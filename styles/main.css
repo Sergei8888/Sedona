@@ -1,0 +1,283 @@
+/*Fonts*/
+    @font-face{
+        font-family: 'PT Sans';
+        src: url(../fonts/PTSans-Regular.woff) format('woff');
+        font-style: normal;
+        font-weight: normal;
+        font-display: swap;
+    }
+    @font-face{
+        font-family: 'PT Sans-bold';
+        src: url(../fonts/PTSans-Bold.woff) format('woff');
+        font-style: normal;
+        font-weight: bold;
+        font-display: swap;
+    }
+/*Images*/
+    .sedona_image{
+        height: 260px;
+    }
+    .town-image{
+        background: url(../img/photo-city@1x.webp) center center no-repeat;
+        background-size: cover;
+    }
+    .bridge-image{
+        background: url(../img/photo-bridge@1x.webp) center center no-repeat;
+        background-size: cover;
+    }
+    /*First article*/
+        .First_article_text-area{
+            padding: 61px 28px 45px 28px;
+            clip-path: polygon(50% 8%, 100% 0, 100% 100%, 0 100%, 0 0);
+        }
+        .text_area--blue{
+            background-color: #81b3d2;
+            color: white;
+        }
+        /*List*/
+        .First_article-list{
+            display: flex;
+            flex-direction: column;
+            margin: 26px 0 42px 18px;
+        }
+        .First_article-list_list-item{
+            display: flex;
+            max-width: 82%;
+        }
+        .second-list-item{
+            margin: 22px 0 28px 0;
+        }
+        .list-item_img{
+            align-self: flex-start;
+            margin-right: 13px;
+            width: 40px;
+            height: 40px;
+        }
+        .list-item_text_description{
+            max-width: 80%;
+        }
+        .list-item_title--first{
+            margin-top: 9px;
+            margin-bottom: 25px;
+        }
+        .list-item_title--second{
+            margin-top: 12px;
+            margin-bottom: 25px;
+        }
+        .list-item_title--therd{
+            margin-top: 10px;
+            margin-bottom: 25px;
+        }
+    /*Second arcticle*/
+        .Second_article_text-area{
+            padding: 30px 43px 0 30px;
+        }
+        .Second_article_text-area--main{
+            padding-bottom: 42px;
+            padding-top: 45px;
+        }
+        .Second_article_text-area--last{
+            padding-bottom: 30px;
+        }
+        .Second_arcticle-list{
+            display: flex;
+            flex-direction: column;
+            background-color: #eee;
+        }
+        .grey-line{
+            width: 280px;
+            height: 1px;
+            background-color: black;
+            opacity: 0.1;
+            margin-top: 32px;
+        }
+    .Interested{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        padding-bottom: 50px;
+    }
+    .Interested-text-area{
+        padding: 40px 30px;
+    }
+    .Interested-text-area_text-area_title{
+        margin-bottom: 30px;
+    }
+    /*Search hotel button*/
+        .search-hotel-button{
+            background-color: #81b3d2;
+            font-weight: 700;
+            padding: 17px 47px;
+        }
+        .search-hotel-button_title{
+            color: white;
+            font-size: 21px;
+        }
+        .search-hotel-button:hover{
+            background-color: #669ec0;
+        }
+        .search-hotel-button:active{
+            background-color: #5496bd;
+        }
+        .search-hotel-button:active .search-hotel-button_title{
+            opacity: 0.3;
+        }
+    /*Map*/
+        .map{
+            width: 100%;
+        }
+    /*Footer*/
+    .footer{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-direction: column;
+        padding: 41px 0 23px 0;
+    }
+    /*Social buttons*/
+        .social-btns{
+            display: flex;
+            margin: 41px 0 51px 0;
+        }
+        .social-btns_btn{
+            width: 46px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #81b3d2;
+        }
+        .social-btns_btn--second{
+            margin: 0 6px;
+        }
+        .social-btns_btn:hover{
+            background-color: #669ec0;
+        }
+        .social-btns_btn:active{
+            background-color: #5496bd;
+        }
+        .social-btns_btn:active .social-icon{
+            opacity: .3;
+        }
+    .developed-by{
+        display: flex;
+        align-items: center;
+    }
+    .developed-by_title{
+        color: #000000;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 26px;
+        margin-right: 11px;
+    }
+    .academy_icon{
+        width: 27px;
+        height: 34px;
+        background-image: url(../img/htmlacademy.svg);
+    }
+    .academy_icon:hover{
+        background-image: url(../img/htmlacademy_hover.png);
+    }
+    .academy_icon:active{
+        background-image: url(../img/htmlacademy.svg);
+        opacity: .3;
+    }
+    
+/*Media*/
+    /*Tablet*/
+        @media screen and (min-width: 768px){
+            .town-section{
+                display: flex;
+            } 
+            .bridge-section{
+                display: flex;
+            }
+            .First_article_text-area{
+                padding: 46px 47px;
+                width: 34%;
+                clip-path: none;
+            }
+            .Second_article_text-area--main{
+                padding: 50px;
+                width: 34%;
+                order: 2;
+            }
+            .town-image{
+                width: 66%;
+            }
+            .bridge-image{
+                width: 66%;
+            }
+            .First_article-list{
+                justify-content: space-around;
+                flex-direction: row; 
+                margin: 60px 0 66px 0;
+            }
+            .Second_arcticle-list{
+                flex-direction: row;
+            }
+            .second-list-item{
+                margin: 0;
+            }
+            .First_article-list_list-item{
+                flex-direction: column;
+                justify-content: center;
+                width: 33.34%;
+            }
+            .Second_arcticle-list_list-item{
+                width: 33.34%;
+            }
+            .list-item_img{
+                margin: 0;
+                align-self: center;
+                width: 77px;
+                height: 75px;
+            }
+            .list-item_text{
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+            .grey-line{
+                display: none;
+            }
+            .search-hotel-button{
+                padding: 17px 136px;
+            }
+            .footer{
+                flex-direction: row;
+                justify-content: space-between;
+                padding: 36px 60px;
+            }
+            .social-btns{
+                margin: 0;
+            }
+            .Interested{
+                padding-bottom: 58px;
+            }
+        }
+    /*Desktop*/
+    @media screen and (min-width: 1200px){
+        .town-image{
+            background: url(../img/photo-city@2x.webp) center center no-repeat;
+            background-size: cover;
+        }
+        .bridge-image{
+            background: url(../img/photo-bridge@2x.webp) center center no-repeat;
+            background-size: cover;
+        }
+        .Second_article_text-area{
+            padding: 58px 0 70px 0;
+        }
+        .Interested{
+            padding-bottom: 66px;
+        }
+        .Interested-text-area{
+            padding: 57px 0 52px 0;
+        }
+        .footer{
+            padding: 36px 120px;
+        }
+    }
