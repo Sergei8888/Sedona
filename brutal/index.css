@@ -269,6 +269,9 @@ section{
 }
 
 .road__img{
+	display: flex;
+	justify-content: center;
+	align-content: center;
 	width: 176px;
   height: 176px;
   position: absolute;
@@ -277,6 +280,18 @@ section{
 	transform: translate(-50%, -50%);
 	border: 7px solid #f1f1f1;
 	border-radius: 50%;
+	text-align: center;
+}
+
+.road__img .list__title{
+	display: flex;
+	justify-content: center;
+	align-items: center;	
+	margin: 0;
+	color: white;
+	text-transform: uppercase;
+	letter-spacing: -0.45px;
+	text-shadow: 0 1px 1px rgba(0, 0, 0, 0.7);
 }
 
 .grey-line{
@@ -286,18 +301,24 @@ section{
 	background-color: #f1f1f1;
 }
 
+.road__description--last{
+	height: 127px;
+}
+
 .road__description:nth-child(1) .road__img{
 	background: url(img/road__1.jpg) center center no-repeat;
 }
-
-.road__description:nth-child(2) .road__img{
+.road__description:nth-child(3) .road__img{
 	background: url(img/road__2.jpg) center center no-repeat;
 }
-.road__description:nth-child(3) .road__img{
+.road__description:nth-child(5) .road__img{
 	background: url(img/road__3.jpg) center center no-repeat;
 }
-.road__description:nth-child(4) .road__img{
+.road__description:nth-child(7) .road__img{
 	background: url(img/road__4.jpg) center center no-repeat;
+}
+.road__description--last .road__img{
+	background-color: #fed136;
 }
 
 
