@@ -321,4 +321,112 @@ section{
 	background-color: #fed136;
 }
 
+.team{
+	background-color: #f9f9f9;
+}
+
+.team-list{
+	display: grid;
+	grid-template-columns: repeat(3, 235px);
+	grid-template-rows: 345px;
+	grid-column-gap: 60px;
+	margin: 0 auto;
+	margin-top: 85px;
+	margin-bottom: 51px;
+}
+
+.team-list__member{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.photo{
+	width: 220px;
+	height: 220px;
+	border-radius: 50%;
+	background-color: #000;
+	margin-bottom: 25px;
+}
+
+.member__social{
+	display: flex;
+	justify-content: space-around;
+	width: 100%;
+	margin-top: 15px;
+}
+
+.member__social div{
+	width: 40px;
+	height: 40px;
+	border: 3px solid #222222;
+	border-radius: 50%;
+}
+
+.twitter{
+	background: url(img/Twitter.png) center center no-repeat;
+}
+
+.facebook{
+	background: url(img/Facebook.png) center center no-repeat;
+}
+
+.gmail{
+	background: url(img/Google+.png) center center no-repeat;
+}
+
+.team_p{
+	width: 40%;
+	text-align: center;
+	color: #777;
+}
+
+.CMS{
+	padding: 67px 0;
+}
+
+.CMS__list{
+	margin: 0 auto;
+}
+
+.CMS__list img{
+	margin: 0 20px;
+}
+
+.Contact{
+	color: white;
+	background-color: #222;
+}
+
+.contact__form{
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-column-gap: 30px;
+	grid-template-rows: 50px 50px 50px;
+	grid-row-gap: 30px;
+	grid-template-areas: 
+            "i t"
+            "i1 t"
+            "i2 t";
+	margin: 75px 0 30px 0;
+	width: 90%;
+}
+
+input:nth-child(1){
+	grid-area: i;
+}
+
+input:nth-child(2){
+	grid-area: i1;
+}
+
+input:nth-child(3){
+	grid-area: i2;
+}
+
+textarea{
+	grid-area: t;
+}
+
+
 
