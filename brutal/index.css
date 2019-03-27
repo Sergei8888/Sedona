@@ -28,6 +28,7 @@
 	box-sizing: border-box;
 }
 
+
 .header{
 	position: relative;
 	height: 100vh;
@@ -83,6 +84,7 @@
 	color: white;
 	text-decoration: none;
 	text-transform: uppercase;
+	font-size: 14px;
 }
 
 .nav-list__item a:hover{
@@ -119,9 +121,10 @@
 	border-radius: 1px;
 	font-family: "ArialBold", sans-serif;
 	color: white;
-	font-size: 24px;
+	font-size: 18px;
 	text-transform: uppercase;
 	text-decoration: none;
+	color: #484543;
 }
 
 .main__btn:active{
@@ -221,6 +224,15 @@ section{
 	grid-column-gap: 50px;
 }
 
+.achivment{
+	display: flex;
+	flex-direction: column;
+}
+
+.achivment picture{
+	height: 300px;
+}
+
 .achivment__description{
 	display: flex;
 	flex-direction: column;
@@ -233,3 +245,59 @@ section{
 .achivment__description .list__title{
 	margin-bottom: 5px;
 }
+
+.road{
+	width: 67%;
+	margin-top: 85px;
+}
+
+.road__description{
+	display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+	position: relative;
+	text-align: right;
+}
+
+.road__description--text-right{
+	justify-content: flex-end;
+	text-align: left;
+}
+
+.road__description span{
+	max-width: 290px;
+}
+
+.road__img{
+	width: 176px;
+  height: 176px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+	transform: translate(-50%, -50%);
+	border: 7px solid #f1f1f1;
+	border-radius: 50%;
+}
+
+.grey-line{
+	margin: 0 auto;
+	width: 3px;
+	height: 94px;
+	background-color: #f1f1f1;
+}
+
+.road__description:nth-child(1) .road__img{
+	background: url(img/road__1.jpg) center center no-repeat;
+}
+
+.road__description:nth-child(2) .road__img{
+	background: url(img/road__2.jpg) center center no-repeat;
+}
+.road__description:nth-child(3) .road__img{
+	background: url(img/road__3.jpg) center center no-repeat;
+}
+.road__description:nth-child(4) .road__img{
+	background: url(img/road__4.jpg) center center no-repeat;
+}
+
+
