@@ -4,7 +4,7 @@
   "description": "Electron test project",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "electron ."
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Sergei8888/Sergei8888.github.io/issues"
   },
-  "homepage": "https://github.com/Sergei8888/Sergei8888.github.io#readme"
+  "homepage": "https://github.com/Sergei8888/Sergei8888.github.io#readme",
+  "dependencies": {
+    "electron": "^4.1.3"
+  }
 }
