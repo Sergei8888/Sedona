@@ -1,50 +1,78 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Golden-One</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<!-- Normalize css -->
-	<link rel="stylesheet" href="normalize.css" type="text/css">
 	<!-- Main css -->
 	<link rel="stylesheet" href="index.css" rel="stylesheet">
+	<!-- Animate CSS -->
+	<link rel="stylesheet" href="animate.css" rel="stylesheet">
 </head>
+
 <body>
+	<ul class="nav-list nav-list--mobile" id="mobileMenu">
+		<li class="nav-list__item--mobile">
+			<a href="#">Home</a>
+		</li>
+		<li class="nav-list__item--mobile">
+			<a href="#">Services</a>
+		</li>
+		<li class="nav-list__item--mobile">
+			<a href="#">Portfolio</a>
+		</li>
+		<li class="nav-list__item--mobile">
+			<a href="#">About</a>
+		</li>
+		<li class="nav-list__item--mobile">
+			<a href="#">Contact</a>
+		</li>
+	</ul>
+
 	<header class="header">
 		<div class="tint"></div>
-			<div class="content-wrapper">
-				<nav class="nav">
-						<picture>
-							<source srcset="img/Logo-Treehouse.webp 1x" srcset="img/Logo-Treehouse@2x.webp 2x" type="image/webp">
-							<img src="img/Logo-Treehouse.png 1x" srcset="img/Logo-Treehouse@2x.png 2x" alt="Logotype Golden">
-						</picture>
-						<ul class="nav-list">
-							<li class="nav-list__item">
-								<a href="#">Home</a>
-							</li>
-							<li class="nav-list__item">
-								<a href="#">Services</a>
-							</li>
-							<li class="nav-list__item">
-								<a href="#">Portfolio</a>
-							</li>
-							<li class="nav-list__item">
-								<a href="#">About</a>
-							</li>
-							<li class="nav-list__item">
-								<a href="#">Contact</a>
-							</li>
-						</ul>
-				</nav>
-				<main class="main">
-					<h2 class="main__subtitle">Welcome To Our Studio!</h2>
-					<h1 class="main__title">It’s nice to Meet you</h1>
-					<a href="#" class="main__btn">Tell Me More</a>
-				</main>
-			</div>
+		<div class="content-wrapper">
+
+
+
+			<nav class="nav">
+				<picture>
+					<source srcset="img/Logo-Treehouse.webp 1x" srcset="img/Logo-Treehouse@2x.webp 2x" type="image/webp">
+					<img src="img/Logo-Treehouse.png 1x" srcset="img/Logo-Treehouse@2x.png 2x" alt="Logotype Golden">
+				</picture>
+				<ul class="nav-list">
+					<li class="nav-list__item">
+						<a href="#">Home</a>
+					</li>
+					<li class="nav-list__item">
+						<a href="#">Services</a>
+					</li>
+					<li class="nav-list__item">
+						<a href="#">Portfolio</a>
+					</li>
+					<li class="nav-list__item">
+						<a href="#">About</a>
+					</li>
+					<li class="nav-list__item">
+						<a href="#">Contact</a>
+					</li>
+					<li class="nav-list__toggler" id="burger">
+						<div class="burger-line burger-line--anim"></div>
+						<div class="burger-line"></div>
+						<div class="burger-line burger-line--anim"></div>
+					</li>
+				</ul>
+			</nav>
+			<main class="main">
+				<h2 class="main__subtitle">Welcome To Our Studio!</h2>
+				<h1 class="main__title">It’s nice to Meet you</h1>
+				<a href="#services" class="btn">Tell Me More</a>
+			</main>
+		</div>
 	</header>
-	<section class="services">
+	<section class="services" id="services">
 		<h3 class="section__title">Services</h3>
 		<p>Proin iaculis purus consequat sem cure. </p>
 		<ul class="services-list">
@@ -53,27 +81,27 @@
 					<div class="service-icon__img"></div>
 				</div>
 				<h4 class="list__title">E-Commerce</h4>
-				<p>Proin iaculis purus consequat sem cure 
-						digni ssim. Donec porttitora entum suscipit 
-						aenean rhoncus posuere odio in tincidunt.</p>
+				<p>Proin iaculis purus consequat sem cure
+					digni ssim. Donec porttitora entum suscipit
+					aenean rhoncus posuere odio in tincidunt.</p>
 			</li>
 			<li class="services-list__item">
 				<div class="service-icon">
 					<div class="service-icon__img"></div>
 				</div>
 				<h4 class="list__title">Responsive Web</h4>
-				<p>Proin iaculis purus consequat sem cure 
-						digni ssim. Donec porttitora entum suscipit 
-						aenean rhoncus posuere odio in tincidunt.</p>
+				<p>Proin iaculis purus consequat sem cure
+					digni ssim. Donec porttitora entum suscipit
+					aenean rhoncus posuere odio in tincidunt.</p>
 			</li>
 			<li class="services-list__item">
 				<div class="service-icon">
 					<div class="service-icon__img"></div>
 				</div>
 				<h4 class="list__title">Web Security</h4>
-				<p>Proin iaculis purus consequat sem cure 
-						digni ssim. Donec porttitora entum suscipit 
-						aenean rhoncus posuere odio in tincidunt.</p>
+				<p>Proin iaculis purus consequat sem cure
+					digni ssim. Donec porttitora entum suscipit
+					aenean rhoncus posuere odio in tincidunt.</p>
 			</li>
 		</ul>
 	</section>
@@ -144,85 +172,85 @@
 		</ul>
 	</section>
 	<section class="about">
-			<h3 class="section__title">About us</h3>
-			<p>Proin iaculis purus consequat sem cure.</p>
-			<div class="road">
-				<div class="road__description">
-					<span>
-						<h3 class="list__title">
-								July 2010 <br>
-								Our Humble Beginnings
-						</h3>
-						<p>Proin iaculis purus consequat sem cure 
-								digni ssim. Donec porttitora entum suscipit 
-								aenean rhoncus posuere odio in tincidunt. Proin 
-								iaculis purus consequat sem cure digni 
-								ssim. Donec porttitora entum suscipit.</p>
-					</span>
-					<div class="road__img"></div>
-				</div>	
+		<h3 class="section__title">About us</h3>
+		<p>Proin iaculis purus consequat sem cure.</p>
+		<div class="road">
+			<div class="road__description">
+				<span>
+					<h3 class="list__title">
+						July 2010 <br>
+						Our Humble Beginnings
+					</h3>
+					<p>Proin iaculis purus consequat sem cure
+						digni ssim. Donec porttitora entum suscipit
+						aenean rhoncus posuere odio in tincidunt. Proin
+						iaculis purus consequat sem cure digni
+						ssim. Donec porttitora entum suscipit.</p>
+				</span>
+				<div class="road__img"></div>
+			</div>
 
-        <div class="grey-line"></div>
+			<div class="grey-line"></div>
 
-				<div class="road__description road__description--text-right">
-					<span>
-						<h3 class="list__title">
-							July 2010
-							Our Humble Beginnings
-						</h3>
-						<p>Proin iaculis purus consequat sem cure 
-							digni ssim. Donec porttitora entum suscipit 
-							enean rhoncus posuere odio in tincidunt. Proin 
-							iaculis purus consequat sem cure digni 
-							ssim. Donec porttitora entum suscipit.</p>
-					</span>
-						<div class="road__img"></div>
-				</div>
+			<div class="road__description road__description--text-right">
+				<span>
+					<h3 class="list__title">
+						July 2010 <br>
+						Our Humble Beginnings
+					</h3>
+					<p>Proin iaculis purus consequat sem cure
+						digni ssim. Donec porttitora entum suscipit
+						enean rhoncus posuere odio in tincidunt. Proin
+						iaculis purus consequat sem cure digni
+						ssim. Donec porttitora entum suscipit.</p>
+				</span>
+				<div class="road__img"></div>
+			</div>
 
-				<div class="grey-line"></div>
+			<div class="grey-line"></div>
 
-				<div class="road__description">
-					<span>
-						<h3 class="list__title">
-								July 2010 <br>
-								Our Humble Beginnings
-						</h3>
-						<p>Proin iaculis purus consequat sem cure 
-								digni ssim. Donec porttitora entum suscipit 
-								aenean rhoncus posuere odio in tincidunt. Proin 
-								iaculis purus consequat sem cure digni 
-								ssim. Donec porttitora entum suscipit.</p>
-					</span>
-					<div class="road__img"></div>
-				</div>	
+			<div class="road__description">
+				<span>
+					<h3 class="list__title">
+						July 2010 <br>
+						Our Humble Beginnings
+					</h3>
+					<p>Proin iaculis purus consequat sem cure
+						digni ssim. Donec porttitora entum suscipit
+						aenean rhoncus posuere odio in tincidunt. Proin
+						iaculis purus consequat sem cure digni
+						ssim. Donec porttitora entum suscipit.</p>
+				</span>
+				<div class="road__img"></div>
+			</div>
 
-        <div class="grey-line"></div>
+			<div class="grey-line"></div>
 
-				<div class="road__description road__description--text-right">
-					<span>
-						<h3 class="list__title">
-							July 2010
-							Our Humble Beginnings
-						</h3>
-						<p>Proin iaculis purus consequat sem cure 
-							digni ssim. Donec porttitora entum suscipit 
-							enean rhoncus posuere odio in tincidunt. Proin 
-							iaculis purus consequat sem cure digni 
-							ssim. Donec porttitora entum suscipit.</p>
-					</span>
-						<div class="road__img"></div>
-				</div>
+			<div class="road__description road__description--text-right">
+				<span>
+					<h3 class="list__title">
+						July 2010 <br>
+						Our Humble Beginnings
+					</h3>
+					<p>Proin iaculis purus consequat sem cure
+						digni ssim. Donec porttitora entum suscipit
+						enean rhoncus posuere odio in tincidunt. Proin
+						iaculis purus consequat sem cure digni
+						ssim. Donec porttitora entum suscipit.</p>
+				</span>
+				<div class="road__img"></div>
+			</div>
 
-				<div class="grey-line"></div>
+			<div class="grey-line"></div>
 
-				<div class="road__description road__description--last road__description--text-right">
-						<div class="road__img">
-							<h3 class="list__title">
-								Our <br> Story <br> Continues...
-							</h3>
-						</div>
+			<div class="road__description road__description--last road__description--text-right">
+				<div class="road__img">
+					<h3 class="list__title">
+						Our <br> Story <br> Continues...
+					</h3>
 				</div>
 			</div>
+		</div>
 	</section>
 	<section class="team">
 		<h3 class="section__title">our amazing team</h3>
@@ -232,34 +260,34 @@
 				<div class="photo"></div>
 				<h3 class="list__title">Kimberly Thompson</h3>
 				<p>Marketer</p>
-					<div class="member__social">
-						<div class="twitter"></div>
-						<div class="facebook"></div>
-						<div class="gmail"></div>
-					</div>
+				<div class="member__social">
+					<a class="twitter"></a>
+					<a class="facebook"></a>
+					<a class="gmail"></a>
+				</div>
 			</li>
 			<li class="team-list__member">
 				<div class="photo"></div>
 				<h3 class="list__title">Rico Massimo</h3>
 				<p>Coder</p>
-					<div class="member__social">
-						<div class="twitter"></div>
-						<div class="facebook"></div>
-						<div class="gmail"></div>
-					</div>
+				<div class="member__social">
+					<a class="twitter"></a>
+					<a class="facebook"></a>
+					<a class="gmail"></a>
+				</div>
 			</li>
 			<li class="team-list__member">
 				<div class="photo"></div>
 				<h3 class="list__title">Uku Mason</h3>
 				<p>Graphic Designer</p>
-					<div class="member__social">
-						<div class="twitter"></div>
-						<div class="facebook"></div>
-						<div class="gmail"></div>
-					</div>
+				<div class="member__social">
+					<a class="twitter"></a>
+					<a class="facebook"></a>
+					<a class="gmail"></a>
+				</div>
 			</li>
 		</ul>
-		<p class="team_p">Proin iaculis purus consequat sem cure  digni ssim donec porttitora entum suscipit  
+		<p class="team_p">Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit
 			aenean rhoncus posuere odio in tincidunt proin iaculis.</p>
 	</section>
 
@@ -276,12 +304,20 @@
 		<h3 class="section__title">Contact us</h3>
 		<p>Proin iaculis purus consequat sem cure.</p>
 		<form class="contact__form">
-			<input type="text" placeholder=" YOUR NAME *">
-			<input type="text" placeholder=" YOUR EMAIL *">
-			<input type="text" placeholder=" SUBJECT">
-			<textarea placeholder=" YOUR MESSAGE *" name="" id="" cols="30" rows="10"></textarea>
+			<div class="form__grid">
+				<input type="text" placeholder="YOUR NAME *">
+				<input type="email" placeholder="YOUR EMAIL *">
+				<input type="text" placeholder="SUBJECT">
+				<textarea placeholder="YOUR MESSAGE *" name="" id="" cols="30" rows="10"></textarea>
+			</div>
+			<button class="btn form__btn">Send Message</button>
 		</form>
-
 	</section>
+
+	<footer class="footer">
+		<span class="footer__span">© Copyright 2014 FreebiesXpress.com</span>
+	</footer>
+	<script src="main.js"></script>
 </body>
+
 </html>

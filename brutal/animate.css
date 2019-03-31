@@ -1,0 +1,55 @@
+
+.burger-line:nth-child(2){
+	transition: 0s;
+}
+.burger--opened:nth-child(1){
+	animation: burger--open--first 0.4s;
+	animation-fill-mode: forwards;
+	transform-origin: 95% 50%;
+}
+.burger--opened:nth-child(3){
+	animation: burger--open--last 0.4s;
+	animation-fill-mode: forwards;
+	transform-origin: 95% 50%;
+}
+.burger--closed:nth-child(1){
+	animation: burger--closed--first 0.4s;
+	animation-fill-mode: forwards;
+}
+.burger--closed:nth-child(3){
+	animation: burger--closed--last 0.4s;
+	animation-fill-mode: forwards;
+}
+
+@keyframes burger--open--first{
+	0%{
+		transform: rotate(0deg);
+	}
+	100%{
+		transform: rotate(-45deg);
+	}
+}
+@keyframes burger--open--last{
+	0%{
+		transform: rotate(0deg);
+	}
+	100%{
+		transform: rotate(45deg);
+	}
+}
+@keyframes burger--closed--first{
+	0%{
+		transform: rotate(-45deg);
+	}
+	100%{
+		transform: rotate(0deg);
+	}
+}
+@keyframes burger--closed--last{
+	0%{
+		transform: rotate(45deg);
+	}
+	100%{
+		transform: rotate(0deg);
+	}
+}
