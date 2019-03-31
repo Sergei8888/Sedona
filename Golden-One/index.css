@@ -33,6 +33,7 @@ a{
 }
 
 .nav-list--mobile{
+	display: none;
 	height: 0;
 }
 
