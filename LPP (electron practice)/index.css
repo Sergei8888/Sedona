@@ -1,0 +1,42 @@
+body{
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	background: -webkit-linear-gradient(bottom, #FFE47A, #3D7EAA) no-repeat;
+	background-size: cover;
+	background: linear-gradient(to bottom, #FFE47A, #3D7EAA) no-repeat;
+	background-size: cover;
+	color: white;
+	letter-spacing: 4px;
+}
+
+h1{
+	font-size: 80px;
+}
+
+h2{
+ font-size: 50px;
+}
+
+h1 + p{
+	margin: 20px 0;
+}
+
+.GO-btn{
+	width: 100px;
+	padding: 10px 0px;
+	border: 1px solid white;
+	border-radius: 10px;
+	background-color: transparent;
+	color: white;
+	font-weight: bold;
+	font-size: 17px;
+}
+
+.GO-btn:focus{
+	outline: none;
+	background-color: rgba(61, 126, 170, 0.3);
+}

@@ -1,0 +1,68 @@
+body{
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	background: -webkit-linear-gradient(bottom, #FFE47A, #3D7EAA) no-repeat;
+	background-size: cover;
+	background: linear-gradient(to bottom, #FFE47A, #3D7EAA) no-repeat;
+	background-size: cover;
+	color: white;
+	letter-spacing: 4px;
+}
+
+h1{
+	font-size: 80px;
+}
+
+h2{
+ font-size: 50px;
+}
+
+h1 + p{
+	margin: 20px 0;
+}
+
+.backBtn{
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	width: 50px;
+	height: 50px;
+	border: 1px solid white;
+	border-radius: 50%;
+	background-color: transparent;
+	outline: none;
+	padding: 10px;
+}
+
+/*Piano*/
+.piano{
+	display: flex;
+	height: 50%;
+}
+
+.piano__button{
+	background: url(img/black.jpg) right top no-repeat, url(img/black.jpg) left top no-repeat;
+	background-size: 15px 30%;
+	background-color: white;
+	width: 50px;
+	box-shadow: inset 1px -9px 14px -6px rgba(0,0,0,0.75);
+}
+
+.piano__button:first-child{
+	background: url(img/black.jpg) right top no-repeat;
+	background-size: 15px 30%;
+	background-color: white;
+}
+
+.piano__button:last-child{
+	background: url(img/black.jpg) left top no-repeat;
+	background-size: 15px 30%;
+	background-color: white;
+}
+
+
+
