@@ -17,7 +17,7 @@ ul {
 	padding: 0;
 }
 
-h1,h2,h3,h4,h5,h6{
+h1,h2,h3,h4,h5,h6,blockquote{
 	margin: 0;
 }
 
@@ -209,14 +209,16 @@ p {
 	align-items: center;
 	border-left: 1px solid rgba(149, 255, 211, .3);
 	border-right: 1px solid rgba(149, 255, 211, .3);
-	padding: 10px 0;
+	padding: 15px 0;
 }
 
 .statistic__number {
 	font-size: 72px;
+	line-height: 60px;
+	margin-bottom: 30px;
 }
 
-.statistic__number+p {
+.statistic__number + p {
 	font-family: Montserrat;
 	color: white;
 	font-size: 14px;
@@ -318,6 +320,7 @@ h5 {
 	grid-template: 1fr / 1fr 1fr;
 	column-gap: 30px;
 	margin-top: 90px;
+	width: 100%;
 }
 
 .summary__content-wrapper{
@@ -339,16 +342,77 @@ h5 {
 }
 
 .services__photography-content{
-	width: 570px;
 	height: 181px;
 	border: 1px solid #e5e5e5;
 	overflow-y: scroll;
 
+	font-family: Roboto;
 	font-size: 15px;
 	font-weight: 400;
 	color: #999999;
 	padding: 20px;
 }
+
+/*blockquote*/
+.blockquote{
+	display: flex;
+	justify-content: center;
+	padding: 70px 0;
+	background-color: #f8f8f8;
+}
+
+.swiper-container{
+	height: 100%;
+	width: 90%;
+	max-width: 1150px;
+}
+
+.swiper-slide{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0 10%;
+}
+
+.swiper-button-prev{
+	background: url(img/arrow-left.png) center center no-repeat;
+}
+
+.swiper-button-next{
+	background: url(img/arrow-right.png) center center no-repeat;
+}
+
+.blockquote__icon{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: 3px solid #95e1d3;
+	padding: 45px;
+	margin-right: 60px;
+}
+
+.bockquote__content .red-line{
+	display: inline-block;
+	margin-right: 10px;
+}
+
+.bockquote__content h4{
+	display: inline-block;
+}
+
+.bockquote__content cite{
+	display: flex;
+	align-items: center;
+	margin-top: 23px;
+}
+
+.blockquote blockquote{
+	color: #999999;
+	font-size: 24px;
+	font-weight: 400;
+	font-family: Roboto;
+}
+
 
 @media (max-width: 1235px) {
 	.about-us__galerey {
@@ -360,7 +424,7 @@ h5 {
 		width: 100%;
 		grid-template: repeat(5, 1fr) / 1fr;
 		grid-row-gap: 20px;
-		padding: 0 10px;
+		padding: 0 15px;
 	}
 }
 
@@ -382,6 +446,37 @@ h5 {
 
 	h2 {
 		font-size: 50px;
+	}
+}
+
+@media (max-width: 620px){
+	.services__content{
+		display: flex;
+		flex-direction: column;
+	}
+	.details-wrappwer{
+		margin-top: 50px;
+	}
+	.ipad{
+		width: 200px;
+		height: 265px;
+	}
+	.iphone{
+		width: 137px;
+		height: 238px;
+	}
+	.design{
+		padding-bottom: 300px;
+	}
+	.blockquote__icon{
+		display: none;
+	}
+	.swiper-button-prev{
+		left: -6px;
+	}
+	
+	.swiper-button-next{
+		right: -6px;
 	}
 }
 
