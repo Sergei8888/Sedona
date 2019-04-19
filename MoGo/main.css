@@ -289,6 +289,8 @@ h5 {
 }
 
 .ipad {
+	width: 400px;
+	height: 530px;
 	position: absolute;
 	bottom: 0;
 	left: 50%;
@@ -296,9 +298,8 @@ h5 {
 }
 
 .iphone {
-	width: 224px;
-	height: 400px;
-	;
+	width: 274px;
+	height: 476px;
 	position: absolute;
 	bottom: -80px;
 	left: 56%;
