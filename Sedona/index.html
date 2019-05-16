@@ -1,287 +1,108 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- CSS -->
-    <style>
-    /*Critical css*/
-    /*Reset css*/
-        *{
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        }
-        body{
-            font-family: 'PT Sans', sans-serif;
-            text-transform: uppercase;
-        }
-        li, ul{
-            list-style: none;
-        }
-        a{
-            display: block;
-            text-decoration: none;
-            transition: all .3s;
-        }
-        img{
-            display: block;
-        }
-        button{
-            border: none;
-            transition: all .3s;
-        }
-        /*Mobile version*/
-            /*Mobile-menu*/
-            .nav-mobile-menu{
-                background-color: #81B3D2;
-                font-family: "PT Sans-bold";
-            }
-            .nav-mobile-menu-item{
-                height: 55px;
-                box-shadow: 0 1px 0 rgba(1, 1, 1, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.2);
-            }
-            .nav-mobile-menu-item_link:hover{
-                background-color: #669ec0;
-            }
-            .nav-mobile-menu-item_link:active{
-                background-color: #5496bd;
-            }
-            .nav-mobile-menu-item_link:active .nav-mobile-menu-item_link_content{
-                opacity: .3;
-            }
-            .nav-mobile-menu-item_link{
-                
-                height: 100%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-            .nav-mobile-menu-item_link_content{
-                font-size: 18px;
-                color: #fff;
-            }
-        /*Desktop-menu*/
-            .desktop-navigation{
-                height: 56px; 
-                z-index: 10;
-            }
-            .nav-desktop-menu{
-                height: 100%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                z-index: 15;
-            }
-            .nav-desktop-menu-item{
-                width: 20%;
-                height: 100%;
-                display: none;
-            }
-            .nav-desktop-menu-item--logo{
-                flex-grow: 1;
-                height: 100%;
-                z-index: 10;
-            }
-            .nav-desktop-menu-item_link{
-                width: 100%;
-                height: 100%;
-                color: #000000;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-            .nav-desktop-menu-item_link:hover{
-                color: #81b3d2;
-            }
-            .nav-desktop-menu-item_link:active{
-                color: #000;
-                opacity: .3;
-            }
-            /*Logotype*/
-                .logo{
-                    background: url(img/logotyle-mobile.svg) center 0 no-repeat;
-                    width: 102px;
-                    height: 83px;
-                    margin: 0 auto;
-                    z-index: 10;
-                }
-                
-        /*Intro*/
-            .Intro-main{
-                padding-top: 90px;
-                display: flex;
-                align-items: center;
-                flex-direction: column;
-                background-image: url(img/back-mobile.webp);
-                background-position: center 0;
-                background-repeat: no-repeat;
-                z-index: 5;
-                clip-path: polygon(100% 0, 100% 92%, 50% 100%, 0 92%, 0 0);
-            }
-            .Intro-main_text{
-                background: url(img/text-index.svg) center 0 no-repeat;
-                width: 282px;
-                height: 214px;
-                margin-bottom: 85px;
-            }
-            .Intro_title{
-                padding-bottom: 40px;
-                
-            }
-            .Intro_description{
-                color: #333333;
-            }
-            .Intro_text-area{
-                padding: 45px 0 35px 0;
-            }
-        
-        /*Text area*/
-            .text-area{
-                line-height: 26px;
-            }
-            .text-area_title{
-                font-family: "PT Sans-bold";
-                font-size: 21px;
-            }
-            .text-area_counter{
-                margin: 20px 0;
-            }
-            .text-area_description{
-                font-size: 14px;
-                font-weight: 400;
-                color: #333;
-                max-width: 80%;
-            }
-            .text-area_description--white{
-                color: white;
-            }
-            .text-area{
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-                max-height: 260px;
-            }
-        
-        @media screen and (min-width: 768px){
-            .nav-mobile-menu{
-                display: none;
-            }
-            .Intro_text-area{
-                padding: 51px 0 55px 0;
-            }
-            .Intro-main{
-                background-image: url(img/back-desktop.webp);
-                background-size: cover;
-                clip-path: polygon(100% 0, 100% 94%, 95% 95%, 95% 90%, 50% 100%, 5% 90%, 5% 95%, 0 94%, 0 0);
-                padding-top: 77px;
-            }
-            .Intro-main_text{
-                background: url(img/text-index-table.svg) center 0 no-repeat;
-                width: 460px;
-                height: 350px;
-            }
-            .nav-desktop-menu-item{
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                font-size: 14px;
-                font-family: "PT Sans-bold";
-            }  
-        }
-        @media screen and (min-width: 1200px){
-            .logo{
-                width: 188px;
-                height: 96px;
-                background: url(img/logotype-desktop.svg) no-repeat;
-            }
-            .Intro_text-area{
-                padding: 55px 55px;
-            }
-            .Intro-main{
-                clip-path: polygon(100% 0, 100% 92%, 85% 95%, 85% 90%, 50% 100%, 15% 90%, 15% 95%, 0 92%, 0 0);
-            }
-        }
-    </style>
-    <!--Load non-critical CSS-->
     <link rel="stylesheet" href="styles/main.css">
     <title>Седона</title>
 </head>
+
 <body>
     <header>
         <nav class="mobile-navigation">
             <ul class="nav-mobile-menu">
-                <li class="nav-mobile-menu-item"><a href="index.html" class="nav-mobile-menu-item_link"><p class="nav-mobile-menu-item_link_content">Главная</p></a></li>
-                <li class="nav-mobile-menu-item"><a href="photo.html" class="nav-mobile-menu-item_link"><p class="nav-mobile-menu-item_link_content">Фото и видео</p></a></li>
-                <li class="nav-mobile-menu-item"><a href="form.html" class="nav-mobile-menu-item_link"><p class="nav-mobile-menu-item_link_content">Форма отзыва</p></a></li>
-                <li class="nav-mobile-menu-item"><a href="https://htmlacademy.ru/intensive/adaptive" target="_blank" rel="noopener" class="nav-mobile-menu-item_link"><p class="nav-mobile-menu-item_link_content">HTML academy</p></a></li>
-            </ul>   
+                <li class="nav-mobile-menu-item"><a href="index.html" class="nav-mobile-menu-item_link">
+                        <p class="nav-mobile-menu-item_link_content">Главная</p>
+                    </a></li>
+                <li class="nav-mobile-menu-item"><a href="photo.html" class="nav-mobile-menu-item_link">
+                        <p class="nav-mobile-menu-item_link_content">Фото и видео</p>
+                    </a></li>
+                <li class="nav-mobile-menu-item"><a href="form.html" class="nav-mobile-menu-item_link">
+                        <p class="nav-mobile-menu-item_link_content">Форма отзыва</p>
+                    </a></li>
+                <li class="nav-mobile-menu-item"><a href="https://htmlacademy.ru/intensive/adaptive" target="_blank"
+                        rel="noopener" class="nav-mobile-menu-item_link">
+                        <p class="nav-mobile-menu-item_link_content">HTML academy</p>
+                    </a></li>
+            </ul>
         </nav>
         <nav class="desktop-navigation">
             <ul class="nav-desktop-menu">
                 <li class="nav-desktop-menu-item"><a href="#" class="nav-desktop-menu-item_link">Главная</a></li>
-                <li class="nav-desktop-menu-item"><a href="photo.html" class="nav-desktop-menu-item_link">Фото и видео</a></li>
-                <li class="nav-desktop-menu-item--logo"><div class="logo"></div></li>
-                <li class="nav-desktop-menu-item"><a href="form.html" class="nav-desktop-menu-item_link">Форма отзыва</a></li>
-                <li class="nav-desktop-menu-item"><a href="https://htmlacademy.ru/intensive/adaptive" target="_blank" rel="noopener" class="nav-desktop-menu-item_link">HTML academy</a></li>
+                <li class="nav-desktop-menu-item"><a href="photo.html" class="nav-desktop-menu-item_link">Фото и
+                        видео</a></li>
+                <li class="nav-desktop-menu-item--logo">
+                    <div class="logo"></div>
+                </li>
+                <li class="nav-desktop-menu-item"><a href="form.html" class="nav-desktop-menu-item_link">Форма
+                        отзыва</a></li>
+                <li class="nav-desktop-menu-item"><a href="https://htmlacademy.ru/intensive/adaptive" target="_blank"
+                        rel="noopener" class="nav-desktop-menu-item_link">HTML academy</a></li>
             </ul>
-        </nav> 
-    </header>   
+        </nav>
+    </header>
     <div class="Intro">
         <div class="Intro-main">
             <div class="Intro-main_text"></div>
         </div>
         <div class="text-area Intro_text-area">
-            <h1 class="Intro_title text-area_title">СЕДОНА — небольшой 
+            <h1 class="Intro_title text-area_title">СЕДОНА — небольшой
                 городок в АРИЗОНЕ, <br>
                 зАСЛУЖИвающий большего!</h1>
-                <p class="Intro_description text-area_description">Рассмотрим 5 причин, по которым Седона круче, чем гранд каньон!</p>
+            <p class="Intro_description text-area_description">Рассмотрим 5 причин, по которым Седона круче, чем гранд
+                каньон!</p>
         </div>
     </div>
-        <article class="First_article">
-            <section class="town-section">
-                <div class="First_article_text-area text-area text_area--blue">
-                    <h2 class="text-area_title">НАСТОЯЩИЙ ГОРОДОК</h2>
-                    <p class="text-area_counter">— №1 —</p>
-                    <p class="text-area_description text-area_description--white">СЕДОНА НЕ АТТРАКЦИОН ДЛЯ ТУРИСТОВ, ТАМ ТЕЧЕТ СВОЯ ЖИЗНЬ</p>
-                </div>
-                <div class="sedona_image town-image"></div>
-            </section>
-            <ul class="First_article-list">
-                <li class="First_article-list_list-item ">
-                    <img src="img/icon-house.svg" alt="House icon" class="list-item_img">
-                    <div class="list-item_text">
-                        <h3 class="list-item_title--first">Жилье</h3>
-                        <p class="text-area_description list-item_text_description">Рекомендуем пожить в настоящем мотеле, все как в кино!</p>
-                    </div>
-                </li>
-                <li class="First_article-list_list-item second-list-item">
-                    <img src="img/icon-gift.svg" alt="Gift icon" class="list-item_img">
-                    <div class="list-item_text">
-                        <h3 class="list-item_title--second">СУВЕНИРЫ</h3>
-                        <p class="text-area_description list-item_text_description">Не только китайского, но и местного производства!</p>
-                    </div>
-                </li>
-                <li class="First_article-list_list-item ">
-                    <img src="img/icon-burger.svg" alt="Burger icon" class="list-item_img">
-                    <div class="list-item_text">
-                        <h3 class="list-item_title--therd">ЕДА</h3>
-                        <p class="text-area_description list-item_text_description">Всегда заказывайте ФИРМЕННЫЙ БУРГЕР, Вы НЕ разочаруетесь!</p>
-                    </div>
-                </li>
-            </ul>
-        </article>
-        <article class="Second_article">
-            <div class="bridge-section">
-                <div class="Second_article_text-area--main text-area text_area--blue">
-                    <h2 class="text-area_title">ТАМ ЕСТЬ Мост дьявола</h2>
-                    <p class="text-area_counter">— №2 —</p>
-                    <p class="text-area_description text-area_description--white">Да, по нему можно пройти! Если вы осмелитесь, конечно</p>
-                </div>
-                <div class="sedona_image bridge-image"></div>
+    <article class="First_article">
+        <section class="town-section">
+            <div class="First_article_text-area text-area text_area--blue">
+                <h2 class="text-area_title">НАСТОЯЩИЙ ГОРОДОК</h2>
+                <p class="text-area_counter">— №1 —</p>
+                <p class="text-area_description text-area_description--white">СЕДОНА НЕ АТТРАКЦИОН ДЛЯ ТУРИСТОВ, ТАМ
+                    ТЕЧЕТ СВОЯ ЖИЗНЬ</p>
             </div>
+            <div class="sedona_image town-image"></div>
+        </section>
+        <ul class="First_article-list">
+            <li class="First_article-list_list-item ">
+                <img src="img/icon-house.svg" alt="House icon" class="list-item_img">
+                <div class="list-item_text">
+                    <h3 class="list-item_title--first">Жилье</h3>
+                    <p class="text-area_description list-item_text_description">Рекомендуем пожить в настоящем мотеле,
+                        все как в кино!</p>
+                </div>
+            </li>
+            <li class="First_article-list_list-item second-list-item">
+                <img src="img/icon-gift.svg" alt="Gift icon" class="list-item_img">
+                <div class="list-item_text">
+                    <h3 class="list-item_title--second">СУВЕНИРЫ</h3>
+                    <p class="text-area_description list-item_text_description">Не только китайского, но и местного
+                        производства!</p>
+                </div>
+            </li>
+            <li class="First_article-list_list-item ">
+                <img src="img/icon-burger.svg" alt="Burger icon" class="list-item_img">
+                <div class="list-item_text">
+                    <h3 class="list-item_title--therd">ЕДА</h3>
+                    <p class="text-area_description list-item_text_description">Всегда заказывайте ФИРМЕННЫЙ БУРГЕР, Вы
+                        НЕ разочаруетесь!</p>
+                </div>
+            </li>
+        </ul>
+    </article>
+    <article class="Second_article">
+        <div class="bridge-section">
+            <div class="Second_article_text-area--main text-area text_area--blue">
+                <h2 class="text-area_title">ТАМ ЕСТЬ Мост дьявола</h2>
+                <p class="text-area_counter">— №2 —</p>
+                <p class="text-area_description text-area_description--white">Да, по нему можно пройти! Если вы
+                    осмелитесь, конечно</p>
+            </div>
+            <div class="sedona_image bridge-image"></div>
+        </div>
         <ul class="Second_arcticle-list">
             <li class="Second_arcticle-list_list-item">
                 <div class="Second_article_text-area text-area">
@@ -307,26 +128,36 @@
                 </div>
             </li>
         </ul>
-        </article>
-        <div class="Interested">
-            <div class="Interested-text-area text-area">
-                <h2 class="text-area_title Interested-text-area_text-area_title">ЗАИНТЕРЕСОВАЛИСЬ?</h2>
-                <p class="text-area_description">Укажите предполагаемые даты поездки,
+    </article>
+    <div class="Interested">
+        <div class="Interested-text-area text-area">
+            <h2 class="text-area_title Interested-text-area_text-area_title">ЗАИНТЕРЕСОВАЛИСЬ?</h2>
+            <p class="text-area_description">Укажите предполагаемые даты поездки,
                 и мы покажем вам лучшие предложения гостиниц в седоне</p>
-            </div> 
-            <a href="#" class="search-hotel-button"><h2 class="search-hotel-button_title">НАЙТИ гостиницу</h2></a> 
-        </div>   
-        <div class="map"><iframe title="Google Map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d439517.5182990558!2d-111.68715603618841!3d35.0975417776919!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x872da132f942b00d%3A0x5548c523fa6c8efd!2z0KHQtdC00L7QvdCwLCDQkNGA0LjQt9C-0L3QsCA4NjMzNiwg0KHQqNCQ!5e0!3m2!1sru!2sru!4v1549454546988" width="100%" height="350" frameborder="0" style="border:0" allowfullscreen></iframe></div>
-        <footer class="footer">
-            <h2>#visitSEDONA</h2>
-            <div class="social-btns">
-                <a href="#" class="social-btns_btn"><img src="img/icon-twitter.png" alt="Twitter icon" class="social-icon"></a>
-                <a href="#" class="social-btns_btn social-btns_btn--second"><img src="img/icon-facebook.png" alt="Facebook icon" class="social-icon"></a>
-                <a href="#" class="social-btns_btn"><img src="img/icon-youtube.png" alt="Youtube icon" class="social-icon"></a>
-            </div>
-            <div class="developed-by"><a href="https://htmlacademy.ru/intensive/adaptive" target="_blank" rel="noopener" class="developed-by_title">разработано</a><a href="https://htmlacademy.ru/intensive/adaptive" target="_blank" rel="noopener" class="academy_icon"></a></div>
-        </footer>
+        </div>
+        <a href="#" class="search-hotel-button">
+            <h2 class="search-hotel-button_title">НАЙТИ гостиницу</h2>
+        </a>
+    </div>
+    <div class="map"><iframe title="Google Map"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d439517.5182990558!2d-111.68715603618841!3d35.0975417776919!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x872da132f942b00d%3A0x5548c523fa6c8efd!2z0KHQtdC00L7QvdCwLCDQkNGA0LjQt9C-0L3QsCA4NjMzNiwg0KHQqNCQ!5e0!3m2!1sru!2sru!4v1549454546988"
+            width="100%" height="350" frameborder="0" style="border:0" allowfullscreen></iframe></div>
+    <footer class="footer">
+        <h2>#visitSEDONA</h2>
+        <div class="social-btns">
+            <a href="#" class="social-btns_btn"><img src="img/icon-twitter.png" alt="Twitter icon"
+                    class="social-icon"></a>
+            <a href="#" class="social-btns_btn social-btns_btn--second"><img src="img/icon-facebook.png"
+                    alt="Facebook icon" class="social-icon"></a>
+            <a href="#" class="social-btns_btn"><img src="img/icon-youtube.png" alt="Youtube icon"
+                    class="social-icon"></a>
+        </div>
+        <div class="developed-by"><a href="https://htmlacademy.ru/intensive/adaptive" target="_blank" rel="noopener"
+                class="developed-by_title">разработано</a><a href="https://htmlacademy.ru/intensive/adaptive"
+                target="_blank" rel="noopener" class="academy_icon"></a></div>
+    </footer>
 
-        
+
 </body>
+
 </html>
