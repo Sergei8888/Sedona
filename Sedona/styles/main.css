@@ -280,7 +280,7 @@ button {
 .First_article-list {
     display: flex;
     flex-direction: column;
-    margin: 26px 0 42px 18px;
+    padding: 26px 0 42px 18px;
 }
 
 .First_article-list_list-item {
