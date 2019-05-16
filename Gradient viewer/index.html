@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Document</title>
+	<title>Gradient Viewer</title>
 	<style>
 		/*Reset CSS*/
 		* {
@@ -104,6 +104,9 @@
 	<button id="done"
 		onclick="setGradient(select.options[select.selectedIndex].value, inputStart.value, inputEnd.value);">done!</button>
 	<div id="gradient-div"></div>
+	<p class="description">Цвета можно выбирать во всех доступных форматах: hex(#000000 - чёрный), rgb, rgba, hsl, hsla, ключевые слова(white, black, green).
+	 Полезный ресурс для выбора цветов: <a href="https://www.w3schools.com/colors/colors_picker.asp" target="_blank">https://www.w3schools.com/colors/colors_picker.asp</a>.
+	</p>
 	<script src="main.js"></script>
 </body>
 
