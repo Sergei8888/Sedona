@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<style>
+		/*Reset CSS*/
+		* {
+			font-family: sans-serif;
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		li,
+		ul {
+			list-style: none;
+		}
+
+		a {
+			text-decoration: none;
+			transition: all .3s;
+		}
+
+		img {
+			display: block;
+		}
+
+		button {
+			display: block;
+			border: none;
+			transition: all .3s;
+		}
+
+		.label-list {
+			display: flex;
+			flex-wrap: wrap;
+		}
+
+		.select-dir-wrapper {
+			display: flex;
+			flex-wrap: wrap;
+		}
+
+		#gradient-div {
+			margin: 30px auto;
+			background-color: #444;
+			width: 80vw;
+			height: 10vh;
+		}
+
+		label {
+			display: inline-block;
+			margin: 10px 30px;
+		}
+
+		p {
+			margin: 10px 0;
+			margin-left: 30px;
+		}
+
+		input {
+			padding: 3px;
+			margin-left: 10px;
+		}
+
+		#select-dir {
+			padding: 3px;
+			margin: 5px 30px;
+		}
+
+		button {
+			background-color: green;
+			color: white;
+			font-size: 20px;
+			border-radius: 10px;
+			padding: 5px 10px;
+			margin: 20px 30px;
+		}
+	</style>
+</head>
+
+<body>
+	<ul class="label-list">
+		<li><label>Первый цвет: <input id="color-input--first" type="text"></label></li>
+		<li><label>Второй цвет: <input id="color-input--second" type="text"></label></li>
+	</ul>
+	<div class="select-dir-wrapper">
+		<p>Выберите направление:</p>
+		<select id="select-dir">
+			<option value="to bottom">Сверху вниз</option>
+			<option value="to top">Снизу вверх</option>
+			<option value="to left">Справа на лево</option>
+			<option value="to right">Слева на право</option>
+			<option value="to top left">Справо снизу к слево сверху</option>
+			<option value="to top right">Слево снизу к справо сверху</option>
+			<option value="to bottom left">Справо сверху к слево снизу</option>
+			<option value="to bottom right">Слево сверху к справо снизу</option>
+		</select>
+	</div>
+	<button id="done"
+		onclick="setGradient(select.options[select.selectedIndex].value, inputStart.value, inputEnd.value);">done!</button>
+	<div id="gradient-div"></div>
+	<script src="main.js"></script>
+</body>
+
+</html>
