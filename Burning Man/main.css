@@ -1,0 +1,144 @@
+body {
+    font-family: 'Anton', sans-serif;
+}
+
+.header {
+    display: flex;
+    /*Дабы растянуть контейнер на всю высоту хедер*/
+    min-height: 100vh;
+    color: white;
+    background: no-repeat center top/cover url(./img/header-bg.jpg);
+}
+
+.container {
+    position: relative;
+    flex-grow: 1;
+    /*Дабы растянуть контейнер на всю ширину хедер*/
+    margin: 57px 3%;
+}
+
+.nav {
+    display: flex;
+}
+
+.nav-list {
+    display: flex;
+    align-items: center;
+}
+
+.nav__nav-list {
+    flex-grow: 1;
+    margin-left: 30px;
+}
+
+.nav-list__item {
+    margin: 0 40px;
+    font-size: 14px;
+    line-height: 21px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+}
+
+.nav-list__item a {
+    color: white;
+}
+
+.nav-list__item--number {
+    margin: 0;
+    margin-left: auto;
+    font-size: 17px;
+}
+
+.offer {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(0, -50%);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+}
+
+.offer__subtitle {
+    font-size: 30px;
+    line-height: 44px;
+}
+
+.offer__title {
+    font-size: 100px;
+    line-height: 147px;
+}
+
+.offer__btn {
+    margin-top: 20px;
+    padding: 18px 50px;
+    cursor: pointer;
+    letter-spacing: 0.15em;
+    color: white;
+    font-size: 17px;
+    line-height: 25px;
+    text-transform: uppercase;
+    border: 1px solid #FFFFFF;
+    background: none;
+}
+
+.article__title {
+    margin-bottom: 60px;
+    font-size: 50px;
+    line-height: 73px;
+    text-transform: uppercase;
+}
+
+.footer {
+    margin-top: 120px;
+    margin-bottom: 110px;
+}
+
+.footer__design-info {
+    font-family: "Open Sans";
+    font-size: 15px;
+    line-height: 20px;
+}
+
+.article>.container {
+    margin-top: 113px;
+}
+
+.article__sections-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.article-section {
+    width: 567px;
+}
+
+.article-section:last-child {
+    margin-left: 30px;
+}
+
+.article-section__title {
+    font-size: 25px;
+    line-height: 37px;
+    text-transform: uppercase;
+}
+
+.article-section__text {
+    margin-top: 20px;
+    font-family: "Open Sans";
+    font-size: 16px;
+    line-height: 26px;
+    text-align: justify;
+}
+
+.gallery {
+    display: flex;
+    margin-top: 67px;
+}
+
+.gallery__img:nth-child(2) {
+    margin-left: 30px;
+}
+
+.gallery__img:nth-child(3) {
+    margin-left: auto;
+}
