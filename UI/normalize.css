@@ -6,6 +6,11 @@
     box-sizing: border-box;
 }
 
+/*Задаем стандартное поведение картинок как блоков*/
+
+img{
+    display: block;
+}
 
 /* Убираем внутренние отступы */
 
@@ -38,6 +43,7 @@ dd {
 /* Выставляем основные настройки по-умолчанию для body */
 
 body {
+    min-width: 100vw;
     min-height: 100vh;
     scroll-behavior: smooth;
     text-rendering: optimizeSpeed;
