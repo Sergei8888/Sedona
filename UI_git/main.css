@@ -69,6 +69,8 @@ body{
     .header{
         display: flex;
         margin-bottom: 70px;
+        
+        font-weight: 500;
     }
     
     .header__start, .header__end{
