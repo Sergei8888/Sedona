@@ -70,8 +70,10 @@
         <!--Главный блок-->
         <main class="main">
 
+            <!--Оглавление-->
             <header class="header">
 
+                <!--Первая половина оглавления-->
                 <div class="header__start">
                     <h1 class="main__title">Overview</h1>
                     <div class="dropup">
@@ -96,6 +98,7 @@
                     </div>
                 </div>
 
+                <!--Вторая половина оглавления-->
                 <div class="header__end">
                     <button class="search-btn">
                         <img src="img/Search.svg" alt="search icon">
@@ -114,39 +117,54 @@
 
             </header>
 
+            <!--Контент-->
             <article class="content">
 
-                <section
-                    class="content--left-block">
-                    <!-- Левая секция контента -->
+                <!-- Левая секция контента -->
+                <section class="content--left-block">
+                    
                     <div class="content-block profile">
-                        <div class="profile__text-info">
-                            <span class="profile__name">
-                                Sergei Kuzmenkov
-                            </span>
-                            <span class="profile__gmail">
-                                sergeiclashroale@gmail.com
-                            </span>
-                            <div class="profile__data">
-                                <span class="profile__salary">
-                                    Salary: -100$ (coffie + electricity)
+
+                        <!--Визитка-->
+                        <div class="profile__cutaway"> 
+                            <div class="profile__text-info">
+                                <span class="profile__name">
+                                    Sergei Kuzmenkov
                                 </span>
-                                <span class="profile__exp">
-                                    Exp: not enough anyway
+                                <span class="profile__gmail">
+                                    sergeiclashroale@gmail.com
                                 </span>
+                                <div class="profile__data">
+                                    <span class="profile__salary">
+                                        Salary: -100$ (coffie + electricity)
+                                    </span>
+                                    <span class="profile__exp">
+                                        Exp: not enough anyway
+                                    </span>
+                                </div>
                             </div>
+                            <img src="img/Face.jpg" alt="face" class="profile__img"> 
                         </div>
-                        <img src="img/Face.jpg" alt="face" class="profile__img">
-                        <div class="content-block__graph"></div>
-                        <div class="content-block__radar-chart"></div>
+                        
+
+                        <div class="profile__linear-chart">
+                            <canvas id="linear-chart"></canvas>
+                        </div>
+    
+                        <!-- <div class="profile__radar-chart">
+                            <canvas id="radar-chart"></canvas>
+                        </div> -->
+
                     </div>
+
                 </section>
 
+                <!-- Правая секция контента-->
                 <section
                     class="content--right-block">
-                    <!-- Правая секция контента-->
                     <div class="data-blocks">
 
+                        <!--Статистика-->
                         <div class="content-block data-content-block">
                             <span class="data-content-block__title">
                                 <img src="img/Fix.svg" alt="repair icon">
@@ -159,6 +177,7 @@
                             </div>
                         </div>
 
+                        <!--Статистика-->
                         <div class="content-block data-content-block">
                             <span class="data-content-block__title">
                                 <img src="img/Timer.svg" alt="timer icon">
@@ -171,44 +190,45 @@
                             </div>
                         </div>
 
-
+                        <!--Командный блок-->
                         <div class="content-block data-content-block team-block">
                             <div class="team-block__info">
                                 <img class="team-block__logo" src="img/Team_logo.svg" alt="team logo">
-                                <div>
+                                <span>
                                     <p class="team-block__team-name">Xenofium</p>
-                                    <p class="team-block__members">4 members</p>
-                                </div>
-                                <div class="team-block__actions">
-                                    <div class="dot"></div>
-                                    <div class="dot"></div>
-                                    <div class="dot"></div>
-                                </div>
+                                    <p class="team-block__members">6 members</p>
+                                </span>
+                                <button class="team-block__actions actions">
+                                    <div class="actions__dot"></div>
+                                    <div class="actions__dot"></div>
+                                    <div class="actions__dot"></div>
+                                </button>
                             </div>
+                            <!--Список фотографий членов команды(как бы это не звучало)-->
                             <ul class="team-block__photo-list">
                                 <li class="team__photo">
-                                    <img src="" alt="">
+                                    <img src="img/Vlad_photo.jpg" alt="Vladislav photo">
                                 </li>
                                 <li class="team__photo">
-                                    <img src="" alt="">
+                                    <img src="img/Lion_photoI.jpg" alt="Lev photo">
                                 </li>
                                 <li class="team__photo">
-                                    <img src="" alt="">
+                                    <img src="img/Yana.jpg" alt="Yana photo">
                                 </li>
                                 <li class="team__photo">
-                                    <img src="" alt="">
+                                    <img src="img/Sergei_not_legendary.jpg" alt="Sergei №2 photo">
                                 </li>
                                 <li class="team__photo">
-                                    <img src="" alt="">
+                                    <img src="img/Philips.jpg" alt="TV photo">
+                                </li>
+                                <li class="team__photo">
+                                    <img src="img/Sergei_legendary.jpg" alt="Sergei №1 photo">
                                 </li>
                             </ul>
                         </div>
-
                     </div>
                 </section>
-
             </article>
-
-        </body>
-    </body>
+            <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+            <script src="main.js"></script>
 </html></main></body></html>
