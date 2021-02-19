@@ -64,34 +64,4 @@ var chart = new Chart(ctx_linear, {
     }
 });
 
-let ctx_radar = document.getElementById('radar-chart').getContext('2d');
-var chart = new Chart(ctx_radar, {
-    // The type of chart we want to create
-    type: 'radar',
-
-    // The data for our dataset
-    data: {
-        labels: ['Oct', 'Nov', 'Dec', 'Jan'],
-        datasets: [{
-            backgroundColor: '#FFFFFF',
-            borderColor: '#E087EE',
-            data: [40, 35, 32, 36, 25, 20, 5]
-        },
-        {
-            backgroundColor: '#FFFFFF',
-            borderColor: '#1780FF',
-            data: [40, 42, 30, 27, 31, 17, 12]
-        }
-    
-    ]
-
-    },
-
-    // Configuration options go here
-    options: {
-        legend: {
-            display: false
-        }
-    }
-});
 
