@@ -274,6 +274,8 @@ body{
 
 /*Right content section*/
     .content--right-block{
+        display: flex;
+        flex-direction: column;
         flex-grow: 1;
         margin: 0; /*Обнуляем верхний отступ из нормалайз css так как секции в горизонтали*/
         margin-left: 50px;
@@ -397,8 +399,8 @@ body{
 }
 /*Bar chart*/
 .bar-chart{
+    flex-grow: 1;
     position: relative;
-    height: 460px;
     padding: 60px;
     margin-top: 25px;
 }
