@@ -284,6 +284,7 @@ body{
 /*Data blocks*/
     .data-blocks{
         display: flex;
+        margin-bottom: 25px;
     }
 
     .data-content-block{
@@ -402,5 +403,4 @@ body{
     flex-grow: 1;
     position: relative;
     padding: 60px;
-    margin-top: 25px;
 }
