@@ -8,6 +8,10 @@ body{
     font-weight: 400;
 }
 
+a, button{
+    outline-offset: 3px;
+}
+
 
 /*Navigation*/
 .navigation{
