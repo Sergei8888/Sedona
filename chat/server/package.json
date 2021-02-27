@@ -1,0 +1,24 @@
+{
+    "name": "chat",
+    "version": "1.0.0",
+    "description": "Simple js chat on fetch",
+    "main": "backend.js",
+    "scripts": {
+        "dev": "nodemon backend.js",
+        "prod": "node backend.js"
+    },
+    "keywords": [
+        "chat"
+    ],
+    "author": "Sergei Kuzmenkov",
+    "license": "ISC",
+    "dependencies": {
+        "body-parser": "^1.19.0",
+        "cors": "^2.8.5",
+        "express": "^4.17.1",
+        "fs": "^0.0.1-security"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.7"
+    }
+}
