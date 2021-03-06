@@ -22,10 +22,10 @@ button:focus {
 /*Navigation*/
 
 .navigation {
+    min-width: 120px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 0 42px;
     background-color: hsl(213, 98%, 49%);
 }
 
@@ -74,10 +74,11 @@ button:focus {
 /*Main*/
 
 .main {
+    max-width: 1650px;
     display: flex;
     flex-direction: column;
     width: 100%;
-    padding: 60px 100px 100px 100px;
+    margin: 60px auto;
 }
 
 
@@ -213,6 +214,7 @@ h1 {
 .content {
     display: flex;
     flex-grow: 1;
+    align-items: stretch;
 }
 
 
@@ -230,7 +232,8 @@ h1 {
 /*Profile cutaway*/
 
 .profile {
-    max-width: 527px;
+    max-width: 500px;
+    height: 100%;
     padding: 60px;
 }
 
@@ -313,6 +316,7 @@ h1 {
 /*Right content section*/
 
 .content--right-block {
+    max-width: 1100px;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
@@ -446,25 +450,14 @@ h1 {
 /*Bar chart*/
 
 .bar-chart {
-    flex-grow: 1;
-    position: relative;
+    max-height: 100vh;
+    /*При любых раскладах график должен уместиться в 1 экране по высоте*/
     padding: 60px;
+    position: relative;
+    flex-grow: 1;
 }
 
 
 /*Адаптив*/
 
-@media screen and (max-width: 1740px) {
-    .main {
-        padding: 60px 80px 80px 80px;
-    }
-    .navigation {
-        padding: 0 32px;
-    }
-}
-
-@media screen and (max-width: 1700px) {
-    .main {
-        padding: 55px 60px 60px 60px;
-    }
-}
+@media screen and (max-width: 1855px) {}
