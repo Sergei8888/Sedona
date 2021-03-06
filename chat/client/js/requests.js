@@ -58,4 +58,4 @@ async function updating() {
 
 updating() //Первая отрисовка
 
-let updateTimer = setInterval(updating, 100)
+let updateTimer = setInterval(updating, 5000)
