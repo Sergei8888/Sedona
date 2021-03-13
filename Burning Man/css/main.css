@@ -7,7 +7,7 @@ body {
     /*Дабы растянуть контейнер на всю высоту хедера*/
     min-height: 100vh;
     color: white;
-    background: no-repeat center top/cover url(./img/header-bg.jpg);
+    background: no-repeat center top/cover url(../img/header-bg.jpg);
     transition: 0.2s linear;
 }
 
@@ -204,4 +204,19 @@ body {
     }
 }
 
-@media screen and (max-width: 790px) {}
+@media screen and (max-width: 815px) {
+    .nav-list {
+        position: absolute;
+        top: -162px;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        margin: 0;
+    }
+    .nav-list__item--number {
+        margin: 0;
+    }
+    .nav-list__item--underline {
+        display: none;
+    }
+}
