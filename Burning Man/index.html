@@ -9,12 +9,13 @@
     <link rel="stylesheet" href="./css/burger.css">
     <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap " rel="stylesheet ">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
-    <link rel="shortcut icon" href="./img/faicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
     <title>Burning Man</title>
 </head>
 
 <body>
     <header class="header">
+        <div class="tint" id="tint"></div>
         <div class="container">
             <nav class="nav">
                 <img src="./img/logo.svg " alt="Burning Man logo ">
@@ -27,7 +28,13 @@
                         +1 893 839-23-64
                     </li>
                     <li class="nav-list__item nav-list__item--underline"></li>
+                    <button onclick="navToggle()" id="burgerBtn" class="burger-btn nav-list__burger-btn">
+                        <img src="img/Burger.svg" alt="toggle menu button">
+                    </button>
                 </ul>
+                <button onclick="navToggle()" id="burgerBtn" class="burger-btn">
+                    <img src="img/Burger.svg" alt="toggle menu button">
+                </button>
             </nav>
             <div class="offer">
                 <p class="offer__subtitle">Not tne event. The life</p>

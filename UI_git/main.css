@@ -74,7 +74,7 @@ button:focus {
 /*Main*/
 
 .main {
-    max-width: 1650px;
+    padding: 0 100px; 
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -99,7 +99,7 @@ button:focus {
     flex-grow: 1;
     align-items: center;
     justify-content: space-between;
-    margin-left: 215px;
+    margin-left: 185px;
 }
 
 h1 {
@@ -232,9 +232,9 @@ h1 {
 /*Profile cutaway*/
 
 .profile {
-    max-width: 500px;
     height: 100%;
     padding: 60px;
+    max-width: 500px;
 }
 
 .profile__cutaway {
@@ -316,7 +316,6 @@ h1 {
 /*Right content section*/
 
 .content--right-block {
-    max-width: 1100px;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
@@ -334,6 +333,12 @@ h1 {
 }
 
 .data-content-block {
+    flex-grow: 1;
+    padding: 40px;
+}
+
+.data-content-block--adaptive{
+    display: none;
     flex-grow: 1;
     padding: 40px;
 }
@@ -391,6 +396,7 @@ h1 {
 
 .team-block {
     flex-grow: 1;
+    padding: 40px;
 }
 
 .team-block__info {
@@ -460,4 +466,26 @@ h1 {
 
 /*Адаптив*/
 
-@media screen and (max-width: 1855px) {}
+@media screen and (max-width: 1800px) {
+    .data-content-block:nth-child(1){
+        display: none;
+    }
+    .data-content-block:nth-child(2){
+        margin: 0;
+    }
+    .team-block{
+        margin-left: 25px;
+    }
+}
+
+@media screen and (max-width: 1400px) {
+    .data-content-block:nth-child(1){
+        display: none;
+    }
+    .data-content-block:nth-child(2){
+        margin: 0;
+    }
+    .team-block{
+        margin-left: 25px;
+    }
+}

@@ -95,6 +95,7 @@ var barChart = new Chart(ctx_bar, {
 
   // Configuration options go here
   options: {
+    responsive: true,
     maintainAspectRatio: false,
     scales: {
       yAxes: [
