@@ -1,1 +1,1 @@
-ƒл€ быстрого доступа к программе создайте €рлык сс сылкой на файл LPP.exe
+Thnk HTMLAcademy for template :) love
