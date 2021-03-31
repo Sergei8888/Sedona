@@ -1,24 +1,3 @@
-@font-face{
-	font-family: "Times new roman";
-	src: url(fonts/ofont.ru_Times\ New\ Roman.ttf);
-	font-weight: 400;
-	font-display: swap;
-}
-
-@font-face{
-	font-family: "Arial";
-	src: url(fonts/arial.ttf);
-	font-weight: 400;
-	font-display: swap;
-}
-
-@font-face{
-	font-family: "ArialBold";
-	src: url(fonts/arial_bold.ttf);
-	font-weight: bold;
-	font-display: swap;
-}
-
 *{
 	list-style: none;
 	-webkit-transition: 0.3s;
@@ -182,6 +161,7 @@ a{
 .btn{
 	width: 240px;
 	height: 65px;
+    
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -192,21 +172,26 @@ a{
 	    -ms-flex-align: center;
 	        align-items: center;
 	margin: 0 auto;
+
 	background-color: #fed136;
-	border-radius: 1px;
-	font-family: "ArialBold", sans-serif;
+
+	font-family: "Arial", sans-serif;
+    font-weight: bold;
 	color: white;
 	font-size: 18px;
 	text-transform: uppercase;
 	text-decoration: none;
 	color: #484543;
+    
+    transition: .2s;
+    -webkit-transition: .2s;
+	-o-transition: .2s;
+
+    cursor: pointer;
 }
 
-.main__btn:active{
-	-webkit-transition: 0.1s;
-	-o-transition: 0.1s;
-	transition: 0.1s;
-	background-color: #cb9c01;
+.main__btn:hover{
+	background-color: #eec533;
 }
 
 section{
@@ -229,7 +214,8 @@ section{
 
 .section__title{
 	font-size: 40px;
-	font-family: "ArialBold", sans-serif;
+	font-family: "Arial", sans-serif;
+    font-weight: bold;
 	text-transform: uppercase;
 	margin-bottom: 15px;
 	text-align: center;
@@ -311,7 +297,8 @@ section{
 .list__title{
 	font-size: 18px;
 	letter-spacing: -0.45px;
-	font-family: "ArialBold", sans-serif;
+	font-family: "Arial", sans-serif;
+    font-weight: bold;
 	margin-bottom: 15px;
 }
 
@@ -545,8 +532,22 @@ section{
 	width: 220px;
 	height: 220px;
 	border-radius: 50%;
-	background-color: #000;
 	margin-bottom: 25px;
+    background-position: center;
+    background-size: 220px;
+    background-repeat: no-repeat;
+}
+
+.team-list__member:nth-child(1) .photo{
+    background-image: url('./img/team_member1.jpg');
+}
+
+.team-list__member:nth-child(2) .photo{
+    background-image: url('./img/team_member2.jpg');    
+}
+
+.team-list__member:nth-child(3) .photo{
+    background-image: url('./img/team_member3.jpg');    
 }
 
 .member__social{
@@ -651,7 +652,8 @@ section{
 }
 
 input, textarea{
-	font-family: "ArialBold", sans-serif;
+	font-family: "Arial", sans-serif;
+    font-weight: bold;
 	padding: 10px 10px;
 }
 
