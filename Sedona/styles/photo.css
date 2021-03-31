@@ -61,7 +61,14 @@
 	background-size: 100%;
 	background-repeat: no-repeat;
 	margin-right: 14px;
+
+    transition: 0.2s linear;
 }
+
+.photo-content_like-img:hover{
+    transform: scale(1.1);
+}
+
 .photo-content_like-counter {
 	font-family: "PT Sans-bold";
 }
@@ -219,6 +226,7 @@
 	.photo-content_like-block {
 		align-items: center;
 	}
+    
 	.photo-list_list-item--therd .photo-content_description {
 		background-color: #eaeaea;
 	}
