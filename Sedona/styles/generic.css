@@ -121,13 +121,11 @@
             .Intro_description{
                 color: #333333;
             }
-            .Intro_text-area{
-                padding: 45px 0 35px 0;
-            }
         
         /*Text area*/
             .text-area{
                 line-height: 26px;
+                padding: 45px 0 35px 0;
             }
             .text-area_title{
                 font-family: "PT Sans-bold";

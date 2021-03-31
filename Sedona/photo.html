@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
     <!-- Generic CSS -->
     <link rel="stylesheet" href="styles/generic.css">
     <!--Load local CSS-->
@@ -183,15 +185,10 @@
             <p class="text-area_description">Смотрите видеопрезентацию и скорее за билетами, пока они не подорожали в очередной раз!</p>
         </div>
         <section class="video-section">
-            <picture>
-                <source srcset="img_photos/video-mobile.webp" media="(max-width: 767px)">
-                <source srcset="img_photos/video-mobile.jpg" media="(max-width: 767px)">
-                <source srcset="img_photos/video-tablet.webp" media="(max-width: 1199px)">  
-                <source srcset="img_photos/video-tablet.jpg" media="(max-width: 1199px)">
-                <source srcset="img_photos/video-desktop.webp" media="(min-width: 1200px)">
-                <source srcset="img_photos/video-desktop.jpg" media="(min-width: 1200px)">  
-                <img class="photo-link_img photo-link_video-img" src="" alt="Road photo">
-            </picture>
+            <div class="video-block">
+                <iframe src="https://www.youtube.com/embed/MB_iFDDNtrw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+
             <div class="contol-bar-wrapper">
                 <div class="control-bar">
                     <div class="volume-wrapper">
