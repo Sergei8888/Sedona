@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Noto Sans JP", sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.app {
+    display: flex;
+    flex-direction: column;
+}
+
+.form {
+    margin-top: 100px;
+    width: 340px;
+}
+
+.form__title {
+    margin-bottom: 20px;
+    font-size: 30px;
+    text-align: center;
+}
+
+.form__input {
+    border: 1px solid rgb(224, 224, 224);
+    border-radius: 5px;
+    padding: 5px 8px;
+}
+
+.form__page {
+    display: grid;
+    grid-template: auto / 1fr;
+    grid-gap: 15px;
+    padding-bottom: 20px;
+}
+
+.pagination__btns-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.pagination__btn {
+    flex-grow: 1;
+    padding: 8px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(128, 0, 128);
+    font-size: 14px;
+    font-weight: bold;
+    color: whitesmoke;
+    cursor: pointer;
+}
+
+.pagination__btn:hover {
+    background-color: rgb(107, 0, 107);
+}
+
+.pagination__btn:first-child {
+    margin-right: 5px;
+}
+
+.pagination__bar {
+    position: relative;
+    margin: 20px auto 0;
+}
+
+.pagination__page-indicator {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30%;
+    height: 3px;
+    border-radius: 10px;
+    background-color: grey;
+}
+
+.pagination__page-indicator_active {
+    background-color: purple;
+    transition: .3s all;
+    z-index: 5;
+}
+
+.pagination__page-indicator_left {
+    left: 0;
+}
+
+.pagination__page-indicator_center {
+    left: 35%;
+}
+
+.pagination__page-indicator_right {
+    left: 70%;
+}
+
+.pagination__page-indicator:nth-child(2) {
+    left: 35%;
+}
+
+.pagination__page-indicator:last-child {
+    left: 70%;
+}
+
+.profile {
+    display: flex;
+    font-style: normal;
+    margin-top: 100px;
+}
+
+.profile__nickname {
+    font-size: 22px;
+}
+
+.profile__initials {
+    color: rgb(105, 105, 105);
+}
+
+.profile__password {
+    margin-top: 5px;
+}
+
+.profile__email {
+    font-style: italic;
+}
+
+.profile__location {
+    margin-left: auto;
+}

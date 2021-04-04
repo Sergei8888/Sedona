@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <link rel="icon" href="favicon.ico" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <title>Live form</title>
+</head>
+
+<body>
+    <div class="app" id="app">
+        <form class="form">
+            <h2 class="form__title">Registration form</h2>
+            <div v-if="page_counter == 1" class="form__page form__page_first">
+                <input class="form__input" v-model="nickname" placeholder="Nickname" type="text" />
+                <input class="form__input" v-model="username" placeholder="Name" type="text" />
+                <input class="form__input" v-model="secondname" placeholder="Secondname" type="text" />
+            </div>
+
+            <div v-if="page_counter == 2" class="form__page form__page_second">
+                <input class="form__input" v-model="password" placeholder="Password" type="password" />
+                <input class="form__input" v-model="password_confirm" placeholder="Confirm password" type="password" />
+                <input class="form__input" v-model="email" placeholder="Email" type="email" />
+            </div>
+
+            <div v-if="page_counter == 3" class="form__page form__page_third">
+                <select v-model="country" id="">
+                    <option value="Russia">Russia</option>
+                    <option value="Germany">Germany</option>
+                    <option value="Italy">Italy</option>
+                </select>
+                <select v-model="town" v-if="country == 'Russia'" id="">
+                    <option value="Kaliningrad">Kaliningrad</option>
+                    <option value="Moscow">Moscow</option>
+                    <option value="Orel">Orel</option>
+                </select>
+                <select v-model="town" v-if="country == 'Germany'" id="">
+                    <option value="Berlin">Berlin</option>
+                    <option value="Koln">Koln</option>
+                    <option value="Frankfurt">Frankfurt</option>
+                </select>
+                <select v-model="town" v-if="country == 'Italy'" id="">
+                    <option value="Rome">Rome</option>
+                    <option value="Melan">Melan</option>
+                    <option value="Florence">Florence</option>
+                </select>
+            </div>
+            <div class="form__pagination pagination">
+                <div class="pagination__btns-wrapper">
+                    <button @click="prevPage" class="pagination__btn" type="button">
+                        back
+                    </button>
+                    <button @click="nextPage" class="pagination__btn" type="button">
+                        next
+                    </button>
+                </div>
+                <div class="pagination__bar">
+                    <div :class="{
+                            ['pagination__page-indicator_left']: (page_counter == 1),
+                            ['pagination__page-indicator_center']: (page_counter == 2),
+                            ['pagination__page-indicator_right']: (page_counter == 3),
+                        }" class="pagination__page-indicator pagination__page-indicator_active"></div>
+                    <div class="pagination__page-indicators-wrapper">
+                        <div class="pagination__page-indicator"></div>
+                        <div class="pagination__page-indicator"></div>
+                        <div class="pagination__page-indicator"></div>
+                    </div>
+
+                </div>
+            </div>
+        </form>
+
+        <address class="profile">
+            <div class="profile__info">
+                <h4 class="profile__nickname">{{ nickname }}</h4>
+                <p class="profile__initials">{{ username }} {{ secondname }}</p>
+                <p class="profile__password">{{ passwordEncoded }}</p>
+                <a class="profile__email" :href="'mailto:' + email">{{ email }}</a>
+            </div>
+            <div class="profile__location">
+                <p class="profile__country">{{ profileCountry }}</p>
+                <p class="profile__town">{{ profileTown }}</p>
+            </div>
+        </address>
+    </div>
+    <script src="main.js"></script>
+</body>
+
+</html>
