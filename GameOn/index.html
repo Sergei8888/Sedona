@@ -115,9 +115,9 @@
                 <ul class="header__menu">
                     <li class="header__item"><a href="#">Обучение</a></li>
                     <li class="header__item"><a href="#">Группы</a></li>
-                    <li class="header__item"><a href="#">Наставники</li></a>
-                        <li class="header__item"><a href="#sign-up">Записаться</a></li>
-                        <li class="header__item"><a href="#">Контакты</a></li>
+                    <li class="header__item"><a href="#">Наставники</a></li>
+                    <li class="header__item"><a href="#sign-up">Записаться</a></li>
+                    <li class="header__item"><a href="#">Контакты</a></li>
                 </ul>
                 <div class="header__contacts">
                     <a href="tel:+74959834719" class="header__contact">
@@ -143,12 +143,12 @@
                 <a class="main-block__button button" href="#sign-up">Погнали!</a>
             </section>
 
-            <svg class="main-block__mask-desktop" width="1366" height="100" viewBox="0 0 1366 100" preserveAspectRatio="none">
+            <svg class="main-block__mask-desktop" width="1366" height="100" viewBox="0 0 1366 100" preserveAspectRatio="none" aria-label="Декоративный элемент">
                 <path
                     d="M0 76.58c80.28-8.83 143.31-17.75 187.32-24.51 25.43-3.91 53.8-8.52 94.47-11.74 14.89-1.18 52.18-3.82 111.83-3.06 63.01.8 112.44 4.89 148.09 8.17 46.28 4.25 77.25 7.85 258.38 30.64 22.09 2.78 111.02 13.97 204.26 20.43 10.44.72 40.72 2.75 80.68 2.57 36.91-.17 65.34-.41 102.13-6.15 23.1-3.6 54.35-8.68 91.91-24.51 37.86-15.95 55.94-31.78 63.83-39.32 10.67-10.2 18.2-20 23.1-27.08v97.04H0V76.58z"
                     fill="#fefcfa" stroke="#fefcfa" stroke-miterlimit="10"></path>
             </svg>
-            <svg class="main-block__mask-table" width="767.7" height="56.9" viewBox="0 0 767.7 56.9" preserveAspectRatio="none">
+            <svg class="main-block__mask-table" width="767.7" height="56.9" viewBox="0 0 767.7 56.9" preserveAspectRatio="none" aria-label="Декоративный элемент">
                 <path
                     d="M.2 34.1C-.4 8.4-.7 9.1 11.4 6.5 59.3-6.5 280.9.8 375.2 21.4 530 55.2 760.3 56.5 767.7 56.9c0 0-171.9-.4-383.3-.2L.2 56.9V34.1z"
                     fill="#fefcfa"></path>
@@ -180,10 +180,10 @@
 
         <section class="features">
             <div class="features__wrapper">
-                <svg class="features__decorate-arrow-right" width="80" height="60">
+                <svg class="features__decorate-arrow-right" aria-label="Декоративный элемент">
                     <use xlink:href="#decorate-arrow-right"></use>
                 </svg>
-                <svg class="features__decorate-arrow-left">
+                <svg class="features__decorate-arrow-left" aria-label="Декоративный элемент">
                     <use xlink:href="#decorate-arrow-left"></use>
                 </svg>
                 <header class="features__header-wrapper">
@@ -242,58 +242,63 @@
                                 <h3 class="our-groups__article-header">Новичок</h3>
                                 <img class="our-groups__img" src="img/decorate-groups_1.svg" alt="Иллюстрация 1 группы">
                                 <p class="our-groups__price">2500 ₽ <span>в месяц</span></p>
-                                <button class="our-groups__button button button--card button--lightblue" href="#sign-up">Записаться</button>
+                                <a class="our-groups__button button button--card button--lightblue" href="#sign-up">Записаться</a>
                             </article>
                         </div>
                         <div class="group-card__back-side">
                             <article class="our-groups__article">
                                 <ul class="group-card__features-list">
                                     <li class="group-card__feature">Одно занятие в неделю</li>
-                                    <li class="group-card__feature">Оно длится один час</li>
+                                    <li class="group-card__feature">Длится один час</li>
+                                    <li class="group-card__feature">Базовые компьютеры</li>
                                     <li class="group-card__feature">Проходит в общей группе</li>
                                 </ul>
+                                <img class="our-groups__img" src="img/decorate-desc-groups_3.svg" alt="Иконка 3 места">
                             </article>
                         </div>
                     </li>
                     <!--Вторая группа-->
-                    <li class="our-groups__item group-card">
+                    <li class="our-groups__item our-groups__item--indigo group-card">
                         <div class="group-card__front-side">
                             <article class="our-groups__article">
                                 <h3 class="our-groups__article-header">Продвинутый</h3>
                                 <img class="our-groups__img" src="img/decorate-groups_2.svg" alt="Иллюстрация 2 группы">
                                 <p class="our-groups__price">5000 ₽ <span>в месяц</span></p>
-                                <button class="our-groups__button button button--card" href="#sign-up">Записаться</button>
+                                <a class="our-groups__button button button--card" href="#sign-up">Записаться</a>
                             </article>
                         </div>
                         <div class="group-card__back-side">
                             <article class="our-groups__article">
                                 <ul class="group-card__features-list">
                                     <li class="group-card__feature">Два занятия в неделю</li>
-                                    <li class="group-card__feature">Они длятся по полтора часа</li>
-                                    <li class="group-card__feature">Проходит в общей группе</li>
-                                    <li class="group-card__feature">Тридцать минут личных консультаций в неделю с вашим проподавателем
-                                    </li>
+                                    <li class="group-card__feature">Длятся по полтора часа</li>
+                                    <li class="group-card__feature">Продвинутые компьютеры</li>
+                                    <li class="group-card__feature">Проходят в общей группе</li>
                                 </ul>
+                                <img class="our-groups__img" src="img/decorate-desc-groups_2.svg" alt="Иконка 2 места">
                             </article>
                         </div>
                     </li>
                     <!--Третья группа-->
-                    <li class="our-groups__item group-card">
+                    <li class="our-groups__item our-groups__item--blue group-card">
                         <div class="group-card__front-side">
                             <article class="our-groups__article">
-                                <h3 class="our-groups__article-header">Новичок</h3>
+                                <h3 class="our-groups__article-header">Мастер игры</h3>
                                 <img class="our-groups__img" src="img/decorate-groups_3.svg" alt="Иллюстрация 3 группы">
                                 <p class="our-groups__price">7000 ₽ <span>в месяц</span></p>
-                                <button class="our-groups__button button button--card button--blue" href="#sign-up">Записаться</button>
+                                <a class="our-groups__button button button--card button--blue" href="#sign-up">Записаться</a>
                             </article>
                         </div>
                         <div class="group-card__back-side">
                             <article class="our-groups__article">
                                 <ul class="group-card__features-list">
-                                    <li class="group-card__feature">Одно занятие в неделю</li>
-                                    <li class="group-card__feature">Оно длится один час</li>
-                                    <li class="group-card__feature">Проходит в общей группе</li>
+                                    <li class="group-card__feature">Четыре занятия в неделю</li>
+                                    <li class="group-card__feature">Длятся по два с половиной часа</li>
+                                    <li class="group-card__feature">Компьютеры категории "VIP"</li>
+                                    <li class="group-card__feature">Проходят в отдельной группе</li>
+
                                 </ul>
+                                <img class="our-groups__img" src="img/decorate-desc-groups_1.svg" alt="Иконка 1 места">
                             </article>
                         </div>
                     </li>
@@ -399,21 +404,21 @@
                 </ul>
             </div>
 
-            <a class="teachers__prev slider__prev">
+            <button class="teachers__prev slider__prev" aria-label="Перелистнуть на следущую страницу слайдера">
                 <svg width="15" height="8">
                     <use xlink:href="#icon-arrow-left"></use>
                 </svg>
-            </a>
-            <a class="teachers__next slider__next">
+            </button>
+            <button class="teachers__next slider__next" aria-label="Перелистнуть на предыдущую страницу слайдера">
                 <svg width="15" height="8">
                     <use xlink:href="#icon-arrow-right"></use>
                 </svg>
-            </a>
+            </button>
 
         </section>
 
         <section class="banner">
-            <svg class="banner__background-desktop" width="1366" height="453" version="1.1" viewBox="0 0 1366 453" preserveAspectRatio="none">
+            <svg class="banner__background-desktop" width="1366" height="453" version="1.1" viewBox="0 0 1366 453" preserveAspectRatio="none" aria-label="Декоративный элемент">
                 <g transform="translate(-1.1899 1.1899)">
                     <path
                         d="m404 452.37c-85.088-4.6504-164.34-15.03-262-34.317l-29.5-5.8256-52.5 3.8498c-28.875 2.1174-54.188 3.8652-56.25 3.8842l-3.75 0.03438v-387.66l5.25 0.40548c2.8875 0.22301 28.875 2.0961 57.75 4.1623l52.5 3.7569 8.5-1.8447c31.08-6.745 92.684-17.586 132-23.229 68.227-9.7926 121.73-14.264 182.5-15.252 63.195-1.0269 119.07 2.4877 211.84 13.326l31.844 3.7202 14.156-1.7286c50.216-6.1319 90.119-10.147 132.66-13.347 33.821-2.5446 129.56-2.5398 162.5 0.00818 77.95 6.03 146.58 15.662 232.5 32.628l29.5 5.8256 52.5-3.8498c28.875-2.1174 54.188-3.8653 56.25-3.8842l3.75-0.034375v387.66l-5.25-0.40548c-2.8875-0.22301-28.875-2.0961-57.75-4.1623-51.902-3.7141-52.591-3.7372-60.5-2.026-31.973 6.9175-93.14 17.693-132.5 23.343-68.227 9.7926-121.73 14.264-182.5 15.252-63.195 1.027-119.07-2.4877-211.84-13.326l-31.844-3.7202-14.156 1.7281c-97.403 11.891-136.92 14.79-206.16 15.126-29.15 0.14135-55.925 0.0971-59.5-0.0983z"
@@ -435,7 +440,7 @@
                         fill="#5778e7"></path>
                 </g>
             </svg>
-            <svg class="banner__background-tablet" width="768" height="450" version="1.1" viewBox="0 0 768 450" preserveAspectRatio="none">
+            <svg class="banner__background-tablet" width="768" height="450" version="1.1" viewBox="0 0 768 450" preserveAspectRatio="none" aria-label="Декоративный элемент">
                 <g transform="translate(0 -.66202)">
                     <path
                         d="m98.5 448.89c-26.159-1.415-92.867-7.2276-97.25-8.4738-0.99502-0.28294-1.25-44.218-1.25-215.39 0-118.27 0.18208-215.03 0.40462-215.03 0.22254 0 6.5672-0.68326 14.099-1.5184 19.824-2.1979 54.02-5.1808 76.496-6.6725 25.066-1.6637 109.06-1.6678 134.5-0.0066114 41.346 2.6996 88.293 7.1468 130.5 12.362l25.5 3.1507 14-1.6962c103.73-12.568 157.76-16.179 229.45-15.335 45.762 0.53847 67.79 1.7261 108.05 5.8255 11.275 1.1481 23.65 2.3807 27.5 2.7392l7 0.65171 0.25228 215.25c0.13876 118.39 0.0844 215.25-0.12085 215.25-0.20522 0-8.4188 0.87773-18.252 1.9505-53.295 5.8141-84.398 7.4964-138.88 7.5114-67.009 0.0184-112.2-3.2002-211.1-15.035l-14.101-1.6874-25.399 3.0893c-52.438 6.3782-102.75 10.934-145.4 13.167-21.978 1.1504-94.01 1.0864-116-0.10312z"
@@ -460,7 +465,7 @@
                         fill="#5778e7"></path>
                 </g>
             </svg>
-            <svg class="banner__background-mobile" width="320" height="384" viewBox="0 0 320 384" preserveAspectRatio="none">
+            <svg class="banner__background-mobile" width="320" height="384" viewBox="0 0 320 384" preserveAspectRatio="none" aria-label="Декоративный элемент">
                 <g transform="translate(.50847 1.6949)">
                     <path
                         d="m0 192.5v-191.5h7.5386c19.705 0 72.956 4.468 120.46 10.107 14.025 1.6649 27.3 3.0386 29.5 3.0528 2.2 0.01415 13.9-1.1304 26-2.5435 40.653-4.7475 47.907-5.5163 71.5-7.5768 19.248-1.6811 55.801-4.0127 63.25-4.0346 1.6606-0.00488 1.75 9.786 1.75 191.65v191.65l-17.75-0.69179c-27.971-1.0901-80.418-5.8109-118.61-10.676-20.231-2.5772-21.885-2.5603-47.643 0.48457-37.364 4.4168-46.91 5.4298-71 7.5337-19.248 1.6811-55.801 4.0127-63.25 4.0346-1.6606 0.00488-1.75-9.7786-1.75-191.49z"
@@ -549,7 +554,7 @@
                         <div id="map" class="map__wrapper">
                             <picture>
                                 <source type="image/webp" data-srcset="img/map-layer-desktop@1x.webp 1x, img/map-layer-desktop@2x.webp 2x" srcset="img/map-layer-desktop@1x.webp 1x, img/map-layer-desktop@2x.webp 2x">
-                                <source type="image/jpeg" data-srcset="img/map-layer-desktop@1x.jpg 1x img/map-layer-desktop@2x.jpg 2x" srcset="img/map-layer-desktop@1x.jpg 1x img/map-layer-desktop@2x.jpg 2x">
+                                <source type="image/jpeg" data-srcset="img/map-layer-desktop@1x.jpg 1x, img/map-layer-desktop@2x.jpg 2x" srcset="img/map-layer-desktop@1x.jpg 1x, img/map-layer-desktop@2x.jpg 2x">
                                 <img src="img/map-layer-desktop@1x.jpg" data-src="img/map-layer-desktop@1x.jpg" alt="Карта с нашим местонахождением" width="1366" height="611">
                             </picture>
                         </div>

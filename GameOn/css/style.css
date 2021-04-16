@@ -18,6 +18,7 @@
     src: url("../fonts/Montserrat-Regular.woff2") format("woff2"), url("../fonts/Montserrat-Regular.woff") format("woff");
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
@@ -25,6 +26,7 @@
     src: url("../fonts/Montserrat-Medium.woff2") format("woff2"), url("../fonts/Montserrat-Medium.woff") format("woff");
     font-weight: 500;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
@@ -32,6 +34,7 @@
     src: url("../fonts/Rubik-Medium.woff2") format("woff2"), url("../fonts/Rubik-Medium.woff") format("woff");
     font-weight: 500;
     font-style: normal;
+    font-display: swap;
 }
 
 html,
@@ -130,6 +133,9 @@ img {
 
 .slider__prev,
 .slider__next {
+    background: none;
+    border: none;
+    padding: 0;
     cursor: pointer;
     position: absolute;
     user-select: none;
@@ -458,6 +464,8 @@ img {
 }
 
 .features__decorate-arrow-right {
+    width: 80px;
+    height: 60px;
     position: absolute;
     top: 150px;
     left: -110px;
@@ -611,8 +619,8 @@ img {
     width: 30.42%;
     min-width: 296px;
     min-height: 373px;
-    margin-right: 0;
     margin-bottom: 30px;
+    margin-right: 0;
     transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
 }
 
@@ -644,15 +652,25 @@ img {
     margin: 0 auto;
 }
 
+.our-groups__img {
+    width: 105px;
+}
+
+.our-groups__img[src*='desc'] {
+    margin: auto 0;
+}
+
 .our-groups__item:nth-of-type(3n) {
     margin-right: 0;
 }
 
-.our-groups__item--indigo {
+.our-groups__item--indigo .group-card__front-side,
+.our-groups__item--indigo .group-card__back-side {
     border-color: #2F5DA1;
 }
 
-.our-groups__item--blue {
+.our-groups__item--blue .group-card__front-side,
+.our-groups__item--blue .group-card__back-side {
     border-color: #5879E8;
 }
 
@@ -714,11 +732,20 @@ img {
 }
 
 .group-card__features-list {
-    list-style: none;
+    margin-top: 41px;
+    padding-left: 20px;
+    max-width: 80%;
+    list-style: disc;
 }
 
-.group-card__feature {
+.group-card__feature:not(:last-child) {
     margin-bottom: 20px;
+}
+
+@media screen and (max-width: 1760px) {
+    .group-card__feature {
+        font-size: 16px;
+    }
 }
 
 .teachers {
