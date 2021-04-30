@@ -156,9 +156,9 @@ async function teleport() {
 
 function teleportItem(teleportingItem) {
     if (hard) {
-        return src(teleportingItem.inputDir).pipe(dest(path.prod.main)), src(teleportingItem.files).pipe(dest(teleportingItem.prodDir))
+        return src(teleportingItem.inputDir).pipe(dest(path.prod.main)), src(teleportingItem.files, { allowEmpty: true }).pipe(dest(teleportingItem.prodDir))
     } else {
-        return src(teleportingItem.inputDir).pipe(dest(path.dist.main)), src(teleportingItem.files).pipe(dest(teleportingItem.outputDir))
+        return src(teleportingItem.inputDir).pipe(dest(path.dist.main)), src(teleportingItem.files, { allowEmpty: true }).pipe(dest(teleportingItem.outputDir))
     }
 
 }
