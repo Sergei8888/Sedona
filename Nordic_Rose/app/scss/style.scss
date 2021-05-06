@@ -4,18 +4,65 @@ body {
 }
 
 .navbar {
-    padding: 50px 60px;
+    position: relative;
+    padding: 35px 60px;
     border-bottom: 1px solid rgb(165, 165, 165);
     &-toggler {
         margin: 0;
         padding: 0;
-        &:focus:not(:focus-visible) {
-            outline: 2px silver;
-        }
         &-icon {
             width: 24px;
             height: 15px;
             vertical-align: top;
+        }
+    }
+    &__activ-link-underline {
+        position: absolute;
+        right: 369px;
+        bottom: 0;
+        width: 56px;
+        height: 2px;
+        background-color: #000000;
+        &_2 {
+            width: 72px;
+            right: 281px;
+            bottom: 0;
+        }
+        &_3 {
+            width: 63px;
+            right: 201px;
+            bottom: 0;
+        }
+        &_4 {
+            width: 105px;
+            right: 80px;
+            bottom: 0;
+        }
+        will-change: right,
+        bottom;
+        transition: 0.2s ease-out;
+    }
+}
+
+@media (max-width: 991px) {
+    .navbar {
+        &__activ-link-underline {
+            display: none;
+        }
+    }
+    .navbar-nav .nav {
+        &-link {
+            display: inline-block;
+            padding: 5px 10px 5px 0;
+        }
+        &-item {
+            padding: 10px 0;
+        }
+        &-item:last-child {
+            padding-bottom: 0;
+        }
+        &-item:first-child {
+            margin-top: 10px;
         }
     }
 }
