@@ -1,0 +1,175 @@
+body {
+    display: flex;
+    background-color: #B8B2B2;
+    font-family: 'Lato', sans-serif;
+    overflow: hidden;
+}
+
+.anim-frame {
+    flex-grow: 1;
+}
+
+.settings {
+    position: absolute;
+    top: 0;
+    left: calc(100% - 4px);
+    display: flex;
+    flex-direction: column;
+    width: 30vw;
+    min-width: 300px;
+    max-width: 500px;
+    min-height: 100vh;
+    background-color: #404040;
+    &:hover {
+        transform: translate(calc(-100% + 10px), 0);
+    }
+    transition: 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+    &__tongue {
+        position: absolute;
+        left: -10px;
+        top: 50%;
+        width: 10px;
+        height: 15%;
+        border-radius: 10px 0 0 10px;
+        background-color: #404040;
+        transform: translate(0, -50%);
+    }
+    &__object-wrapper {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        padding: 30px 20px;
+    }
+    &__add-object-btn {
+        margin-top: 30px;
+        transition: 0.2s;
+        &:hover {
+            background-color: rgb(204, 204, 204);
+        }
+    }
+    &__ui {
+        display: flex;
+        padding: 20px;
+        background-color: #2E2D2D;
+    }
+    &__update-btn,
+    &__upload-btn {
+        width: 40px;
+        height: 40px;
+        background-size: contain;
+        will-change: top;
+    }
+    &__update-btn {
+        margin-right: 20px;
+        background-image: url(../img/reload.svg);
+        transition: 0.3s ease-out;
+        &:hover {
+            transform: rotate(0.75turn);
+        }
+    }
+    &__upload-btn {
+        background-image: url(../img/upload.svg);
+        transition: 0.2s;
+        &:hover {
+            transform: translate(0, -5px);
+        }
+    }
+    &__object-settings-btn {
+        width: 20px;
+        height: 20px;
+        margin-left: auto;
+        background-image: url(../img/settings.svg);
+        background-size: contain;
+        transition: 0.3s ease-in-out;
+        &:hover {
+            transform: rotate(0.5turn);
+        }
+    }
+    &__delete-object-btn {
+        width: 18px;
+        height: 18px;
+        margin-left: 20px;
+        background-image: url(../img/delete_object.svg);
+        &:hover {
+            transform: scale(1.15);
+        }
+    }
+    &__form {
+        display: flex;
+        flex-direction: column;
+        padding: 20px 80px;
+        label {
+            text-align-last: left;
+            input {
+                margin-left: 3px;
+            }
+        }
+        label:not(:first-child) {
+            margin-top: 20px;
+        }
+    }
+    &__color-indicator {
+        width: 30px;
+        height: 30px;
+        margin-right: 20px;
+        border-radius: 50%;
+    }
+    &__object-name {
+        margin-top: -3px;
+    }
+}
+
+.object-list {
+    max-height: 70vh;
+    overflow: auto;
+    &__item {
+        display: flex;
+        align-items: center;
+        padding: 20px 25px;
+        border-radius: 10px;
+        background-color: #fff;
+        &_margined {
+            margin-right: 15px;
+        }
+    }
+    &__item:not(:last-child) {
+        margin-bottom: 20px;
+    }
+    &_scroll {
+        & .object-list__item {
+            margin-right: 20px;
+        }
+    }
+    &_scroll~.add-object-btn {
+        margin-right: 27px;
+    }
+}
+
+
+/* width */
+
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+
+/* Track */
+
+ ::-webkit-scrollbar-track {
+    background: #C4C4C4;
+    border-radius: 3px;
+}
+
+
+/* Handle */
+
+ ::-webkit-scrollbar-thumb {
+    background: #6A6A6A;
+    border-radius: 3px;
+}
+
+.add-object-btn {
+    padding: 10px 30px;
+    border-radius: 10px;
+    background-color: #fff;
+}

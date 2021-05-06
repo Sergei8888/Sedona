@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/normalize.css" media="print" onload="this.media='all'; this.onload=null;">
+    <link rel="stylesheet" href="css/style.css" media="print" onload="this.media='all'; this.onload=null;">
+    <title>BFU</title>
+</head>
+
+<body>
+    <main class="anim-frame">
+        <canvas class="anim-frame__canvas">
+        </canvas>
+    </main>
+    <aside class="settings" id="app">
+        <div class="settings__object-wrapper">
+            <ul class="object-list settings__object-list" id="scrollingList">
+                <li v-for="object in objectList" class="object-list__item">
+                </li>
+            </ul>
+            <button @click="addObject" class="add-object-btn settings__add-object-btn">+</button>
+        </div>
+    </aside>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
