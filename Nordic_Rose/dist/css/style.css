@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: "Mackay";
   src: url(../fonts/Mackay-Bold.woff2);
@@ -37,6 +38,9 @@ body {
   padding: 35px 60px;
   border-bottom: 1px solid #a5a5a5;
 }
+.navbar-brand {
+  width: 397px;
+}
 .navbar-toggler {
   margin: 0;
   padding: 0;
@@ -72,6 +76,132 @@ body {
   bottom: 0;
 }
 
+.nav-link {
+  padding: 0;
+  color: black;
+  text-transform: uppercase;
+  font-size: 20px;
+  font-family: "Harriet";
+}
+.nav-link:hover {
+  color: black;
+  opacity: 0.75;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  max-width: 854px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 75px;
+}
+.header__img {
+  width: 100%;
+  margin-bottom: 45px;
+}
+.header__title {
+  padding: 0 20px;
+  color: #000000;
+  font-size: 54px;
+  font-family: "Mackay";
+}
+.header__desc {
+  max-width: 70%;
+  padding: 32px 0;
+  font-size: 20px;
+  font-family: monospace;
+}
+
+.main {
+  max-width: 640px;
+  border-top: 2px solid #000;
+}
+.main__title {
+  margin: 64px 0 39px 0;
+  font-family: "Mackay";
+}
+
+.articles-list {
+  display: grid;
+  grid-template: auto/repeat(2, 304px);
+  grid-gap: 65px 30px;
+  justify-content: center;
+  margin-bottom: 115px;
+}
+.articles-list__article p {
+  margin-top: 20px;
+  font-family: "grotesque-medium";
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px 0 30px;
+  background-color: #000;
+  color: white;
+  text-align: center;
+  overflow: hidden;
+}
+.footer__marquee {
+  overflow: hidden;
+  white-space: nowrap;
+  /* Запрещаем переносы слов */
+  animation: marquee 23s linear infinite;
+  letter-spacing: 3px;
+}
+.footer span {
+  margin-right: 10px;
+  text-transform: uppercase;
+  font-size: 20px;
+  font-family: "grotesque-regular";
+}
+.footer span:nth-child(2n) {
+  font-family: "grotesque-black";
+}
+.footer__logo {
+  margin: 105px 0 30px;
+}
+.footer__desc {
+  max-width: 60%;
+  font-family: "grotesque-regular";
+}
+.footer .footer__links-list {
+  margin: 35px 0 64px;
+}
+
+.links-list {
+  display: flex;
+}
+.links-list__item:not(:last-child) {
+  margin-right: 27px;
+}
+.links-list__link {
+  display: flex;
+  justify-content: center;
+  color: inherit;
+  text-decoration: underline;
+}
+.links-list__link:hover {
+  color: #dadada;
+}
+
+@keyframes marquee {
+  from {
+    text-indent: 80%;
+  }
+  to {
+    text-indent: -75%;
+  }
+}
 @media (max-width: 991px) {
   .navbar__activ-link-underline {
     display: none;
@@ -91,14 +221,52 @@ body {
     margin-top: 10px;
   }
 }
-.nav-link {
-  padding: 0;
-  color: black;
-  text-transform: uppercase;
-  font-size: 20px;
-  font-family: "Harriet";
+@media (max-width: 680px) {
+  .header__title {
+    font-size: 40px;
+  }
+
+  .navbar-brand {
+    width: 300px;
+  }
+
+  .articles-list {
+    grid-template-columns: 304px;
+  }
 }
-.nav-link:hover {
-  color: black;
-  opacity: 0.75;
+@media (max-width: 550px) {
+  .navbar {
+    padding: 24px 20px;
+  }
+  .navbar-brand {
+    width: 217px;
+  }
+
+  .header {
+    margin-top: 52px;
+    border-bottom: 2px solid black;
+  }
+  .header__img {
+    margin-bottom: 32px;
+  }
+  .header__desc {
+    padding: 24px 0 52px;
+  }
+
+  .main {
+    border-top: 0;
+  }
+  .main__title {
+    margin: 56px 0 29px 0;
+  }
+
+  .footer__logo {
+    width: 236px;
+  }
+  .footer__desc {
+    font-size: 13px;
+  }
+  .footer__credits {
+    font-size: 12px;
+  }
 }
