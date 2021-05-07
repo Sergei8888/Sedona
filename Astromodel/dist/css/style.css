@@ -27,8 +27,9 @@ body {
 }
 .settings__tongue {
   position: absolute;
-  left: -10px;
+  left: -9px;
   top: 50%;
+  z-index: 20;
   width: 10px;
   height: 15%;
   border-radius: 10px 0 0 10px;
