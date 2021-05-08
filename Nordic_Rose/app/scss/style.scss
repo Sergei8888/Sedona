@@ -77,8 +77,12 @@ body {
     margin-top: 75px;
     &__img {
         width: 100%;
-        height: auto;
+        height: 0;
+        padding-top: calc(533/854 * 100%);
         margin-bottom: 45px;
+        background-color: rgb(255, 251, 196);
+        background-image: url(../img/articles.svg);
+        background-size: cover;
     }
     &__title {
         padding: 0 20px;

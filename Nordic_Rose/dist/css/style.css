@@ -105,8 +105,12 @@ body {
 }
 .header__img {
   width: 100%;
-  height: auto;
+  height: 0;
+  padding-top: calc(533/854 * 100%);
   margin-bottom: 45px;
+  background-color: #fffbc4;
+  background-image: url(../img/articles.svg);
+  background-size: cover;
 }
 .header__title {
   padding: 0 20px;
