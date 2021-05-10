@@ -8,7 +8,7 @@
     <!-- Styles -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous" media="print" onload="this.media='all'; this.onload=null;">
     <link rel="stylesheet" href="css/normalize.css" media="print" onload="this.media='all'; this.onload=null;">
-    <link rel="stylesheet" href="css/style.css" media="print" onload="this.media='all'; this.onload=null;">
+    <link rel="stylesheet" href="css/article.css" media="print" onload="this.media='all'; this.onload=null;">
     <!--Preload fonts-->
     <link rel="preload" as="font" href="./fonts/basis-grotesque-black-pro.woff2" crossorigin="anonymous">
     <link rel="preload" as="font" href="./fonts/basis-grotesque-medium-pro.woff2" crossorigin="anonymous">
@@ -85,113 +85,77 @@
             </div>
         </div>
     </nav>
-    <div class="wrapper">
-        <header class="header">
-            <div class="header__img"></div>
+
+    <header class="header">
+        <div class="wrapper">
             <h1 class="header__title">A few words about this blog platform, Ghost, and how this site was made</h1>
             <p class="header__desc">Why Ghost (& Figma) instead of Medium, WordPress or other options?</p>
-        </header>
-        <main class="main">
-            <h2 class="main__title">All articles</h2>
-            <ul class="articles-list">
-                <li class="articles-list__item">
-                    <a href="article1.html">
-                        <article class="articles-list__article">
-                            <img src="./img/article_1.webp" width="304px" height="176px" alt="abstract decorative img">
-                            <p>Here are some things you should know regarding how we work</p>
-                        </article>
-                    </a>
-                </li>
-                <li class="articles-list__item">
-                    <a href="#">
-                        <article class="articles-list__article">
-                            <img src="./img/article_2.webp" width="304px" height="176px" alt="abstract decorative img">
-                            <p>Granny gives everyone the finger, and other tips from OFFF Barcelona</p>
-                        </article>
-                    </a>
-                </li>
-                <li class="articles-list__item">
-                    <a href="#">
-                        <article class="articles-list__article">
-                            <img src="./img/article_3.webp" width="304px" height="176px" alt="abstract decorative img">
-                            <p>Hello world, or, in other words, why this blog exists</p>
-                        </article>
-                    </a>
-                </li>
-                <li class="articles-list__item">
-                    <a href="#">
-                        <article class="articles-list__article">
-                            <img src="./img/article_4.webp" width="304px" height="176px" alt="abstract decorative img">
-                            <p>Here are some things you should know regarding how we work</p>
-                        </article>
-                    </a>
-                </li>
-                <li class="articles-list__item">
-                    <a href="#">
-                        <article class="articles-list__article">
-                            <img src="./img/article_5.webp" width="304px" height="176px" alt="abstract decorative img">
-                            <p>Connecting artificial intelligence with digital product design</p>
-                        </article>
-                    </a>
-                </li>
-                <li class="articles-list__item">
-                    <a href="#">
-                        <article class="articles-list__article">
-                            <img src="./img/article_6.webp" width="304px" height="176px" alt="abstract decorative img">
-                            <p>It’s all about finding the perfect balance</p>
-                        </article>
-                    </a>
-                </li>
-                <li class="articles-list__item">
-                    <a href="#">
-                        <article class="articles-list__article">
-                            <img src="./img/article_7.webp" width="304px" height="176px" alt="abstract decorative img">
-                            <p>I believe learning is the most important skill</p>
-                        </article>
-                    </a>
-                </li>
-                <li class="articles-list__item">
-                    <a href="#">
-                        <article class="articles-list__article">
-                            <img src="./img/article_8.webp" width="304px" height="176px" alt="abstract decorative img">
-                            <p>Clients are part of the team</p>
-                        </article>
-                    </a>
-                </li>
-                <li class="articles-list__item">
-                    <a href="#">
-                        <article class="articles-list__article">
-                            <img src="./img/article_9.webp" width="304px" height="176px" alt="abstract decorative img">
-                            <p>Clients are part of the team</p>
-                        </article>
-                    </a>
-                </li>
-                <li class="articles-list__item">
-                    <a href="#">
-                        <article class="articles-list__article">
-                            <img src="./img/article_10.webp" width="304px" height="176px" alt="abstract decorative img">
-                            <p>Here are some things you should know regarding how we work</p>
-                        </article>
-                    </a>
-                </li>
-                <li class="articles-list__item">
-                    <a href="#">
-                        <article class="articles-list__article">
-                            <img src="./img/article_11.webp" width="304px" height="176px" alt="abstract decorative img">
-                            <p>Connecting artificial intelligence with digital product design</p>
-                        </article>
-                    </a>
-                </li>
-                <li class="articles-list__item">
-                    <a href="#">
-                        <article class="articles-list__article">
-                            <img src="./img/article_12.webp" width="304px" height="176px" alt="abstract decorative img">
-                            <p>How modern remote working tools get along with Old School Cowboy's methods</p>
-                        </article>
-                    </a>
-                </li>
+        </div>
+        <div class="header__img"></div>
+
+    </header>
+    <main class="main">
+        <article class="article">
+            <header class="article__header">
+                <div class="author">
+                    <div class="author__img"></div>
+                    <div class="author__text">
+                        <span class="author__name">
+                            Mika Matikainen
+                        </span>
+                        <time class="author__time-data">Apr 15, 2020 · 4 min read</time>
+                    </div>
+                </div>
+                <div class="social article-header__social">
+                    <button class="social__btn">
+                        <div class="social__icon"></div>
+                    </button>
+                    <button class="social__btn">
+                        <div class="social__icon"></div>
+                    </button>
+                </div>
+            </header>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu velit tempus erat egestas efficitur. In hac habitasse platea dictumst. Fusce a nunc eget ligula suscipit finibus. Aenean pharetra quis lacus at viverra. Class aptent taciti sociosqu
+                ad litora torquent per conubia nostra, per inceptos himenaeos. Aliquam quis posuere ligula. In eu dui molestie, molestie lectus eu, semper lectus.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu velit tempus erat egestas efficitur. In hac habitasse platea dictumst. Fusce a nunc eget ligula suscipit finibus. Aenean pharetra quis lacus at viverra. Class aptent taciti sociosqu
+                ad litora torquent per conubia nostra, per inceptos himenaeos. Aliquam quis posuere ligula. In eu dui molestie, molestie lectus eu, semper lectus.</p>
+            <h2>Next on the pipeline</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu velit tempus erat egestas efficitur. In hac habitasse platea dictumst. Fusce a nunc eget ligula suscipit finibus. Aenean pharetra quis lacus at viverra.
+            </p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <figure class="article__figure">
+                <img class="article__img" src="./img/article_img1.jpg" alt="ancient stone sculpture">
+                <figcaption class="article__figcaption">Image caption centered this way and I’ll make this a bit longer to indicate the amount of line-height.</figcaption>
+            </figure>
+            <p>Aenean pharetra quis lacus at viverra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aliquam quis posuere ligula. In eu dui molestie, molestie lectus eu, semper lectus. Proin at justo lacinia,
+                auctor nisl et, consequat ante. Donec sit amet nisi arcu. Morbi efficitur auctor metus, id mollis lorem pellentesque id. Nullam posuere maximus dui et fringilla. Nulla non volutpat leo.</p>
+            <p>Aenean pharetra quis lacus at viverra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aliquam quis posuere ligula. In eu dui molestie, molestie lectus eu, semper lectus. Proin at justo lacinia,
+                auctor nisl et, consequat ante. Donec sit amet nisi arcu. Morbi efficitur auctor metus, id mollis lorem pellentesque id. Nullam posuere maximus dui et fringilla. Nulla non volutpat leo.</p>
+            <p>A list looks like this:</p>
+            <ul class="article__list">
+                <li class="article__list-item"><span>First item in the list</span> </li>
+                <li class="article__list-item"><span>Second item in the list lorem ipsum dolor sit amet nunc felis dolor
+                        lorem ipsum sit amet</span></li>
+                <li class="article__list-item"><span>Third item in the list</span></li>
             </ul>
-        </main>
+            <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aliquam quis posuere ligula.</p>
+            <p>Thanks for reading, <br> Mika</p>
+            <div class="social social_big">
+                <button class="social__btn">
+                    <div class="social__btn-content">
+                        <div class="social__icon"></div>
+                        <span>Share on Facebook</span>
+                    </div>
+                </button>
+                <button class="social__btn">
+                    <div class="social__btn-content">
+                        <div class="social__icon"></div>
+                        <span>Share on Twitter</span>
+                    </div>
+                </button>
+            </div>
+        </article>
+    </main>
     </div>
     <footer class="footer">
         <div class="footer__marquee">

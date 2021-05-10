@@ -1,0 +1,97 @@
+.navbar {
+    position: relative;
+    padding: 35px 60px;
+    border-bottom: 1px solid rgb(165, 165, 165);
+    &-brand {
+        width: 397px;
+    }
+    &-toggler {
+        margin: 0;
+        padding: 0;
+        &-icon {
+            width: 24px;
+            height: 15px;
+            vertical-align: top;
+        }
+    }
+    &__activ-link-underline {
+        position: absolute;
+        right: 369px;
+        bottom: 0;
+        width: 56px;
+        height: 2px;
+        background-color: #000000;
+        &_2 {
+            width: 72px;
+            right: 281px;
+            bottom: 0;
+        }
+        &_3 {
+            width: 63px;
+            right: 201px;
+            bottom: 0;
+        }
+        &_4 {
+            width: 105px;
+            right: 80px;
+            bottom: 0;
+        }
+        will-change: right,
+        bottom;
+        transition: 0.2s ease-out;
+    }
+}
+
+.nav {
+    &-link {
+        padding: 0;
+        color: black;
+        text-transform: uppercase;
+        font-size: 20px;
+        font-family: 'Harriet';
+        &:hover {
+            color: black;
+            opacity: .75;
+        }
+    }
+}
+
+@media (max-width: 991px) {
+    .navbar {
+        &__activ-link-underline {
+            display: none;
+        }
+    }
+    .navbar-nav .nav {
+        &-link {
+            display: inline-block;
+            padding: 5px 10px 5px 0;
+        }
+        &-item {
+            padding: 10px 0;
+        }
+        &-item:last-child {
+            padding-bottom: 0;
+        }
+        &-item:first-child {
+            margin-top: 10px;
+        }
+    }
+}
+
+@media (max-width: 680px) {
+    .navbar {
+        &-brand {
+            width: 300px;
+        }
+    }
+}
+
+@media (max-width: 550px) {
+    .navbar {
+        padding: 24px 20px;
+        &-brand {
+            width: 217px;
+        }
+    }
+}
