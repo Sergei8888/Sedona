@@ -1,23 +1,83 @@
-let scrollingList
-
-let errorAlert = {
-    position: 'top-end',
-    icon: 'error',
-    title: 'Some number properties weren`t numbers',
-    showConfirmButton: false,
-    timer: 2500
+//REST
+async function postData(url = '', data = {}) {
+    // Default options are marked with *
+    const response = await fetch(url, {
+        method: 'POST', // *GET, POST, PUT, DELETE, etc.
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data) // body data type must match "Content-Type" header
+    });
+    return await response.json(); // parses JSON response into native JavaScript objects
 }
 
-function checkMargin() {
-    if (vm.objectList.length >= 9) {
-        scrollingList.classList.add('object-list_scroll')
-    } else {
-        scrollingList.classList.remove('object-list_scroll')
+// App alerts
+let alerts = {
+    errorAlert: {
+        position: 'top-end',
+        icon: 'error',
+        title: 'Some number properties weren`t numbers',
+        showConfirmButton: false,
+        timer: 2500
+    },
+
+    getSettingsAlert(objectName = 'New') {
+        return {
+            title: `${objectName} settings`,
+            html: `<form class="settings__form">
+    <label>Color: <input type="color" id="settingsColor"></label>
+    <label>Name: <input type="text" id="settingsName"></label>
+    <label>Frequency: <input type="text" id="settingsT"></label>
+    <label>Phase: <input type="text" id="settingsPhase"></label>
+    <label>Connection force: <input type="text" id="settingsConnectionForce"></label>
+</form>`,
+            width: '60vw',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Apply'
+        }
+
     }
+}
+
+// Functions to react with modals
+function validNewObjectSettings() {
+    let TInput = document.getElementById('settingsT')
+    let phaseInput = document.getElementById('settingsPhase')
+    let connectionForceInput = document.getElementById('settingsConnectionForce')
+
+    numberInputs = [TInput, phaseInput, connectionForceInput]
+
+    for (input of numberInputs) {
+        if (isNaN(+input.value)) {
+            return false
+        }
+    }
+
+    return true
+}
+
+function getNewObjectSettings() {
+    let colorInput = document.getElementById('settingsColor')
+    let nameInput = document.getElementById('settingsName')
+    let TInput = document.getElementById('settingsT')
+    let phaseInput = document.getElementById('settingsPhase')
+    let connectionForceInput = document.getElementById('settingsConnectionForce')
+
+    return {
+        color: colorInput.value,
+        name: nameInput.value,
+        T: +TInput.value,
+        phase: +phaseInput.value,
+        connectionForce: +connectionForceInput.value
+    }
+
 }
 
 class FrameObject {
     constructor(props) {
+        this.id = Math.random().toString(16).slice(2)
         this.color = props.color || 'red'
         this.name = props.name || 'default'
         this.T = props.T || 2
@@ -35,28 +95,14 @@ let vm = new Vue({
 
     methods: {
         addObject: function() {
-            Swal.fire({
-                title: 'New object settings',
-                html: `<form class="settings__form">
-    <label>Color: <input type="color" id="settingsColor"></label>
-    <label>Name: <input type="text" id="settingsName"></label>
-    <label>Frequency: <input type="text" id="settingsT"></label>
-    <label>Phase: <input type="text" id="settingsPhase"></label>
-    <label>Connection force: <input type="text" id="settingsConnectionForce"></label>
-</form>`,
-                width: '60vw',
-                showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
-                confirmButtonText: 'Apply'
-            }).then((result) => {
+            Swal.fire(alerts.getSettingsAlert()).then((result) => {
                 if (result.isConfirmed) {
-                    if (!validObjectSettings()) {
+                    if (!validNewObjectSettings()) {
                         Swal.fire(errorAlert)
-                    } else this.objectList.push(new FrameObject(getObjectSettings()))
+                    } else this.objectList.push(new FrameObject(getNewObjectSettings()))
                 }
             })
-            checkMargin()
+            this.checkScrollingListMargin('future')
         },
 
         deleteObject(object) {
@@ -66,70 +112,47 @@ let vm = new Vue({
                     this.objectList.splice(indexOfObject, 1)
                 }
             }
-            checkMargin()
+            this.checkScrollingListMargin('past')
+        },
+
+        checkScrollingListMargin(scrollingListStatus) {
+            let itemsCounter = 7
+            if (scrollingListStatus == 'future') {
+                itemsCounter = 7
+            }
+            if (scrollingListStatus == 'past') {
+                itemsCounter = 8
+            }
+
+            if (vm.objectList.length >= itemsCounter) {
+                scrollingList.classList.add('object-list_scroll')
+            } else {
+                scrollingList.classList.remove('object-list_scroll')
+            }
+
         },
 
         changeSettings(object) {
-            Swal.fire({
-                title: `${object.name} settings`,
-                html: `<form class="settings__form">
-    <label>Color: <input type="color" id="settingsColor"></label>
-    <label>Name: <input type="text" id="settingsName"></label>
-    <label>Frequency: <input type="text" id="settingsT"></label>
-    <label>Phase: <input type="text" id="settingsPhase"></label>
-    <label>Connection force: <input type="text" id="settingsConnectionForce"></label>
-</form>`,
-                width: '60vw',
-                showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
-                confirmButtonText: 'Apply'
-            }).then((result) => {
+            Swal.fire(alerts.getSettingsAlert(object.name)).then((result) => {
                 if (result.isConfirmed) {
-                    if (!validObjectSettings()) {
-                        Swal.fire(errorAlert)
-                    } else Object.assign(object, getObjectSettings())
+                    if (!validNewObjectSettings()) {
+                        Swal.fire(alerts.errorAlert)
+                    } else Object.assign(object, getNewObjectSettings())
                 }
             })
+        },
+
+        updateAnim() {
+            postData('https://xenofium-astromodel.herokuapp.com/api/test/dDha03LqkyCYI6NyRZysPXukX', {...this.objectList })
+                .then((data) => {
+                    console.log(data); // JSON data parsed by `response.json()` call
+                });
         }
     },
 
     mounted: function() {
         this.$nextTick(function() {
-            scrollingList = document.getElementById('scrollingList')
+            let scrollingList = document.getElementById('scrollingList')
         })
     }
 })
-
-function validObjectSettings() {
-    let TInput = document.getElementById('settingsT')
-    let phaseInput = document.getElementById('settingsPhase')
-    let connectionForceInput = document.getElementById('settingsConnectionForce')
-
-    numberInputs = [TInput, phaseInput, connectionForceInput]
-
-    for (input of numberInputs) {
-        if (isNaN(+input.value)) {
-            return false
-        }
-    }
-
-    return true
-}
-
-function getObjectSettings() {
-    let colorInput = document.getElementById('settingsColor')
-    let nameInput = document.getElementById('settingsName')
-    let TInput = document.getElementById('settingsT')
-    let phaseInput = document.getElementById('settingsPhase')
-    let connectionForceInput = document.getElementById('settingsConnectionForce')
-
-    return {
-        color: colorInput.value,
-        name: nameInput.value,
-        T: +TInput.value,
-        phase: +phaseInput.value,
-        connectionForce: +connectionForceInput.value
-    }
-
-}
