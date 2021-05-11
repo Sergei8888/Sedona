@@ -143,8 +143,10 @@ let vm = new Vue({
         },
 
         updateAnim() {
+            console.log('responce going')
             postData('https://xenofium-astromodel.herokuapp.com/api/test/dDha03LqkyCYI6NyRZysPXukX', {...this.objectList })
                 .then((data) => {
+                    console.log('responce goi')
                     console.log(data); // JSON data parsed by `response.json()` call
                 });
         }
