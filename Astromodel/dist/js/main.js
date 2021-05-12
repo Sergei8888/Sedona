@@ -28,9 +28,9 @@ let alerts = {
     <label>Color: <input type="color" id="settingsColor"></label>
     <label>Name: <input type="text" id="settingsName"></label>
     <label>Frequency: <input type="text" id="settingsT"></label>
-    <label>Phase: <input type="text" id="settingsPhase"></label>
     <label>Connection force: <input type="text" id="settingsConnectionForce"></label>
-</form>`,
+</form>
+`,
             width: '60vw',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
@@ -44,10 +44,10 @@ let alerts = {
 // Functions to react with modals
 function validNewObjectSettings() {
     let TInput = document.getElementById('settingsT')
-    let phaseInput = document.getElementById('settingsPhase')
+
     let connectionForceInput = document.getElementById('settingsConnectionForce')
 
-    numberInputs = [TInput, phaseInput, connectionForceInput]
+    numberInputs = [TInput, connectionForceInput]
 
     for (input of numberInputs) {
         if (isNaN(+input.value)) {
@@ -62,14 +62,14 @@ function getNewObjectSettings() {
     let colorInput = document.getElementById('settingsColor')
     let nameInput = document.getElementById('settingsName')
     let TInput = document.getElementById('settingsT')
-    let phaseInput = document.getElementById('settingsPhase')
+
     let connectionForceInput = document.getElementById('settingsConnectionForce')
 
     return {
         color: colorInput.value,
         name: nameInput.value,
         T: +TInput.value,
-        phase: +phaseInput.value,
+
         connectionForce: +connectionForceInput.value
     }
 
@@ -143,12 +143,25 @@ let vm = new Vue({
         },
 
         updateAnim() {
-            console.log('responce going')
-            postData('https://xenofium-astromodel.herokuapp.com/api/test/dDha03LqkyCYI6NyRZysPXukX', {...this.objectList })
+            postData('https://xenofium-astromodel.herokuapp.com/api/test/dDha03LqkyCYI6NyRZysPXukX', this.formattedObjectList)
                 .then((data) => {
-                    console.log('responce goi')
                     console.log(data); // JSON data parsed by `response.json()` call
                 });
+        }
+    },
+
+    computed: {
+        formattedObjectList() {
+            let formattedObjectList = {}
+
+            for (object of this.objectList) {
+                let formattedObject = {}
+                Object.assign(formattedObject, object)
+                delete formattedObject.id
+                formattedObjectList[`${object.id}`] = formattedObject
+            }
+
+            return formattedObjectList
         }
     },
 
