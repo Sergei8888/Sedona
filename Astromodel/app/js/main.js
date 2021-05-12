@@ -75,7 +75,6 @@ class FrameObject {
         this.color = props.color || 'red'
         this.name = props.name || 'default'
         this.T = props.T || 2
-        this.phase = props.phase || 2
         this.connectionForce = props.connectionForce || 2
     }
 }
@@ -152,6 +151,8 @@ let vm = new Vue({
                 let formattedObject = {}
                 Object.assign(formattedObject, object)
                 delete formattedObject.id
+                delete formattedObject.name
+                delete formattedObject.color
                 formattedObjectList[`${object.id}`] = formattedObject
             }
 
