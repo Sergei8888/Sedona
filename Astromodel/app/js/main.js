@@ -1,4 +1,4 @@
-//REST
+//REST methods
 async function postData(url = '', data = {}) {
     // Default options are marked with *
     const response = await fetch(url, {
@@ -62,9 +62,8 @@ function getNewObjectSettings() {
     return {
         color: colorInput.value,
         name: nameInput.value,
-        T: +TInput.value,
-
-        connectionForce: +connectionForceInput.value
+        frequency: +TInput.value,
+        connectivity: +connectionForceInput.value
     }
 
 }
@@ -74,8 +73,8 @@ class FrameObject {
         this.id = Math.random().toString(16).slice(2)
         this.color = props.color || 'red'
         this.name = props.name || 'default'
-        this.T = props.T || 2
-        this.connectionForce = props.connectionForce || 2
+        this.frequency = props.frequency || 2
+        this.connectivity = props.connectivity || 2
     }
 }
 
@@ -136,7 +135,7 @@ let vm = new Vue({
         },
 
         updateAnim() {
-            postData('https://xenofium-astromodel.herokuapp.com/api/test/dDha03LqkyCYI6NyRZysPXukX', this.formattedObjectList)
+            postData('http://95.55.247.243:80/api/test/dDha03LqkyCYI6NyRZysPXukX', this.formattedObjectList)
                 .then((data) => {
                     console.log(data); // JSON data parsed by `response.json()` call
                 });
