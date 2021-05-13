@@ -28,15 +28,15 @@
                 <li v-for="object in objectList" class="object-list__item">
                     <div :style="{backgroundColor: object.color}" class="settings__color-indicator"></div>
                     <span class="settings__object-name">{{ object.name }}</span>
-                    <button @click="changeSettings(object)" class="settings__object-settings-btn"></button>
-                    <button @click="deleteObject(object)" class="settings__delete-object-btn"></button>
+                    <button aria-label="change oscillator settings" @click="changeSettings(object)" class="settings__object-settings-btn"></button>
+                    <button aria-label="delete oscillator" @click="deleteObject(object)" class="settings__delete-object-btn"></button>
                 </li>
             </ul>
-            <button @click="addObject" class="add-object-btn settings__add-object-btn">+</button>
+            <button aria-label="add oscillator" @click="addObject" class="add-object-btn settings__add-object-btn">+</button>
         </div>
         <div class="settings__ui">
-            <button @click="updateAnim" class="settings__update-btn"></button>
-            <button class="settings__upload-btn"></button>
+            <button aria-label="start oscillators animation" @click="updateAnim" class="settings__update-btn"></button>
+            <button aria-label="upload json file with oscillators and their settings" class="settings__upload-btn"></button>
         </div>
     </aside>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
