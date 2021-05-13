@@ -214,11 +214,9 @@ function cssCompile() {
 function jsCompile() {
     if (hard) {
         return src(path.app.js + "/*.js").pipe(include())
-            .pipe(
-                babel({
-                    presets: ["@babel/env"],
-                })
-            )
+            .pipe(babel({
+                plugins: ['@babel/transform-runtime']
+            }))
             .pipe(
                 babelMinify({
                     builtIns: false,

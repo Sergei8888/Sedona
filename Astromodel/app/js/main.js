@@ -146,7 +146,7 @@ let vm = new Vue({
         formattedObjectList() {
             let formattedObjectList = {}
 
-            for (object of this.objectList) {
+            for (let object of this.objectList) {
                 let formattedObject = {}
                 Object.assign(formattedObject, object)
                 delete formattedObject.id
