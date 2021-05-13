@@ -1,7 +1,7 @@
 {
     "name": "winmine",
     "version": "1.0.0",
-    "description": "Basic template for web project with gulp",
+    "description": "Kuramoto  model BFU project",
     "main": "main.js",
     "devDependencies": {
         "@babel/core": "^7.14.2",
