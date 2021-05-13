@@ -15,9 +15,7 @@ body {
     left: calc(100% - 4px);
     display: flex;
     flex-direction: column;
-    width: 30vw;
-    min-width: 300px;
-    max-width: 500px;
+    width: 320px;
     min-height: 100vh;
     background-color: #404040;
     &:hover {
