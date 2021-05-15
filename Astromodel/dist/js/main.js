@@ -141,7 +141,14 @@ let vm = new Vue({
         },
 
         updateAnim() {
-            postData('http://95.55.247.243:80/api/kuramoto/data/trade/dDha03LqkyCYI6NyRZysPXukX', this.formattedObjectList)
+            console.log({
+                fps: 60,
+                objects: this.formattedObjectList,
+            })
+            postData('http://95.55.247.243:80/api/kuramoto/data/trade/dDha03LqkyCYI6NyRZysPXukX', {
+                    fps: 60,
+                    objects: this.formattedObjectList,
+                })
                 .then((data) => {
                     console.log(data); // JSON data parsed by `response.json()` call
                 });
