@@ -21,6 +21,16 @@ let alerts = {
         timer: 2500
     },
 
+    guideAlert: {
+        title: `How to use app`,
+        html: `@@include('../templates/guideModal.html')`,
+        width: '60vw',
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Apply'
+
+    },
+
     getSettingsAlert(objectName = 'New') {
         return {
             title: `${objectName} settings`,
@@ -71,7 +81,7 @@ function getNewObjectSettings() {
 class FrameObject {
     constructor(props) {
         this.id = Math.random().toString(16).slice(2)
-        this.color = props.color || 'red'
+        this.color = props.color || '#00D1E0'
         this.name = props.name || 'default'
         this.frequency = props.frequency || 2
         this.connectivity = props.connectivity || 2
@@ -91,10 +101,13 @@ let vm = new Vue({
                 if (result.isConfirmed) {
                     if (!validNewObjectSettings()) {
                         Swal.fire(errorAlert)
-                    } else this.objectList.push(new FrameObject(getNewObjectSettings()))
+                    } else {
+                        this.objectList.push(new FrameObject(getNewObjectSettings()))
+                        this.checkScrollingListMargin('future')
+                    }
                 }
             })
-            this.checkScrollingListMargin('future')
+
         },
 
         deleteObject(object) {
@@ -110,10 +123,10 @@ let vm = new Vue({
         checkScrollingListMargin(scrollingListStatus) {
             let itemsCounter = 7
             if (scrollingListStatus == 'future') {
-                itemsCounter = 7
+                itemsCounter = 8
             }
             if (scrollingListStatus == 'past') {
-                itemsCounter = 8
+                itemsCounter = 9
             }
 
             if (vm.objectList.length >= itemsCounter) {
@@ -135,10 +148,6 @@ let vm = new Vue({
         },
 
         updateAnim() {
-            console.log({
-                fps: 60,
-                objects: this.formattedObjectList,
-            })
             postData('http://95.55.247.243:80/api/kuramoto/data/trade/dDha03LqkyCYI6NyRZysPXukX', {
                     fps: 60,
                     objects: this.formattedObjectList,
@@ -146,7 +155,11 @@ let vm = new Vue({
                 .then((data) => {
                     console.log(data); // JSON data parsed by `response.json()` call
                 });
-        }
+        },
+
+        showGuide() {
+            Swal.fire(alerts.guideAlert)
+        },
     },
 
     computed: {
@@ -165,10 +178,10 @@ let vm = new Vue({
             return formattedObjectList
         }
     },
-
     mounted: function() {
         this.$nextTick(function() {
             let scrollingList = document.getElementById('scrollingList')
         })
-    }
+    },
+
 })

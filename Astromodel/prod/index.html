@@ -17,28 +17,32 @@
 </head>
 
 <body>
-    <main class="anim-frame">
-        <canvas class="anim-frame__canvas">
-        </canvas>
-    </main>
-    <aside class="settings" id="app">
-        <div class="settings__tongue"></div>
-        <div class="settings__object-wrapper">
-            <ul class="object-list settings__object-list" id="scrollingList">
-                <li v-for="object in objectList" class="object-list__item">
-                    <div :style="{backgroundColor: object.color}" class="settings__color-indicator"></div>
-                    <span class="settings__object-name">{{ object.name }}</span>
-                    <button aria-label="change oscillator settings" @click="changeSettings(object)" class="settings__object-settings-btn"></button>
-                    <button aria-label="delete oscillator" @click="deleteObject(object)" class="settings__delete-object-btn"></button>
-                </li>
-            </ul>
-            <button aria-label="add oscillator" @click="addObject" class="add-object-btn settings__add-object-btn">+</button>
-        </div>
-        <div class="settings__ui">
-            <button aria-label="start oscillators animation" @click="updateAnim" class="settings__update-btn"></button>
-            <button aria-label="upload json file with oscillators and their settings" class="settings__upload-btn"></button>
-        </div>
-    </aside>
+    <div id="app">
+        <main class="anim-frame">
+            <canvas ref="canvas" class="anim-frame__canvas">
+            </canvas>
+        </main>
+        <aside class="settings">
+            <div class="settings__object-wrapper">
+                <ul class="object-list settings__object-list" id="scrollingList">
+                    <li v-for="object in objectList" class="object-list__item">
+                        <div :style="{backgroundColor: object.color}" class="settings__color-indicator"></div>
+                        <span class="settings__object-name">{{ object.name }}</span>
+                        <button aria-label="change oscillator settings" @click="changeSettings(object)" class="settings__object-settings-btn"></button>
+                        <button aria-label="delete oscillator" @click="deleteObject(object)" class="settings__delete-object-btn"></button>
+
+                    </li>
+                </ul>
+                <button aria-label="add oscillator" @click="addObject" :class="{['settings__add-object-btn_first-in-list']: objectList.length == 0}" class="add-object-btn settings__add-object-btn">+</button>
+            </div>
+            <div class="settings__ui">
+                <button aria-label="start oscillators animation" @click="updateAnim" class="settings__update-btn"></button>
+                <button aria-label="import json file with oscillators and their settings" class="settings__upload-btn"></button>
+                <button aria-label="get popup with the guide" @click="showGuide" class="settings__show-guide-btn"></button>
+            </div>
+        </aside>
+
+    </div>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script src="./js/main.js"></script>
