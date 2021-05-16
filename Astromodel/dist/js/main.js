@@ -27,6 +27,7 @@ let alerts = {
     <li class="guide-list__item">Add oscillators and set settings</li>
     <li class="guide-list__item">Click refresh button</li>
 </ol>
+<p class="guide__description">Also you can export your scene by clicking at the blue button or import scene with the brown button</p>
 `,
         width: '60vw',
         confirmButtonColor: '#3085d6',

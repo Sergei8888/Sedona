@@ -220,6 +220,12 @@ body {
     }
 }
 
+.guide__description {
+    max-width: 60%;
+    padding-left: 24px;
+    text-align: left;
+}
+
 @media (max-width: 950px) {
     .settings {
         &__form {
