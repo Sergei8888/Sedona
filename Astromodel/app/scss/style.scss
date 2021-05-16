@@ -7,6 +7,21 @@ body {
     display: flex;
 }
 
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    min-width: initial;
+    height: 1px;
+    min-height: initial;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
 .anim-frame {
     display: flex;
     justify-content: center;
@@ -43,12 +58,14 @@ body {
     }
     &__ui {
         display: flex;
+        justify-content: space-between;
         padding: 20px;
         background-color: #3f3f3f;
     }
     &__update-btn,
     &__upload-btn,
-    &__show-guide-btn {
+    &__show-guide-btn,
+    &__export-btn {
         width: 60px;
         height: 60px;
         background-size: 40%;
@@ -57,7 +74,6 @@ body {
         transition: 0.2s;
     }
     &__update-btn {
-        margin-right: 20px;
         background-color: #B5AD00;
         background-image: url(../img/update.svg);
         &:hover {
@@ -67,12 +83,22 @@ body {
     &__upload-btn {
         background-image: url(../img/upload.svg);
         background-color: #813600;
+        transform: rotate(0.5turn);
         &:hover {
             background-color: #6b2d00;
         }
+        &::-webkit-file-upload-button {
+            visibility: hidden;
+        }
+    }
+    &__export-btn {
+        background-image: url(../img/upload.svg);
+        background-color: rgb(43, 134, 209);
+        &:hover {
+            background-color: rgb(30, 97, 151);
+        }
     }
     &__show-guide-btn {
-        margin-left: auto;
         background-size: 29%;
         background-image: url(../img/guide.svg);
         background-color: #9e9e9e;

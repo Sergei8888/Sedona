@@ -37,7 +37,9 @@
             </div>
             <div class="settings__ui">
                 <button aria-label="start oscillators animation" @click="updateAnim" class="settings__update-btn"></button>
-                <button aria-label="import json file with oscillators and their settings" class="settings__upload-btn"></button>
+                <label for="objectsImport" class="visually-hidden">Import file width oscillators</label>
+                <input id="objectsImport" type="file" accept=".json" class="settings__upload-btn">
+                <button aria-label="export json file with oscillators and their settings" @click="exportObjects" class="settings__export-btn"></button>
                 <button aria-label="get popup with the guide" @click="showGuide" class="settings__show-guide-btn"></button>
             </div>
         </aside>

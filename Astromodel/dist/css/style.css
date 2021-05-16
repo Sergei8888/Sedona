@@ -7,6 +7,21 @@ body {
   display: flex;
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  min-width: initial;
+  height: 1px;
+  min-height: initial;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
 .anim-frame {
   display: flex;
   justify-content: center;
@@ -44,10 +59,11 @@ body {
 }
 .settings__ui {
   display: flex;
+  justify-content: space-between;
   padding: 20px;
   background-color: #3f3f3f;
 }
-.settings__update-btn, .settings__upload-btn, .settings__show-guide-btn {
+.settings__update-btn, .settings__upload-btn, .settings__show-guide-btn, .settings__export-btn {
   width: 60px;
   height: 60px;
   background-size: 40%;
@@ -56,7 +72,6 @@ body {
   transition: 0.2s;
 }
 .settings__update-btn {
-  margin-right: 20px;
   background-color: #B5AD00;
   background-image: url(../img/update.svg);
 }
@@ -66,12 +81,22 @@ body {
 .settings__upload-btn {
   background-image: url(../img/upload.svg);
   background-color: #813600;
+  transform: rotate(0.5turn);
 }
 .settings__upload-btn:hover {
   background-color: #6b2d00;
 }
+.settings__upload-btn::-webkit-file-upload-button {
+  visibility: hidden;
+}
+.settings__export-btn {
+  background-image: url(../img/upload.svg);
+  background-color: #2b86d1;
+}
+.settings__export-btn:hover {
+  background-color: #1e6197;
+}
 .settings__show-guide-btn {
-  margin-left: auto;
   background-size: 29%;
   background-image: url(../img/guide.svg);
   background-color: #9e9e9e;

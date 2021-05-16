@@ -78,6 +78,21 @@ function getNewObjectSettings() {
 
 }
 
+function download(filename, text) {
+    var element = document.createElement('a');
+    element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+    element.setAttribute('download', filename);
+
+    element.style.display = 'none';
+    document.body.appendChild(element);
+
+    element.click();
+
+    document.body.removeChild(element);
+}
+
+
+
 class FrameObject {
     constructor(props) {
         this.id = Math.random().toString(16).slice(2)
@@ -157,6 +172,21 @@ let vm = new Vue({
                 });
         },
 
+        importObjects(evt) {
+            let files = evt.target.files;
+            let file = files[0];
+            let reader = new FileReader();
+            reader.readAsText(file)
+            reader.onload = () => {
+                this.objectList = JSON.parse(reader.result);
+                this.updateAnim()
+            }
+        },
+
+        exportObjects() {
+            download('oscillators.json', JSON.stringify(this.objectList))
+        },
+
         showGuide() {
             Swal.fire(alerts.guideAlert)
         },
@@ -185,3 +215,6 @@ let vm = new Vue({
     },
 
 })
+
+let objectsImport = document.getElementById('objectsImport')
+objectsImport.addEventListener('change', vm.importObjects)
