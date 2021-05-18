@@ -78,7 +78,7 @@ function getNewObjectSettings() {
     return {
         color: colorInput.value,
         name: nameInput.value,
-        angle: getRads(angleInput.value),
+        angle: getRad(angleInput.value),
         frequency: +TInput.value,
         connectivity: +connectionForceInput.value
     }
