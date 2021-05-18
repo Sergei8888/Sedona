@@ -42,6 +42,7 @@ let alerts = {
             html: `<form class="settings__form">
     <label>Color: <input type="color" id="settingsColor"></label>
     <label>Name: <input type="text" id="settingsName"></label>
+    <label>Angle(position in degrees): <input type="text" id="settingsAngle"></label>
     <label>Frequency: <input type="text" id="settingsT"></label>
     <label>Connectivity: <input type="text" id="settingsConnectionForce"></label>
 </form>
@@ -56,7 +57,12 @@ let alerts = {
     }
 }
 
+
 // Functions to react with modals
+function getRad(degrees) {
+    return degrees * (Math.PI / 180)
+}
+
 function validNewObjectSettings() {
     let TInput = document.getElementById('settingsT')
 
@@ -76,6 +82,7 @@ function validNewObjectSettings() {
 function getNewObjectSettings() {
     let colorInput = document.getElementById('settingsColor')
     let nameInput = document.getElementById('settingsName')
+    let angleInput = document.getElementById('settingsAngle')
     let TInput = document.getElementById('settingsT')
 
     let connectionForceInput = document.getElementById('settingsConnectionForce')
@@ -83,6 +90,7 @@ function getNewObjectSettings() {
     return {
         color: colorInput.value,
         name: nameInput.value,
+        angle: getRads(angleInput.value),
         frequency: +TInput.value,
         connectivity: +connectionForceInput.value
     }
@@ -103,12 +111,12 @@ function download(filename, text) {
 }
 
 
-
 class FrameObject {
     constructor(props) {
         this.id = Math.random().toString(16).slice(2)
         this.color = props.color || '#00D1E0'
         this.name = props.name || 'default'
+        this.angle = props.angle || 1
         this.frequency = props.frequency || 2
         this.connectivity = props.connectivity || 2
     }

@@ -87,7 +87,7 @@ body {
         &:hover {
             background-color: #6b2d00;
         }
-        &::-webkit-file-upload-button {
+        &::file-selector-button {
             visibility: hidden;
         }
     }

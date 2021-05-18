@@ -86,7 +86,7 @@ body {
 .settings__upload-btn:hover {
   background-color: #6b2d00;
 }
-.settings__upload-btn::-webkit-file-upload-button {
+.settings__upload-btn::file-selector-button {
   visibility: hidden;
 }
 .settings__export-btn {
