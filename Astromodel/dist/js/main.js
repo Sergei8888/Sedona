@@ -4,6 +4,7 @@ async function postData(url = '', data = {}) {
     const response = await fetch(url, {
         method: 'POST', // *GET, POST, PUT, DELETE, etc.
         headers: {
+            'Access-Token': 'dDha03LqkyCYI6NyRZysPXukX',
             'Content-Type': 'application/json',
         },
         body: JSON.stringify(data) // body data type must match "Content-Type" header
@@ -182,7 +183,7 @@ let vm = new Vue({
         },
 
         updateAnim() {
-            postData('http://95.55.247.243:80/api/kuramoto/data/trade/dDha03LqkyCYI6NyRZysPXukX', {
+            postData('http://xenofium-astromode.herokuapp.com/api/kuramoto/data/trade/', {
                     fps: 60,
                     objects: this.formattedObjectList,
                 })
