@@ -170,7 +170,7 @@ let vm = new Vue({
         },
 
         updateAnim() {
-            postData('https:xenofium-astromodel.herokuapp.com/api/kuramoto/data/trade/', {
+            postData('https://xenofium-astromodel.herokuapp.com/api/kuramoto/data/trade/', {
                     fps: 60,
                     objects: this.formattedObjectList,
                 })
