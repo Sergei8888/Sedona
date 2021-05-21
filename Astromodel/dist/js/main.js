@@ -221,6 +221,8 @@ let vm = new Vue({
                 delete formattedObject.id
                 delete formattedObject.name
                 delete formattedObject.color
+                formattedObject.start_angle = formattedObject.angle
+                delete formattedObject.angle
                 formattedObjectList[`${object.id}`] = formattedObject
             }
 
