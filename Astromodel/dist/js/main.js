@@ -4,6 +4,7 @@ async function postData(url = '', data = {}) {
     const response = await fetch(url, {
         method: 'POST', // *GET, POST, PUT, DELETE, etc.
         headers: {
+            'Access-Token': 'dDha03LqkyCYI6NyRZysPXukX',
             'Content-Type': 'application/json',
         },
         body: JSON.stringify(data) // body data type must match "Content-Type" header
@@ -65,17 +66,16 @@ function getRad(degrees) {
 
 function validNewObjectSettings() {
     let TInput = document.getElementById('settingsT')
-
+    let angleInput = document.getElementById('settingsAngle')
     let connectionForceInput = document.getElementById('settingsConnectionForce')
 
-    numberInputs = [TInput, connectionForceInput]
+    numberInputs = [TInput, angleInput, connectionForceInput]
 
     for (input of numberInputs) {
         if (isNaN(+input.value)) {
             return false
         }
     }
-
     return true
 }
 
@@ -134,7 +134,7 @@ let vm = new Vue({
             Swal.fire(alerts.getSettingsAlert()).then((result) => {
                 if (result.isConfirmed) {
                     if (!validNewObjectSettings()) {
-                        Swal.fire(errorAlert)
+                        Swal.fire(alerts.errorAlert)
                     } else {
                         this.objectList.push(new FrameObject(getNewObjectSettings()))
                         this.checkScrollingListMargin('future')
@@ -182,7 +182,7 @@ let vm = new Vue({
         },
 
         updateAnim() {
-            postData('http://95.55.247.243:80/api/kuramoto/data/trade/dDha03LqkyCYI6NyRZysPXukX', {
+            postData('https:xenofium-astromodel.herokuapp.com/api/kuramoto/data/trade/', {
                     fps: 60,
                     objects: this.formattedObjectList,
                 })
