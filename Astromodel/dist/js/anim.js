@@ -1,3 +1,4 @@
+
 let BALLS = {
     current: null,
     frames: [],
@@ -14,29 +15,18 @@ function setup() {
 }
 
 function onData(data) {
-    let framesCount
-
-    //////////////////////////////////////////////////////////////////
-
-    // framesCount = data.framesCount
-    framesCount = 1200
-
-    //////////////////////////////////////////////////////////////////
+    // let framesCount = data.framesCount
+    let framesCount = 1200
 
     for (let i = 0; i < framesCount; i++) {
         let frame = {}
         for (id in data.objects) {
             frame[id] = data.objects[id][i]
-
-            //////////////////////////////////////////////////////////////////
-
-            // if (!i) {BALLS.colors[id] = data.colors[id]}
-            if (!i) { BALLS.colors[id] = vm.objectList.filter((obj) => (obj.id === id))[0].color }
-
-            //////////////////////////////////////////////////////////////////
+            if (!i) {BALLS.colors[id] = vm.objectList.filter((obj) => (obj.id === id))[0].color}
         }
         BALLS.frames.push(frame)
     }
+    BALLS.framesCount = framesCount
     BALLS.current = 0
 }
 
@@ -56,17 +46,34 @@ function draw() {
     rect(size * 0.1, size * 0.5, size * 0.08, size * 0.02, size * 0.02)
 
     if (BALLS.current !== null) {
+
         let frame = BALLS.current
+        let massCenterXArray = []
+        let massCenterYArray = []
+
         for (id in BALLS.colors) {
             fill(BALLS.colors[id])
             let angle = BALLS.frames[frame][id]
-            circle(
-                size * 0.5 + Math.cos(angle) * size * 0.4,
-                size * 0.5 - Math.sin(angle) * size * 0.4,
-                size * 0.07,
-            )
+            let x = size * 0.5 + Math.cos(angle) * size * 0.4
+            let y = size * 0.5 - Math.sin(angle) * size * 0.4
+            massCenterXArray.push(x)
+            massCenterYArray.push(y)
+            circle(x, y, size * 0.07)
         }
+        massCenterX = massCenterXArray.reduce((a, b) => a + b) / massCenterXArray.length
+        massCenterY = massCenterYArray.reduce((a, b) => a + b) / massCenterYArray.length
+
+        fill(255, 100)
+        circle(massCenterX, massCenterY, size * 0.11)
+
         BALLS.current++
+        if (BALLS.current === BALLS.framesCount) {
+            BALLS = {
+                current: null,
+                frames: [],
+                colors: {}
+            }
+        }
     }
     pop()
 }
