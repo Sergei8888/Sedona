@@ -1,6 +1,6 @@
 body {
-  background-color: #B8B2B2;
   font-family: "Lato", sans-serif;
+  background-color: #b8b2b2;
 }
 
 #app {
@@ -9,37 +9,38 @@ body {
 
 .visually-hidden {
   position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
   width: 1px;
   min-width: initial;
   height: 1px;
   min-height: initial;
   margin: -1px;
-  border: 0;
   padding: 0;
   white-space: nowrap;
+  border: 0;
   clip-path: inset(100%);
-  clip: rect(0 0 0 0);
-  overflow: hidden;
 }
 
 .anim-frame {
   display: flex;
-  justify-content: center;
   align-items: center;
   flex-grow: 1;
+  justify-content: center;
   padding: 80px 40px;
+  background-color: #222222;
 }
 .anim-frame__canvas {
   background-color: #373737;
 }
 
 .settings {
-  flex-direction: column;
   display: flex;
+  flex-direction: column;
   min-width: 320px;
   min-height: 100vh;
-  background-color: #272727;
   transition: 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+  background-color: #272727;
 }
 .settings__object-wrapper {
   display: flex;
@@ -66,22 +67,22 @@ body {
 .settings__update-btn, .settings__upload-btn, .settings__show-guide-btn, .settings__export-btn {
   width: 60px;
   height: 60px;
-  background-size: 40%;
-  background-position: center;
-  background-repeat: no-repeat;
   transition: 0.2s;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 40%;
 }
 .settings__update-btn {
-  background-color: #B5AD00;
+  background-color: #b5ad00;
   background-image: url(../img/update.svg);
 }
 .settings__update-btn:hover {
   background-color: #9b9300;
 }
 .settings__upload-btn {
-  background-image: url(../img/upload.svg);
-  background-color: #813600;
   transform: rotate(0.5turn);
+  background-color: #813600;
+  background-image: url(../img/upload.svg);
 }
 .settings__upload-btn:hover {
   background-color: #6b2d00;
@@ -90,16 +91,16 @@ body {
   visibility: hidden;
 }
 .settings__export-btn {
-  background-image: url(../img/upload.svg);
   background-color: #2b86d1;
+  background-image: url(../img/upload.svg);
 }
 .settings__export-btn:hover {
   background-color: #1e6197;
 }
 .settings__show-guide-btn {
-  background-size: 29%;
-  background-image: url(../img/guide.svg);
   background-color: #9e9e9e;
+  background-image: url(../img/guide.svg);
+  background-size: 29%;
 }
 .settings__show-guide-btn:hover {
   background-color: #757575;
@@ -108,9 +109,9 @@ body {
   width: 20px;
   height: 20px;
   margin-left: auto;
+  transition: 0.3s ease-in-out;
   background-image: url(../img/settings.svg);
   background-size: contain;
-  transition: 0.3s ease-in-out;
 }
 .settings__object-settings-btn:hover {
   transform: rotate(0.5turn);
@@ -119,11 +120,11 @@ body {
   width: 20px;
   height: 20px;
   margin-left: 20px;
-  background-image: url(../img/delete.svg);
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
   transition: 0.2s;
+  background-image: url(../img/delete.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
 }
 .settings__delete-object-btn:hover {
   transform: scale(1.15);
@@ -153,8 +154,8 @@ body {
 }
 
 .object-list {
-  max-height: 70vh;
   overflow: auto;
+  max-height: 70vh;
 }
 .object-list__item {
   position: relative;
@@ -184,14 +185,14 @@ body {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #C4C4C4;
   border-radius: 3px;
+  background: #c4c4c4;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #6A6A6A;
   border-radius: 3px;
+  background: #6a6a6a;
 }
 
 .add-object-btn {

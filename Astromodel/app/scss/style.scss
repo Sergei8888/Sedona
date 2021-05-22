@@ -1,6 +1,6 @@
 body {
-    background-color: #B8B2B2;
     font-family: 'Lato', sans-serif;
+    background-color: #b8b2b2;
 }
 
 #app {
@@ -9,37 +9,38 @@ body {
 
 .visually-hidden {
     position: absolute;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
     width: 1px;
     min-width: initial;
     height: 1px;
     min-height: initial;
     margin: -1px;
-    border: 0;
     padding: 0;
     white-space: nowrap;
+    border: 0;
     clip-path: inset(100%);
-    clip: rect(0 0 0 0);
-    overflow: hidden;
 }
 
 .anim-frame {
     display: flex;
-    justify-content: center;
     align-items: center;
     flex-grow: 1;
+    justify-content: center;
     padding: 80px 40px;
+    background-color: #222222;
     &__canvas {
         background-color: #373737;
     }
 }
 
 .settings {
-    flex-direction: column;
     display: flex;
+    flex-direction: column;
     min-width: 320px;
     min-height: 100vh;
+    transition: .3s cubic-bezier(.075, .82, .165, 1);
     background-color: #272727;
-    transition: 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
     &__object-wrapper {
         display: flex;
         flex-direction: column;
@@ -48,7 +49,7 @@ body {
     }
     &__add-object-btn {
         margin-top: 30px;
-        transition: 0.2s;
+        transition: .2s;
         &:hover {
             background-color: rgb(204, 204, 204);
         }
@@ -68,22 +69,22 @@ body {
     &__export-btn {
         width: 60px;
         height: 60px;
-        background-size: 40%;
-        background-position: center;
+        transition: .2s;
         background-repeat: no-repeat;
-        transition: 0.2s;
+        background-position: center;
+        background-size: 40%;
     }
     &__update-btn {
-        background-color: #B5AD00;
+        background-color: #b5ad00;
         background-image: url(../img/update.svg);
         &:hover {
             background-color: #9b9300;
         }
     }
     &__upload-btn {
-        background-image: url(../img/upload.svg);
+        transform: rotate(.5turn);
         background-color: #813600;
-        transform: rotate(0.5turn);
+        background-image: url(../img/upload.svg);
         &:hover {
             background-color: #6b2d00;
         }
@@ -92,16 +93,16 @@ body {
         }
     }
     &__export-btn {
-        background-image: url(../img/upload.svg);
         background-color: rgb(43, 134, 209);
+        background-image: url(../img/upload.svg);
         &:hover {
             background-color: rgb(30, 97, 151);
         }
     }
     &__show-guide-btn {
-        background-size: 29%;
-        background-image: url(../img/guide.svg);
         background-color: #9e9e9e;
+        background-image: url(../img/guide.svg);
+        background-size: 29%;
         &:hover {
             background-color: #757575;
         }
@@ -110,22 +111,22 @@ body {
         width: 20px;
         height: 20px;
         margin-left: auto;
+        transition: .3s ease-in-out;
         background-image: url(../img/settings.svg);
         background-size: contain;
-        transition: 0.3s ease-in-out;
         &:hover {
-            transform: rotate(0.5turn);
+            transform: rotate(.5turn);
         }
     }
     &__delete-object-btn {
         width: 20px;
         height: 20px;
         margin-left: 20px;
+        transition: .2s;
         background-image: url(../img/delete.svg);
-        background-size: contain;
-        background-position: center;
         background-repeat: no-repeat;
-        transition: 0.2s;
+        background-position: center;
+        background-size: contain;
         &:hover {
             transform: scale(1.15);
         }
@@ -156,8 +157,8 @@ body {
 }
 
 .object-list {
-    max-height: 70vh;
     overflow: auto;
+    max-height: 70vh;
     &__item {
         position: relative;
         display: flex;
@@ -192,17 +193,17 @@ body {
 
 /* Track */
 
- ::-webkit-scrollbar-track {
-    background: #C4C4C4;
+::-webkit-scrollbar-track {
     border-radius: 3px;
+    background: #c4c4c4;
 }
 
 
 /* Handle */
 
- ::-webkit-scrollbar-thumb {
-    background: #6A6A6A;
+::-webkit-scrollbar-thumb {
     border-radius: 3px;
+    background: #6a6a6a;
 }
 
 .add-object-btn {
