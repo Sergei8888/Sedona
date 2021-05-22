@@ -1,4 +1,3 @@
-
 let BALLS = {
     current: null,
     frames: [],
@@ -15,9 +14,7 @@ function setup() {
 }
 
 function onData(data) {
-    // let framesCount = data.framesCount
     let framesCount = 1200
-
     for (let i = 0; i < framesCount; i++) {
         let frame = {}
         for (id in data.objects) {
@@ -67,13 +64,13 @@ function draw() {
         circle(massCenterX, massCenterY, size * 0.11)
 
         BALLS.current++
-        if (BALLS.current === BALLS.framesCount) {
-            BALLS = {
-                current: null,
-                frames: [],
-                colors: {}
+            if (BALLS.current === BALLS.framesCount) {
+                BALLS = {
+                    current: null,
+                    frames: [],
+                    colors: {}
+                }
             }
-        }
     }
     pop()
 }
