@@ -15,6 +15,12 @@ function setup() {
 }
 
 function onData(data) {
+    BALLS = {
+        current: null,
+        frames: [],
+        colors: {},
+        massCenter: []
+    }
     let framesCount = 1200
     for (let i = 0; i < framesCount; i++) {
         let frame = {}
@@ -79,14 +85,7 @@ function draw() {
         BALLS.massCenter.push([massCenterX, massCenterY])
         BALLS.current++
 
-        if (BALLS.current === BALLS.framesCount) {
-            BALLS = {
-                current: null,
-                frames: [],
-                colors: {},
-                massCenter: []
-            }
-        }
+        if (BALLS.current === BALLS.framesCount) {BALLS.current = null}
     }
     pop()
 }
