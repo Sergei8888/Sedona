@@ -64,13 +64,13 @@ function draw() {
         circle(massCenterX, massCenterY, size * 0.11)
 
         BALLS.current++
-            if (BALLS.current === BALLS.framesCount) {
-                BALLS = {
-                    current: null,
-                    frames: [],
-                    colors: {}
-                }
+        if (BALLS.current === BALLS.framesCount) {
+            BALLS = {
+                current: null,
+                frames: [],
+                colors: {}
             }
+        }
     }
     pop()
 }
