@@ -1,7 +1,8 @@
 let BALLS = {
     current: null,
     frames: [],
-    colors: {}
+    colors: {},
+    massCenter: []
 }
 
 function setup() {
@@ -44,13 +45,12 @@ function draw() {
 
     if (BALLS.current !== null) {
 
-        let frame = BALLS.current
         let massCenterXArray = []
         let massCenterYArray = []
 
         for (id in BALLS.colors) {
             fill(BALLS.colors[id])
-            let angle = BALLS.frames[frame][id]
+            let angle = BALLS.frames[BALLS.current][id]
             let x = size * 0.5 + Math.cos(angle) * size * 0.4
             let y = size * 0.5 - Math.sin(angle) * size * 0.4
             massCenterXArray.push(x)
@@ -60,15 +60,31 @@ function draw() {
         massCenterX = massCenterXArray.reduce((a, b) => a + b) / massCenterXArray.length
         massCenterY = massCenterYArray.reduce((a, b) => a + b) / massCenterYArray.length
 
+        if (BALLS.current > 1) {
+            noFill()
+            strokeWeight(size * 0.01)
+            let dashlength = 1
+            for (let i = 0; i < 256 * dashlength; i++) {
+                let id = i - 256 * dashlength - 1 + BALLS.current
+                if (id > 0) {
+                    stroke(255, i / dashlength / 2.55)
+                    line(...BALLS.massCenter[id - 1], ...BALLS.massCenter[id])
+                }
+            }
+            noStroke()
+        }
         fill(255, 100)
         circle(massCenterX, massCenterY, size * 0.11)
 
+        BALLS.massCenter.push([massCenterX, massCenterY])
         BALLS.current++
+
         if (BALLS.current === BALLS.framesCount) {
             BALLS = {
                 current: null,
                 frames: [],
-                colors: {}
+                colors: {},
+                massCenter: []
             }
         }
     }
