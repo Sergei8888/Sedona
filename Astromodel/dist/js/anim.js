@@ -1,4 +1,3 @@
-
 let BALLS = {
     current: null,
     frames: [],
@@ -28,11 +27,11 @@ function onData(data) {
         let frame = {}
         for (id in data.objects) {
             frame[id] = data.objects[id][i]
-            
+
             //////////////////////////////////////////////////////////////////
 
             // if (!i) {BALLS.colors[id] = data.colors[id]}
-            if (!i) {BALLS.colors[id] = vm.objectList.filter((obj) => (obj.id === id))[0].color}
+            if (!i) { BALLS.colors[id] = vm.objectList.filter((obj) => (obj.id === id))[0].color }
 
             //////////////////////////////////////////////////////////////////
         }
