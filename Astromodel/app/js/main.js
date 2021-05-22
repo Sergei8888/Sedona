@@ -104,9 +104,9 @@ class FrameObject {
         this.id = Math.random().toString(16).slice(2)
         this.color = props.color || '#00D1E0'
         this.name = props.name || 'default'
-        this.angle = props.angle || 1
-        this.frequency = props.frequency || 2
-        this.connectivity = props.connectivity || 2
+        this.angle = props.angle || 0
+        this.frequency = props.frequency || 1
+        this.connectivity = props.connectivity || 1
     }
 }
 
@@ -170,10 +170,11 @@ let vm = new Vue({
         },
 
         updateAnim() {
+            console.log(this.formattedObjectList)
             postData('https://xenofium-astromodel.herokuapp.com/api/kuramoto/data/trade/', {
-                    fps: 60,
-                    objects: this.formattedObjectList,
-                }).then(onData);
+                fps: 60,
+                objects: this.formattedObjectList,
+            }).then(onData);
         },
 
         importObjects(evt) {

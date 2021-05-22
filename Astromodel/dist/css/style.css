@@ -34,8 +34,8 @@ body {
 }
 
 .settings {
-  display: flex;
   flex-direction: column;
+  display: flex;
   min-width: 320px;
   min-height: 100vh;
   background-color: #272727;
