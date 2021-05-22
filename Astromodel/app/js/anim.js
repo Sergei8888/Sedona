@@ -14,6 +14,7 @@ function setup() {
 }
 
 function onData(data) {
+    console.log(data)
     let framesCount
 
     //////////////////////////////////////////////////////////////////
@@ -68,9 +69,9 @@ function draw() {
             )
         }
         BALLS.current++
-        if (BALLS.current === BALLS.framesCount) {
-            BALLS.current = null
-        }
+            if (BALLS.current === BALLS.framesCount) {
+                BALLS.current = null
+            }
     }
     pop()
 }
