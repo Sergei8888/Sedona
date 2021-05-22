@@ -69,9 +69,20 @@ function draw() {
             )
         }
         BALLS.current++
-            if (BALLS.current === BALLS.framesCount) {
-                BALLS.current = null
+            <<
+            << << < HEAD
+        if (BALLS.current === BALLS.framesCount) {
+            BALLS.current = null
+        } ===
+        === =
+        if (BALLS.current === BALLS.framesCount) {
+            BALLS = {
+                current: null,
+                frames: [],
+                colors: {}
             }
+        } >>>
+        >>> > da3881eeb4ca9799dfc6f5dbefa7f043b6f105e2
     }
     pop()
 }
