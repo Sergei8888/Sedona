@@ -38,6 +38,7 @@ function onData(data) {
         }
         BALLS.frames.push(frame)
     }
+    BALLS.framesCount = framesCount
     BALLS.current = 0
 }
 
@@ -68,6 +69,9 @@ function draw() {
             )
         }
         BALLS.current++
+        if (BALLS.current === BALLS.framesCount) {
+            BALLS.current = null
+        }
     }
     pop()
 }
