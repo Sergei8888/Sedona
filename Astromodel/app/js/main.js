@@ -163,13 +163,7 @@ let vm = new Vue({
         },
 
         changeSettings(object) {
-            Swal.fire(alerts.getSettingsAlert(object.name)).then((result) => {
-                if (result.isConfirmed) {
-                    if (!validNewObjectSettings()) {
-                        Swal.fire(alerts.errorAlert)
-                    } else Object.assign(object, this.getNewObjectSettings())
-                }
-            })
+            let alertState = Swal.fire(alerts.getSettingsAlert(object.name))
 
             let colorInput = document.getElementById('settingsColor')
             let nameInput = document.getElementById('settingsName')
@@ -179,10 +173,17 @@ let vm = new Vue({
 
             colorInput.value = object.color
             nameInput.value = object.name
-            angleInput.value = getDeg(object.angle)
+            angleInput.value = Math.round(getDeg(object.angle))
             TInput.value = object.frequency
             connectionForceInput.value = object.connectivity
 
+            alertState.then((result) => {
+                if (result.isConfirmed) {
+                    if (!validNewObjectSettings()) {
+                        Swal.fire(alerts.errorAlert)
+                    } else Object.assign(object, this.getNewObjectSettings())
+                }
+            })
         },
 
         updateAnim() {
