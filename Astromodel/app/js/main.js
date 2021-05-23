@@ -52,6 +52,10 @@ function getRad(degrees) {
     return degrees * (Math.PI / 180)
 }
 
+function getDeg(radians) {
+    return radians / (Math.PI / 180)
+}
+
 function validNewObjectSettings() {
     let TInput = document.getElementById('settingsT')
     let angleInput = document.getElementById('settingsAngle')
@@ -67,23 +71,6 @@ function validNewObjectSettings() {
     return true
 }
 
-function getNewObjectSettings() {
-    let colorInput = document.getElementById('settingsColor')
-    let nameInput = document.getElementById('settingsName')
-    let angleInput = document.getElementById('settingsAngle')
-    let TInput = document.getElementById('settingsT')
-
-    let connectionForceInput = document.getElementById('settingsConnectionForce')
-
-    return {
-        color: colorInput.value,
-        name: nameInput.value,
-        angle: getRad(angleInput.value),
-        frequency: +TInput.value,
-        connectivity: +connectionForceInput.value
-    }
-
-}
 
 function download(filename, text) {
     var element = document.createElement('a');
@@ -124,7 +111,7 @@ let vm = new Vue({
                     if (!validNewObjectSettings()) {
                         Swal.fire(alerts.errorAlert)
                     } else {
-                        this.objectList.push(new FrameObject(getNewObjectSettings()))
+                        this.objectList.push(new FrameObject(this.getNewObjectSettings()))
                         this.checkScrollingListMargin('future')
                     }
                 }
@@ -132,6 +119,22 @@ let vm = new Vue({
 
         },
 
+        getNewObjectSettings: function() {
+            let colorInput = document.getElementById('settingsColor')
+            let nameInput = document.getElementById('settingsName')
+            let angleInput = document.getElementById('settingsAngle')
+            let TInput = document.getElementById('settingsT')
+            let connectionForceInput = document.getElementById('settingsConnectionForce')
+
+            return {
+                color: colorInput.value,
+                name: nameInput.value,
+                angle: getRad(angleInput.value),
+                frequency: +TInput.value,
+                connectivity: +connectionForceInput.value
+            }
+
+        },
         deleteObject(object) {
             for (currentObject of this.objectList) {
                 if (currentObject === object) {
@@ -164,9 +167,22 @@ let vm = new Vue({
                 if (result.isConfirmed) {
                     if (!validNewObjectSettings()) {
                         Swal.fire(alerts.errorAlert)
-                    } else Object.assign(object, getNewObjectSettings())
+                    } else Object.assign(object, this.getNewObjectSettings())
                 }
             })
+
+            let colorInput = document.getElementById('settingsColor')
+            let nameInput = document.getElementById('settingsName')
+            let angleInput = document.getElementById('settingsAngle')
+            let TInput = document.getElementById('settingsT')
+            let connectionForceInput = document.getElementById('settingsConnectionForce')
+
+            colorInput.value = object.color
+            nameInput.value = object.name
+            angleInput.value = getDeg(object.angle)
+            TInput.value = object.frequency
+            connectionForceInput.value = object.connectivity
+
         },
 
         updateAnim() {

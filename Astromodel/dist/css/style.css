@@ -1,6 +1,6 @@
 body {
-  font-family: "Lato", sans-serif;
   background-color: #b8b2b2;
+  font-family: "Lato", sans-serif;
 }
 
 #app {
@@ -28,7 +28,7 @@ body {
   flex-grow: 1;
   justify-content: center;
   padding: 80px 40px;
-  background-color: #222222;
+  background-color: #222;
 }
 .anim-frame__canvas {
   background-color: #373737;
@@ -68,6 +68,7 @@ body {
   width: 60px;
   height: 60px;
   transition: 0.2s;
+  border-radius: 3px;
   background-repeat: no-repeat;
   background-position: center;
   background-size: 40%;
@@ -85,6 +86,7 @@ body {
   background-image: url(../img/upload.svg);
 }
 .settings__upload-btn:hover {
+  cursor: pointer;
   background-color: #6b2d00;
 }
 .settings__upload-btn::file-selector-button {
