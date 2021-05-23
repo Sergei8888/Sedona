@@ -26,7 +26,7 @@ function onData(data) {
         let frame = {}
         for (id in data.objects) {
             frame[id] = data.objects[id][i]
-            if (!i) {BALLS.colors[id] = vm.objectList.filter((obj) => (obj.id === id))[0].color}
+            if (!i) { BALLS.colors[id] = vm.objectList.filter((obj) => (obj.id === id))[0].color }
         }
         BALLS.frames.push(frame)
     }
@@ -85,7 +85,7 @@ function draw() {
         BALLS.massCenter.push([massCenterX, massCenterY])
         BALLS.current++
 
-        if (BALLS.current === BALLS.framesCount) {BALLS.current = null}
+            if (BALLS.current === BALLS.framesCount) { BALLS.current = null }
     }
     pop()
 }

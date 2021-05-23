@@ -59,8 +59,9 @@ body {
   margin-top: 0;
 }
 .settings__ui {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template: 1fr/repeat(4, 1fr);
+  justify-items: center;
   padding: 20px;
   background-color: #3f3f3f;
 }
@@ -224,7 +225,18 @@ body {
   }
 }
 @media (max-width: 780px) {
+  .settings {
+    min-width: 260px;
+  }
   .settings__form {
     padding: 20px 0;
+  }
+  .settings__ui {
+    grid-template: 1fr/repeat(2, 1fr);
+    grid-row-gap: 20px;
+  }
+
+  .swal2-content {
+    padding: 0 !important;
   }
 }
