@@ -5,12 +5,20 @@ let BALLS = {
     massCenter: []
 }
 
+function canvasGetSize() {
+    let virtualHeight = windowHeight - 160
+    let virtualWidth
+    if (windowWidth > 780) {
+        virtualWidth = windowWidth - 400
+    } else {
+        virtualWidth = windowWidth - 340
+    }
+    return Math.min(virtualWidth, virtualHeight)
+}
+
 function setup() {
     let animFrame = document.getElementById('anim-frame')
-    let style = getComputedStyle(animFrame)
-    let width = parseInt(style.width, 10) - parseInt(style.paddingLeft, 10) - parseInt(style.paddingRight, 10)
-    let height = parseInt(style.height, 10) - parseInt(style.paddingTop, 10) - parseInt(style.paddingBottom, 10)
-    let canvas = createCanvas(Math.min(width, height), Math.min(width, height))
+    let canvas = createCanvas(canvasGetSize(), canvasGetSize())
     canvas.parent('anim-frame')
 }
 
@@ -79,8 +87,8 @@ function draw() {
             }
             noStroke()
         }
-        fill(255, 100)
-        circle(massCenterX, massCenterY, size * 0.11)
+        fill(255, 200)
+        circle(massCenterX, massCenterY, size * 0.04)
 
         BALLS.massCenter.push([massCenterX, massCenterY])
         BALLS.current++
@@ -88,4 +96,9 @@ function draw() {
             if (BALLS.current === BALLS.framesCount) { BALLS.current = null }
     }
     pop()
+}
+
+function windowResized() {
+    let animFrame = document.getElementById('anim-frame')
+    resizeCanvas(canvasGetSize(), canvasGetSize())
 }
