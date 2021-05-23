@@ -14,12 +14,14 @@ async function postData(url = '', data = {}) {
 
 // App alerts
 let alerts = {
-    errorAlert: {
-        position: 'top-end',
-        icon: 'error',
-        title: 'Some number properties weren`t numbers',
-        showConfirmButton: false,
-        timer: 2500
+    getErrorAlert(string) {
+        return {
+            position: 'top-end',
+            icon: 'error',
+            title: string,
+            showConfirmButton: false,
+            timer: 2500
+        }
     },
 
     guideAlert: {
@@ -120,7 +122,7 @@ let vm = new Vue({
             Swal.fire(alerts.getSettingsAlert()).then((result) => {
                 if (result.isConfirmed) {
                     if (!validNewObjectSettings()) {
-                        Swal.fire(alerts.errorAlert)
+                        Swal.fire(alerts.getErrorAlert('Some number properties were not numbers'))
                     } else {
                         this.objectList.push(new FrameObject(this.getNewObjectSettings()))
                         this.checkScrollingListMargin('future')
@@ -191,18 +193,32 @@ let vm = new Vue({
             alertState.then((result) => {
                 if (result.isConfirmed) {
                     if (!validNewObjectSettings()) {
-                        Swal.fire(alerts.errorAlert)
+                        Swal.fire(alerts.getErrorAlert('Some number properties were not numbers'))
                     } else Object.assign(object, this.getNewObjectSettings())
                 }
             })
         },
 
         updateAnim() {
+            console.log(this.objectList)
+                //check number of oscillators
+            if (this.objectList.length < 2) {
+                Swal.fire(alerts.getErrorAlert('Must be 2 or more oscillators'))
+                return
+            }
+
+            //show loading banner
+            let requestIndicator = document.getElementById('requestIndicator')
+            requestIndicator.style.display = 'block'
+
             postData('https://xenofium-astromodel.herokuapp.com/api/kuramoto/data/trade/', {
                 fps: 60,
                 time: 360,
                 objects: this.formattedObjectList,
-            }).then(onData);
+            }).then((data) => {
+                onData(data)
+                requestIndicator.style.display = 'none'
+            });
         },
 
         importObjects(evt) {
@@ -212,7 +228,7 @@ let vm = new Vue({
             reader.readAsText(file)
             reader.onload = () => {
                 this.objectList = JSON.parse(reader.result);
-                this.updateAnim()
+                this.checkScrollingListMargin('future')
             }
         },
 

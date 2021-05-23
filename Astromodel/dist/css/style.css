@@ -22,6 +22,27 @@ body {
   clip-path: inset(100%);
 }
 
+.loading-indicator {
+  display: none;
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  width: 50px;
+  height: 50px;
+  z-index: 30;
+  background-size: contain;
+  background-image: url(../img/loading.svg);
+  animation: loading 1s linear infinite;
+}
+
+@keyframes loading {
+  0% {
+    transform: rotate(0turn);
+  }
+  100% {
+    transform: rotate(1turn);
+  }
+}
 .anim-frame {
   display: flex;
   align-items: center;
@@ -60,10 +81,10 @@ body {
 }
 .settings__ui {
   display: grid;
-  grid-template: 1fr/repeat(4, 1fr);
-  justify-items: center;
   padding: 20px;
   background-color: #3f3f3f;
+  grid-template: 1fr/repeat(4, 1fr);
+  justify-items: center;
 }
 .settings__update-btn, .settings__upload-btn, .settings__show-guide-btn, .settings__export-btn {
   width: 60px;
@@ -136,6 +157,7 @@ body {
   display: flex;
   flex-direction: column;
   padding: 20px 80px;
+  text-align: left;
 }
 .settings__form label {
   text-align-last: left;
