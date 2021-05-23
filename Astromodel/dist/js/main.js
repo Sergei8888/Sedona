@@ -213,7 +213,7 @@ let vm = new Vue({
 
             postData('https://xenofium-astromodel.herokuapp.com/api/kuramoto/data/trade/', {
                 fps: 60,
-                time: 360,
+                time: 600,
                 objects: this.formattedObjectList,
             }).then((data) => {
                 onData(data)

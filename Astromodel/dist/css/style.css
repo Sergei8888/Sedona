@@ -103,7 +103,6 @@ body {
   background-color: #9b9300;
 }
 .settings__upload-btn {
-  transform: rotate(0.5turn);
   background-color: #813600;
   background-image: url(../img/upload.svg);
 }
@@ -115,6 +114,7 @@ body {
   visibility: hidden;
 }
 .settings__export-btn {
+  transform: rotate(0.5turn);
   background-color: #2b86d1;
   background-image: url(../img/upload.svg);
 }

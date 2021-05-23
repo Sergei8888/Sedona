@@ -106,7 +106,6 @@ body {
         }
     }
     &__upload-btn {
-        transform: rotate(.5turn);
         background-color: #813600;
         background-image: url(../img/upload.svg);
         &:hover {
@@ -118,6 +117,7 @@ body {
         }
     }
     &__export-btn {
+        transform: rotate(.5turn);
         background-color: rgb(43, 134, 209);
         background-image: url(../img/upload.svg);
         &:hover {
