@@ -25,11 +25,10 @@
             <div class="settings__object-wrapper">
                 <ul class="object-list settings__object-list" id="scrollingList">
                     <li v-for="object in objectList" class="object-list__item">
-                        <div :style="{backgroundColor: object.color}" class="settings__color-indicator"></div>
+                        <div @click="randomizeObjectColor(object)" :style="{backgroundColor: object.color}" class="settings__color-indicator"></div>
                         <span class="settings__object-name">{{ object.name }}</span>
                         <button aria-label="change oscillator settings" @click="changeSettings(object)" class="settings__object-settings-btn"></button>
                         <button aria-label="delete oscillator" @click="deleteObject(object)" class="settings__delete-object-btn"></button>
-
                     </li>
                 </ul>
                 <button aria-label="add oscillator" @click="addObject" :class="{['settings__add-object-btn_first-in-list']: objectList.length == 0}" class="add-object-btn settings__add-object-btn">+</button>

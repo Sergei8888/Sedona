@@ -23,16 +23,16 @@ body {
 }
 
 .loading-indicator {
-    display: none;
     position: absolute;
+    z-index: 30;
     top: 25px;
     left: 25px;
+    display: none;
     width: 50px;
     height: 50px;
-    z-index: 30;
-    background-size: contain;
-    background-image: url(../img/loading.svg);
     animation: loading 1s linear infinite;
+    background-image: url(../img/loading.svg);
+    background-size: contain;
 }
 
 @keyframes loading {
@@ -178,6 +178,7 @@ body {
         width: 25px;
         height: 25px;
         margin-right: 20px;
+        cursor: pointer;
         border-radius: 50%;
     }
 }

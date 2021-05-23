@@ -228,6 +228,10 @@ let vm = new Vue({
         showGuide() {
             Swal.fire(alerts.guideAlert)
         },
+
+        randomizeObjectColor(object) {
+            object.color = '#' + Math.random().toString(16).slice(3, 9)
+        }
     },
 
     computed: {
