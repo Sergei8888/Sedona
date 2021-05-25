@@ -535,8 +535,11 @@ body {
     padding: 40px 35px;
   }
 }
-@media (max-width: 360px) {
+@media (max-width: 380px) {
   .sign-up {
     padding: 40px 25px;
+  }
+  .sign-up__field button {
+    padding: 0 15px;
   }
 }
