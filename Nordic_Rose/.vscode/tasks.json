@@ -8,8 +8,8 @@
             "label": "gulp: dev"
         },
         {
-            "type": "gulp",
-            "task": "build --hard",
+            "type": "shell",
+            "command": "gulp build --hard",
             "group": "build",
             "problemMatcher": [],
             "label": "gulp: build"
