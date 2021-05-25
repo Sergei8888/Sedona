@@ -530,7 +530,7 @@ body {
     border-bottom: 1px solid #EAEAEA;
   }
 }
-@media (max-width: 400px) {
+@media (max-width: 415px) {
   .sign-up {
     padding: 40px 35px;
   }
