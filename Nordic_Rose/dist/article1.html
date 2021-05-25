@@ -92,7 +92,6 @@
             <p class="header__desc">Why Ghost (& Figma) instead of Medium, WordPress or other options?</p>
         </div>
         <div class="header__img"></div>
-
     </header>
     <main class="main">
         <article class="article">
@@ -107,10 +106,10 @@
                     </div>
                 </div>
                 <div class="social article-header__social">
-                    <button class="social__btn">
+                    <button aria-label="Author facebook" class="social__btn">
                         <div class="social__icon"></div>
                     </button>
-                    <button class="social__btn">
+                    <button aria-label="Author twitter" class="social__btn">
                         <div class="social__icon"></div>
                     </button>
                 </div>
@@ -122,7 +121,7 @@
             <h2>Next on the pipeline</h2>
             <p class="article__text-paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu velit tempus erat egestas efficitur. In hac habitasse platea dictumst. Fusce a nunc eget ligula suscipit finibus. Aenean pharetra quis lacus at viverra.
             </p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p class="article__text-paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             <figure class="article__figure">
                 <img class="article__img" src="./img/article_img1.jpg" alt="ancient stone sculpture">
                 <figcaption class="article__figcaption">Image caption centered this way and I’ll make this a bit longer to indicate the amount of line-height.</figcaption>
@@ -163,7 +162,69 @@
             </footer>
         </article>
     </main>
-    </div>
+    <section class="read-next">
+        <div class="read-next__eyes"></div>
+        <h2 class="read-next__title">What to read next</h2>
+        <ul class="articles-list read-next__articles-list">
+            <li class="articles-list__item">
+                <a href="article1.html">
+                    <article class="articles-list__article">
+                        <img src="./img/article_1.webp" width="304px" height="176px" alt="abstract decorative img">
+                        <p>Here are some things you should know regarding how we work</p>
+                    </article>
+                </a>
+            </li>
+            <li class="articles-list__item">
+                <a href="#">
+                    <article class="articles-list__article">
+                        <img src="./img/article_2.webp" width="304px" height="176px" alt="abstract decorative img">
+                        <p>Granny gives everyone the finger, and other tips from OFFF Barcelona</p>
+                    </article>
+                </a>
+            </li>
+            <li class="articles-list__item">
+                <a href="#">
+                    <article class="articles-list__article">
+                        <img src="./img/article_3.webp" width="304px" height="176px" alt="abstract decorative img">
+                        <p>Hello world, or, in other words, why this blog exists</p>
+                    </article>
+                </a>
+            </li>
+            <li class="articles-list__item">
+                <a href="#">
+                    <article class="articles-list__article">
+                        <img src="./img/article_4.webp" width="304px" height="176px" alt="abstract decorative img">
+                        <p>Here are some things you should know regarding how we work</p>
+                    </article>
+                </a>
+            </li>
+            <li class="articles-list__item">
+                <a href="#">
+                    <article class="articles-list__article">
+                        <img src="./img/article_5.webp" width="304px" height="176px" alt="abstract decorative img">
+                        <p>Connecting artificial intelligence with digital product design</p>
+                    </article>
+                </a>
+            </li>
+            <li class="articles-list__item">
+                <a href="#">
+                    <article class="articles-list__article">
+                        <img src="./img/article_6.webp" width="304px" height="176px" alt="abstract decorative img">
+                        <p>It’s all about finding the perfect balance</p>
+                    </article>
+                </a>
+            </li>
+        </ul>
+        <form class="sign-up">
+            <h3 class="sign-up__title">Sign up for the newsletter</h3>
+            <p class="sign-up__description">If you want relevant updates occasionally, sign up for the private newsletter. Your email is never shared.</p>
+            <div class="sign-up__field">
+                <label class="visually-hidden" for="sign-up_email">Write your email to sign up for news</label>
+                <input type="email" name="sign-up_email" placeholder="Enter your email..." id="sign-up_email">
+                <button aria-label="Sign up for news" type="submit">Sign up</button>
+            </div>
+        </form>
+    </section>
     <footer class="footer">
         <div class="footer__marquee">
             <span>Growth</span>
