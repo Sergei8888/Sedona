@@ -1,6 +1,7 @@
 @import "fonts.scss";
 @import "nav.scss";
 @import "footer.scss";
+@import "articles-list";
 body {
     font-family: 'grotesque-regular';
 }
@@ -48,22 +49,6 @@ body {
     &__title {
         margin: 64px 0 39px 0;
         font-family: 'Mackay';
-    }
-}
-
-.articles-list {
-    display: grid;
-    justify-content: center;
-    margin-bottom: 115px;
-    grid-template: auto / repeat(2, 304px);
-    grid-gap: 65px 30px;
-    &__article {
-        & p {
-            margin-top: 20px;
-            text-align: center;
-            color: black;
-            font-family: 'grotesque-medium';
-        }
     }
 }
 

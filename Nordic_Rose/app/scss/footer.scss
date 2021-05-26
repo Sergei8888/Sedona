@@ -1,24 +1,24 @@
 .footer {
     display: flex;
+    overflow: hidden;
     align-items: center;
     flex-direction: column;
     padding: 20px 0 30px;
-    background-color: #000;
-    color: white;
     text-align: center;
-    overflow: hidden;
+    color: white;
+    background-color: #000;
     &__marquee {
         overflow: hidden;
-        white-space: nowrap;
         /* Запрещаем переносы слов */
         animation: marquee 25s linear infinite;
+        white-space: nowrap;
         letter-spacing: 3px;
     }
     & span {
         margin-right: 10px;
         text-transform: uppercase;
-        font-size: 20px;
         font-family: 'grotesque-regular';
+        font-size: 20px;
     }
     & span:nth-child(2n) {
         font-family: 'grotesque-black';
@@ -43,8 +43,8 @@
     &__link {
         display: flex;
         justify-content: center;
-        color: inherit;
         text-decoration: underline;
+        color: inherit;
         &:hover {
             color: rgb(218, 218, 218);
         }
