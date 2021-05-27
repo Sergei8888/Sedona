@@ -29,7 +29,7 @@ function onData(data) {
         colors: {},
         massCenter: []
     }
-    let framesCount = 1200
+    let framesCount = data.frames
     for (let i = 0; i < framesCount; i++) {
         let frame = {}
         for (id in data.objects) {
