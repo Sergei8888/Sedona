@@ -1,0 +1,167 @@
+
+body {
+	max-width: 960px;
+	margin: 200px auto;
+	display: flex;
+	background: #222;
+	justify-content: space-around;
+}
+
+.loader {
+	width: 200px;
+	height: 200px;
+	position: relative;
+	animation: scale 5s steps(1, end) infinite;
+}
+
+.box {
+	position: fixed;
+	transform-origin: 0px 0px;
+	animation: flip 5s ease infinite;
+}
+
+.bg {
+	position: absolute;
+	height: 260px;
+	width: 260px;
+	border: 3px solid #fff;
+	background: #555;
+	border-radius: 10px;
+	animation: squish 5s ease infinite;
+}
+
+.bg div:nth-child(1) {
+	animation: svg_steps_one 5s steps(1, end) infinite;
+}
+
+.bg div:nth-child(1) svg {
+	animation: svg_ease_one 5s ease infinite;
+}
+
+.bg div:nth-child(1) svg path {
+	fill: #fff;
+	transform: scale(0.7) translate(20%, 120%) rotate(-90deg);
+}
+
+.bg div:nth-child(2) {
+	transform: translate(0%, -100%) scale(0.8) rotate(180deg);
+	animation: svg_steps_two 5s steps(1, end) infinite;
+}
+
+.bg div:nth-child(2) svg {
+	animation: svg_ease_two 5s ease infinite;
+}
+
+.bg div:nth-child(2) svg path {
+	fill: #fff;
+}
+
+.bg div:nth-child(3) {
+	transform: translate(0%, -205%) scale(0.7) rotate(90deg);
+	animation: svg_steps_three 5s steps(1, end) infinite;
+}
+
+.bg div:nth-child(3) svg {
+	animation: svg_ease_three 5s ease infinite;
+}
+
+.bg div:nth-child(3) svg path {
+	fill: #fff;
+}
+
+.bg div:nth-child(4) {
+	transform: translate(0%, -295%) scale(0.7);
+	animation: svg_steps_four 5s -3.75s steps(1, end) infinite;
+}
+
+.bg div:nth-child(4) svg {
+	animation: svg_ease_four 5s -3.75s ease infinite;
+}
+
+.bg div:nth-child(4) svg path {
+	fill: #fff;
+}
+
+.line {
+	position: absolute;
+	height: 20px;
+	width: 320px;
+	background: #fff;
+	border-radius: 10px;
+	transform: translate(-60px, -10px);
+}
+
+@keyframes flip {
+	0% { transform: rotate(0deg); }
+	25% { transform: rotate(90deg); }
+	50% { transform: rotate(0deg); }
+	75% { transform: rotate(90deg); }
+	100% { transform: rotate(0deg);}
+}
+
+@keyframes squish {
+	0% { transform: translate(-33px, -33px); }
+	25% { transform: translate(-33px, -233px); }
+	50% { transform: translate(-33px, -33px); }
+	75% { transform: translate(-33px, -233px); }
+	100% { transform: translate(-33px, -33px); }
+}
+
+@keyframes scale {
+	0% { transform: scale(1, 1); }
+	25% { transform: scale(1, -1); }
+	50% { transform: scale(-1, -1); }
+	75% { transform: scale(-1, 1); }
+	100% { transform: scale(1, 1); }
+}
+
+@keyframes svg_ease_one {
+	0% { clip-path: polygon(0% 0%, 97% 0%, 97% 0%, 0% 0%); }
+	25% { clip-path: polygon(0% 0%, 97% 0%, 97% 97%, 0% 97%); }
+	50% { clip-path: polygon(0% 0%, 97% 0%, 97% 0%, 0% 0%); }
+}
+
+@keyframes svg_steps_one {
+	0% { transform: scale(1, 1); opacity: 1; }
+	25% { transform: scale(-1, 1); }
+	50% { transform: scale(1, 1); opacity: 0; }
+}
+
+@keyframes svg_ease_two {
+	25% { clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%); }
+	50% { clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%); }
+	75% { clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%); }
+}
+
+@keyframes svg_steps_two {
+	0% { transform: translate(0%, -100%) scale(0.8, -0.8); opacity: 0; }
+	25% { transform: translate(0%, -100%) scale(0.8, -0.8); opacity: 1; }
+	50% { transform: translate(0%, -100%) scale(-0.8, -0.8); }
+	75% { transform: translate(0%, -100%) scale(0.8, -0.8); opacity: 0; }
+}
+
+@keyframes svg_ease_three {
+	50% { clip-path: polygon(0% 0%, 0% 110%, 0% 110%, 0% 0%); }
+	75% { clip-path: polygon(0% 0%, 0% 110%, 110% 110%, 110% 0%); }
+	100% { clip-path: polygon(0% 0%, 0% 110%, 0% 110%, 0% 0%); }
+}
+
+@keyframes svg_steps_three {
+	0% { transform: translate(0%, -205%) scale(0.7, 0.7) rotate(90deg); opacity: 0; }
+	50% { transform: translate(0%, -205%) scale(0.7, 0.7) rotate(90deg); opacity: 1; }
+	75% { transform: translate(0%, -205%) scale(-0.7, 0.7) rotate(90deg); }
+	100% { transform: translate(0%, -205%) scale(0.7, 0.7) rotate(90deg); opacity: 0; }
+}
+
+@keyframes svg_ease_four{
+	50% { clip-path: polygon(100% 100%, 0% 100%, 0% 100%, 100% 100%); }
+	75% { clip-path: polygon(100% 100%, 0% 100%, 0% -10%, 100% -10%); }
+	100% { clip-path: polygon(100% 100%, 0% 100%, 0% 100%, 100% 100%); }
+}
+
+@keyframes svg_steps_four {
+	0% { transform: translate(0%, -295%) scale(0.7, 0.7); opacity: 0; }
+	50% { transform: translate(0%, -295%) scale(0.7, 0.7); opacity: 1; }
+	75% { transform: translate(0%, -295%) scale(-0.7, 0.7); }
+	100% { transform: translate(0%, -295%) scale(0.7, 0.7); opacity: 0; }
+}
