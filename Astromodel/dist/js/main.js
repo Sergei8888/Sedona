@@ -38,6 +38,20 @@ let alerts = {
 
     },
 
+    environmentSettingsAlert: {
+        title: `Environment settings`,
+        html: `<form class="settings__form">
+  <label>Animation time:<input type="text" id="settingsAnimationTime"></label>
+  <label>FPS: <input type="text" id="settingsFPS"></label>
+</form>
+`,
+        width: '60vw',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Apply'
+    },
+
     getSettingsAlert(objectName = 'New') {
         return {
             title: `${objectName} settings`,
@@ -115,6 +129,10 @@ let vm = new Vue({
 
     data: {
         objectList: [new FrameObject({})],
+        environmentSettings: {
+            fps: 60,
+            animationTime: 30, //seconds
+        }
     },
 
     methods: {
@@ -160,10 +178,10 @@ let vm = new Vue({
 
         checkScrollingListMargin(scrollingListStatus) {
             let itemsCounter = 7
-            if (scrollingListStatus == 'future') {
+            if (scrollingListStatus === 'future') {
                 itemsCounter = 8
             }
-            if (scrollingListStatus == 'past') {
+            if (scrollingListStatus === 'past') {
                 itemsCounter = 9
             }
 
@@ -172,6 +190,51 @@ let vm = new Vue({
             } else {
                 scrollingList.classList.remove('object-list_scroll')
             }
+
+        },
+
+        validNewEnvironmentSettings(){
+            let animationTimeInput = document.getElementById('settingsAnimationTime')
+            let FPSInput = document.getElementById('settingsFPS')
+
+            let numberInputs = [animationTimeInput, FPSInput]
+
+            for (input of numberInputs) {
+                if (isNaN(+input.value)) {
+                    return false
+                }
+            }
+
+            if ((animationTimeInput.value === '') || (FPSInput.value === '')) {
+                return false
+            }
+
+            return !((+animationTimeInput.value > 300) || (+FPSInput.value > 240));
+
+        },
+
+        changeEnvironmentSettings(){
+            let alertPromise = Swal.fire(alerts.environmentSettingsAlert)
+
+            let animationTimeInput = document.getElementById('settingsAnimationTime')
+            let FPSInput = document.getElementById('settingsFPS')
+            animationTimeInput.value = this.environmentSettings.animationTime
+            FPSInput.value = this.environmentSettings.fps
+
+            alertPromise.then((result) => {
+                if (result.isConfirmed) {
+                    if (!this.validNewEnvironmentSettings()) {
+                        Swal.fire(alerts.getErrorAlert(`Some number properties were not numbers or Animation time > 300 or fps > 240`))
+                    } else {
+
+
+                        this.environmentSettings = {
+                            fps: +FPSInput.value,
+                            animationTime: +animationTimeInput.value
+                        }
+                    }
+                }
+            })
 
         },
 
@@ -200,8 +263,7 @@ let vm = new Vue({
         },
 
         updateAnim() {
-            console.log(this.objectList)
-                //check number of oscillators
+            //check number of oscillators
             if (this.objectList.length < 2) {
                 Swal.fire(alerts.getErrorAlert('Must be 2 or more oscillators'))
                 return
@@ -211,9 +273,11 @@ let vm = new Vue({
             let requestIndicator = document.getElementById('requestIndicator')
             requestIndicator.style.display = 'block'
 
+            console.log(this.environmentSettings.fps, this.environmentSettings.animationTime)
+            //post oscillators
             postData('https://xenofium-astromodel.herokuapp.com/api/kuramoto/data/trade/', {
-                fps: 60,
-                time: 30,
+                fps: this.environmentSettings.fps,
+                time: this.environmentSettings.animationTime,
                 objects: this.formattedObjectList,
             }).then((data) => {
                 onData(data)
