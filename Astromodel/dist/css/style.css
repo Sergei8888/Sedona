@@ -5,12 +5,14 @@ html, body {
 body {
   background-color: #b8b2b2;
   font-family: "Lato", sans-serif;
-  overflow: hidden;
 }
 
 #app {
   display: flex;
+  position: relative;
+  width: 100%;
   height: 100%;
+  overflow: hidden;
 }
 
 .settings-btn {
@@ -307,5 +309,9 @@ body {
     background-color: #9e9e9e;
     border-radius: 2px;
     transform: translate(0, -50%);
+  }
+  .settings__object-name {
+    max-width: 50px;
+    overflow: hidden;
   }
 }
