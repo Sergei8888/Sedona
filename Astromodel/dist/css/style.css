@@ -1,36 +1,49 @@
+html, body {
+  height: 100%;
+}
+
 body {
   background-color: #b8b2b2;
   font-family: "Lato", sans-serif;
+  overflow: hidden;
 }
 
 #app {
   display: flex;
+  height: 100%;
 }
 
-.visually-hidden {
+.settings-btn {
   position: absolute;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  width: 1px;
-  min-width: initial;
-  height: 1px;
-  min-height: initial;
-  margin: -1px;
-  padding: 0;
-  white-space: nowrap;
-  border: 0;
-  clip-path: inset(100%);
+  z-index: 30;
+  top: 25px;
+  right: 25px;
+  width: 40px;
+  height: 40px;
+}
+.settings-btn svg {
+  width: 100%;
+  height: 100%;
+  fill: #9e9e9e;
+  transition: 0.2s linear;
+}
+.settings-btn svg:hover {
+  fill: #c4c4c4;
 }
 
-.enviroment-settings-btn {
+.environment-settings-btn {
   position: absolute;
   z-index: 30;
   bottom: 25px;
   left: 25px;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   background-image: url(../img/settings.svg);
   background-size: contain;
+  transition: 0.3s ease-in-out;
+}
+.environment-settings-btn:hover {
+  transform: rotate(0.5turn);
 }
 
 .loading-indicator {
@@ -67,6 +80,7 @@ body {
 }
 
 .settings {
+  z-index: 50;
   display: flex;
   flex-direction: column;
   min-width: 320px;
@@ -272,5 +286,26 @@ body {
 
   .swal2-content {
     padding: 0 !important;
+  }
+}
+@media screen and (max-width: 700px) {
+  .settings {
+    position: absolute;
+    top: 0;
+    right: -260px;
+    transition: 0.3s linear;
+  }
+  .settings_opened {
+    right: 0;
+  }
+  .settings__close-lip {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    width: 2px;
+    height: 15%;
+    background-color: #9e9e9e;
+    border-radius: 2px;
+    transform: translate(0, -50%);
   }
 }

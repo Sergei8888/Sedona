@@ -121,6 +121,11 @@ let vm = new Vue({
     },
 
     methods: {
+        changeSettingsSidebarVisibility: function (){
+            let settingsSidebar = document.getElementsByClassName('settings')[0]
+            settingsSidebar.classList.toggle('settings_opened')
+        },
+
         addObject: function() {
             Swal.fire(alerts.getSettingsAlert()).then((result) => {
                 if (result.isConfirmed) {
@@ -211,8 +216,6 @@ let vm = new Vue({
                     if (!this.validNewEnvironmentSettings()) {
                         Swal.fire(alerts.getErrorAlert(`Some number properties were not numbers or Animation time > 300 or fps > 240`))
                     } else {
-
-
                         this.environmentSettings = {
                             fps: +FPSInput.value,
                             animationTime: +animationTimeInput.value
