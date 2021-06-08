@@ -2,7 +2,6 @@ let BALLS = {
     current: null,
     frames: [],
     colors: {},
-    massCenter: []
 }
 
 function canvasGetSize() {
@@ -46,54 +45,27 @@ function draw() {
     push()
     let size = width
     noStroke()
-    fill(34)
-    rect(0, 0, size, size, size * 0.04)
     fill(22)
-    circle(size * 0.5, size * 0.5, size * 0.9)
+    circle(size * 0.5, size * 0.5, size)
     fill(34)
-    circle(size * 0.5, size * 0.5, size * 0.7)
+    circle(size * 0.5, size * 0.5, size * 0.8)
     fill(55)
     rectMode('center')
-    rect(size * 0.9, size * 0.5, size * 0.08, size * 0.02, size * 0.02)
-    rect(size * 0.1, size * 0.5, size * 0.08, size * 0.02, size * 0.02)
+    rect(size * 0.95, size * 0.5, size * 0.08, size * 0.02, size * 0.02)
+    rect(size * 0.05, size * 0.5, size * 0.08, size * 0.02, size * 0.02)
 
     if (BALLS.current !== null) {
-
-        let massCenterXArray = []
-        let massCenterYArray = []
 
         for (id in BALLS.colors) {
             fill(BALLS.colors[id])
             let angle = BALLS.frames[BALLS.current][id]
-            let x = size * 0.5 + Math.cos(angle) * size * 0.4
-            let y = size * 0.5 - Math.sin(angle) * size * 0.4
-            massCenterXArray.push(x)
-            massCenterYArray.push(y)
+            let x = size * 0.5 + Math.cos(angle) * size * 0.45
+            let y = size * 0.5 - Math.sin(angle) * size * 0.45
             circle(x, y, size * 0.07)
         }
-        massCenterX = massCenterXArray.reduce((a, b) => a + b) / massCenterXArray.length
-        massCenterY = massCenterYArray.reduce((a, b) => a + b) / massCenterYArray.length
 
-        if (BALLS.current > 1) {
-            noFill()
-            strokeWeight(size * 0.01)
-            let dashlength = 1
-            for (let i = 0; i < 256 * dashlength; i++) {
-                let id = i - 256 * dashlength - 1 + BALLS.current
-                if (id > 0) {
-                    stroke(255, i / dashlength / 2.55)
-                    line(...BALLS.massCenter[id - 1], ...BALLS.massCenter[id])
-                }
-            }
-            noStroke()
-        }
-        fill(255, 200)
-        circle(massCenterX, massCenterY, size * 0.04)
-
-        BALLS.massCenter.push([massCenterX, massCenterY])
         BALLS.current++
-
-            if (BALLS.current === BALLS.framesCount) { BALLS.current = null }
+        if (BALLS.current === BALLS.framesCount) { BALLS.current = null }
     }
     pop()
 }
