@@ -11,7 +11,7 @@ function canvasGetSize() {
     if (windowWidth > 780) {
         virtualWidth = windowWidth - 400
     } else {
-        virtualWidth = windowWidth - 340
+        virtualWidth = windowWidth - 80
     }
     return Math.min(virtualWidth, virtualHeight)
 }
