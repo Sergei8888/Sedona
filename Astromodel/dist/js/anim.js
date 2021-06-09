@@ -28,6 +28,7 @@ function onData(data) {
         colors: {},
         massCenter: []
     }
+    frameRate(vm.environmentSettings.fps)
     let framesCount = data.frames
     for (let i = 0; i < framesCount; i++) {
         let frame = {}
@@ -56,7 +57,7 @@ function draw() {
 
     if (BALLS.current !== null) {
 
-        stroke(255, 70)
+        stroke(255, 50)
         strokeWeight(size * 0.002)
         for (id1 in BALLS.colors) {
             for (id2 in BALLS.colors) {
@@ -80,7 +81,7 @@ function draw() {
         }
 
         BALLS.current++
-        if (BALLS.current === BALLS.framesCount) { BALLS.current = null }
+        if (BALLS.current === BALLS.framesCount) { BALLS.current = 0 }
     }
     pop()
 }
