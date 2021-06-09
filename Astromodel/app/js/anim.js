@@ -56,6 +56,21 @@ function draw() {
 
     if (BALLS.current !== null) {
 
+        stroke(255, 70)
+        strokeWeight(size * 0.002)
+        for (id1 in BALLS.colors) {
+            for (id2 in BALLS.colors) {
+                let angle1 = BALLS.frames[BALLS.current][id1]
+                let angle2 = BALLS.frames[BALLS.current][id2]
+                let x1 = size * 0.5 + Math.cos(angle1) * size * 0.45
+                let y1 = size * 0.5 - Math.sin(angle1) * size * 0.45
+                let x2 = size * 0.5 + Math.cos(angle2) * size * 0.45
+                let y2 = size * 0.5 - Math.sin(angle2) * size * 0.45
+                line(x1, y1, x2, y2)
+            }
+        }
+        noStroke()
+
         for (id in BALLS.colors) {
             fill(BALLS.colors[id])
             let angle = BALLS.frames[BALLS.current][id]
