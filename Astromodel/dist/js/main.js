@@ -98,7 +98,7 @@ function validNewObjectSettings() {
     return true
 }
 
-
+//download any text file for user
 function download(filename, text) {
     var element = document.createElement('a');
     element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
@@ -113,7 +113,7 @@ function download(filename, text) {
 }
 
 
-class FrameObject {
+class OscillatorObject {
     constructor(props) {
         this.id = Math.random().toString(16).slice(2)
         this.color = props.color || '#00D1E0'
@@ -128,7 +128,7 @@ let vm = new Vue({
     el: '#app',
 
     data: {
-        objectList: [new FrameObject({})],
+        objectList: [new OscillatorObject({})],
         environmentSettings: {
             fps: 60,
             animationTime: 30, //seconds
@@ -136,7 +136,7 @@ let vm = new Vue({
     },
 
     methods: {
-        changeSettingsSidebarVisibility: function (){
+        changeSettingsSidebarVisibility: function() {
             let settingsSidebar = document.getElementsByClassName('settings')[0]
             settingsSidebar.classList.toggle('settings_opened')
         },
@@ -147,8 +147,13 @@ let vm = new Vue({
                     if (!validNewObjectSettings()) {
                         Swal.fire(alerts.getErrorAlert('Some number properties were not numbers'))
                     } else {
-                        this.objectList.push(new FrameObject(this.getNewObjectSettings()))
-                        this.checkScrollingListMargin('future')
+                        this.objectList.push(new OscillatorObject(this.getNewObjectSettings()))
+                        this.$nextTick(() => {
+                            if (this.isOscillatorListOverflowed()) {
+
+                                this.$refs.scrollingList.classList.add('object-list_scroll')
+                            }
+                        })
                     }
                 }
             })
@@ -171,6 +176,7 @@ let vm = new Vue({
             }
 
         },
+
         deleteObject(object) {
             for (currentObject of this.objectList) {
                 if (currentObject === object) {
@@ -178,27 +184,14 @@ let vm = new Vue({
                     this.objectList.splice(indexOfObject, 1)
                 }
             }
-            this.checkScrollingListMargin('past')
+            this.$nextTick(() => {
+                if (!this.isOscillatorListOverflowed()) {
+                    this.$refs.scrollingList.classList.remove('object-list_scroll')
+                }
+            })
         },
 
-        checkScrollingListMargin(scrollingListStatus) {
-            let itemsCounter = 7
-            if (scrollingListStatus === 'future') {
-                itemsCounter = 8
-            }
-            if (scrollingListStatus === 'past') {
-                itemsCounter = 9
-            }
-
-            if (vm.objectList.length >= itemsCounter) {
-                scrollingList.classList.add('object-list_scroll')
-            } else {
-                scrollingList.classList.remove('object-list_scroll')
-            }
-
-        },
-
-        validNewEnvironmentSettings(){
+        validNewEnvironmentSettings() {
             let animationTimeInput = document.getElementById('settingsAnimationTime')
             let FPSInput = document.getElementById('settingsFPS')
 
@@ -218,7 +211,7 @@ let vm = new Vue({
 
         },
 
-        changeEnvironmentSettings(){
+        changeEnvironmentSettings() {
             let alertPromise = Swal.fire(alerts.environmentSettingsAlert)
 
             let animationTimeInput = document.getElementById('settingsAnimationTime')
@@ -277,7 +270,7 @@ let vm = new Vue({
             requestIndicator.style.display = 'block'
 
             console.log(this.environmentSettings.fps, this.environmentSettings.animationTime)
-            //post oscillators
+                //post oscillators
             postData('https://xenofium-astromodel.herokuapp.com/api/kuramoto/data/trade/', {
                 fps: this.environmentSettings.fps,
                 time: this.environmentSettings.animationTime,
@@ -309,6 +302,23 @@ let vm = new Vue({
 
         randomizeObjectColor(object) {
             object.color = '#' + Math.random().toString(16).slice(3, 9)
+        },
+
+        isOscillatorListOverflowed() {
+            // код для вычисления высоты элемента, мб понадобится
+            // let oscillatorVerticalSpace =
+            //     /*получить высоту элемента */
+            //     this.$refs.oscillatorObject[0].offsetHeight
+            //     /*получить нижний отступ элемента */
+            //     +
+            //     Number(window.getComputedStyle(vm.$refs.oscillatorObject[0]).marginBottom.slice(0, -2))
+            //     /*получить верхний отступ элемента */
+            //     +
+            //     Number(window.getComputedStyle(vm.$refs.oscillatorObject[0]).marginTop.slice(0, -2))
+            if (this.$refs.scrollingList.scrollHeight > this.$refs.scrollingList.offsetHeight) {
+                return true
+            }
+            return false
         }
     },
 
@@ -328,12 +338,8 @@ let vm = new Vue({
             }
 
             return formattedObjectList
-        }
-    },
-    mounted: function() {
-        this.$nextTick(function() {
-            let scrollingList = document.getElementById('scrollingList')
-        })
+        },
+
     },
 
 })

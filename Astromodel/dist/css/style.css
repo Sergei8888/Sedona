@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
   height: 100%;
 }
 
@@ -8,11 +9,11 @@ body {
 }
 
 #app {
-  display: flex;
   position: relative;
+  display: flex;
+  overflow: hidden;
   width: 100%;
   height: 100%;
-  overflow: hidden;
 }
 
 .settings-btn {
@@ -26,8 +27,8 @@ body {
 .settings-btn svg {
   width: 100%;
   height: 100%;
-  fill: #9e9e9e;
   transition: 0.2s linear;
+  fill: #9e9e9e;
 }
 .settings-btn svg:hover {
   fill: #c4c4c4;
@@ -40,9 +41,9 @@ body {
   left: 25px;
   width: 40px;
   height: 40px;
+  transition: 0.3s ease-in-out;
   background-image: url(../img/settings.svg);
   background-size: contain;
-  transition: 0.3s ease-in-out;
 }
 .environment-settings-btn:hover {
   transform: rotate(0.5turn);
@@ -97,7 +98,6 @@ body {
   padding: 30px 20px;
 }
 .settings__add-object-btn {
-  margin-top: 30px;
   transition: 0.2s;
 }
 .settings__add-object-btn:hover {
@@ -209,6 +209,7 @@ body {
 .object-list {
   overflow: auto;
   max-height: 70vh;
+  margin-bottom: 10px;
 }
 .object-list__item {
   position: relative;
@@ -221,14 +222,11 @@ body {
 .object-list__item_margined {
   margin-right: 15px;
 }
-.object-list__item:not(:last-child) {
+.object-list__item {
   margin-bottom: 20px;
 }
 .object-list_scroll .object-list__item {
   margin-right: 20px;
-}
-.object-list_scroll ~ .add-object-btn {
-  margin-right: 27px;
 }
 
 /* width */
@@ -306,12 +304,12 @@ body {
     left: 10px;
     width: 2px;
     height: 15%;
-    background-color: #9e9e9e;
-    border-radius: 2px;
     transform: translate(0, -50%);
+    border-radius: 2px;
+    background-color: #9e9e9e;
   }
   .settings__object-name {
-    max-width: 50px;
     overflow: hidden;
+    max-width: 50px;
   }
 }

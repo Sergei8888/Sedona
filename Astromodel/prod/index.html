@@ -34,9 +34,9 @@
         </main>
         <aside class="settings">
             <button @click="changeSettingsSidebarVisibility" class="settings__close-lip"></button>
-            <div class="settings__object-wrapper">
-                <ul class="object-list settings__object-list" id="scrollingList">
-                    <li v-for="object in objectList" class="object-list__item">
+            <div class="settings__object-wrapper" ref="scrollingListWrapper">
+                <ul class="object-list settings__object-list" ref="scrollingList">
+                    <li v-for="object in objectList" class="object-list__item" ref="oscillatorObject">
                         <div @click="randomizeObjectColor(object)" :style="{backgroundColor: object.color}" class="settings__color-indicator"></div>
                         <span class="settings__object-name">{{ object.name }}</span>
                         <button aria-label="change oscillator settings" @click="changeSettings(object)" class="settings__object-settings-btn"></button>
