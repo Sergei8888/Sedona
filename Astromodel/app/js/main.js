@@ -4,7 +4,7 @@ async function postData(url = '', data = {}) {
     const response = await fetch(url, {
         method: 'POST', // *GET, POST, PUT, DELETE, etc.
         headers: {
-            'Access-Token': 'dDha03LqkyCYI6NyRZysPXukX',
+            'Access-Token': 'herokutest',
             'Content-Type': 'application/json',
         },
         body: JSON.stringify(data) // body data type must match "Content-Type" header
@@ -73,9 +73,9 @@ function validNewObjectSettings() {
     let angleInput = document.getElementById('settingsAngle')
     let connectionForceInput = document.getElementById('settingsConnectionForce')
 
-    numberInputs = [TInput, angleInput, connectionForceInput]
+    let numberInputs = [TInput, angleInput, connectionForceInput]
 
-    for (input of numberInputs) {
+    for (let input of numberInputs) {
         if (isNaN(+input.value)) {
             return false
         }
@@ -85,7 +85,7 @@ function validNewObjectSettings() {
 
 //download any text file for user
 function download(filename, text) {
-    var element = document.createElement('a');
+    let element = document.createElement('a');
     element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
     element.setAttribute('download', filename);
 
@@ -163,7 +163,7 @@ let vm = new Vue({
         },
 
         deleteObject(object) {
-            for (currentObject of this.objectList) {
+            for (let currentObject of this.objectList) {
                 if (currentObject === object) {
                     let indexOfObject = this.objectList.indexOf(object)
                     this.objectList.splice(indexOfObject, 1)
@@ -182,7 +182,7 @@ let vm = new Vue({
 
             let numberInputs = [animationTimeInput, FPSInput]
 
-            for (input of numberInputs) {
+            for (let input of numberInputs) {
                 if (isNaN(+input.value)) {
                     return false
                 }
@@ -300,10 +300,7 @@ let vm = new Vue({
             //     /*получить верхний отступ элемента */
             //     +
             //     Number(window.getComputedStyle(vm.$refs.oscillatorObject[0]).marginTop.slice(0, -2))
-            if (this.$refs.scrollingList.scrollHeight > this.$refs.scrollingList.offsetHeight) {
-                return true
-            }
-            return false
+            return this.$refs.scrollingList.scrollHeight > this.$refs.scrollingList.offsetHeight;
         }
     },
 
